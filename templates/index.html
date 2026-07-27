@@ -1,87 +1,439 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>KBSistemas</title>
-
-<link rel="stylesheet" href="/static/css/style.css">
-
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">
-    <h1>KB<span>Sistemas</span></h1>
-</div>
-
-<nav>
-
-<a href="/">Início</a>
-<a href="/sobre">Sobre</a>
-<a href="/servicos">Serviços</a>
-<a href="/planos">Planos</a>
-<a href="/contato">Contato</a>
-
-</nav>
-
-</header>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
 
-<section class="hero">
+body{
 
-<h1>Transformando empresas através da tecnologia.</h1>
+    background:#050505;
+    color:white;
 
-<p>
-Sistema ERP completo para empresas que desejam crescer com organização,
-automação e inteligência.
-</p>
-
-<a href="/servicos" class="botao">
-Conheça nossos serviços
-</a>
-
-</section>
+}
 
 
-<section class="cards">
+/* HEADER */
 
-<div class="card">
-<h2>📦 Estoque</h2>
-<p>Controle completo de produtos e movimentações.</p>
-</div>
+header{
 
-<div class="card">
-<h2>💰 Financeiro</h2>
-<p>Entradas, saídas e relatórios inteligentes.</p>
-</div>
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#080808;
+    border-bottom:1px solid #222;
 
-<div class="card">
-<h2>🚗 Veículos</h2>
-<p>Controle de frota e manutenções.</p>
-</div>
-
-<div class="card">
-<h2>🤖 IA</h2>
-<p>Automações inteligentes para facilitar seu trabalho.</p>
-</div>
-
-</section>
+}
 
 
-<footer>
+.logo h1{
 
-<p>
-© 2026 KBSistemas - Todos os direitos reservados.
-</p>
+    font-size:32px;
+    color:white;
 
-</footer>
+}
 
-</body>
 
-</html>
+.logo span{
+
+    color:#00eaff;
+
+}
+
+
+
+nav{
+
+    display:flex;
+    gap:25px;
+
+}
+
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:#00eaff;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    padding:40px 10%;
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,.7),
+    rgba(0,0,0,.8)
+    ),
+
+    url("/static/img/tecnologia.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+
+
+.hero-text h1{
+
+    font-size:55px;
+    max-width:900px;
+
+    animation:subir 1s;
+
+}
+
+
+
+.hero-text p{
+
+    margin-top:25px;
+    font-size:21px;
+    color:#ccc;
+    max-width:800px;
+
+}
+
+
+
+.botao{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:15px 35px;
+
+    background:#00eaff;
+
+    color:#000;
+
+    font-weight:bold;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+.botao:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px #00eaff;
+
+}
+
+
+
+
+/* SERVICOS */
+
+
+.servicos-home{
+
+    padding:70px 8%;
+    text-align:center;
+
+}
+
+
+.servicos-home h1{
+
+    font-size:40px;
+    margin-bottom:40px;
+
+}
+
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.card{
+
+
+    background:#111;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    border:1px solid #222;
+
+    transition:.4s;
+
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00eaff;
+
+    box-shadow:0 0 25px rgba(0,234,255,.3);
+
+}
+
+
+
+.card h2{
+
+    color:#00eaff;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+    color:#bbb;
+
+    line-height:1.6;
+
+}
+
+
+
+
+/* DESTAQUE */
+
+
+.destaque{
+
+    padding:80px 10%;
+
+    text-align:center;
+
+    background:#080808;
+
+}
+
+
+.destaque h1{
+
+    font-size:40px;
+
+}
+
+
+.destaque p{
+
+    margin:25px auto;
+
+    max-width:800px;
+
+    color:#bbb;
+
+    font-size:18px;
+
+}
+
+
+.frases{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.frases h2{
+
+    background:#111;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    border:1px solid #222;
+
+}
+
+
+
+/* CONTATO */
+
+
+.contato-home{
+
+    text-align:center;
+
+    padding:80px 10%;
+
+}
+
+
+.contato-home h1{
+
+    font-size:42px;
+
+}
+
+
+.contato-home p{
+
+    color:#bbb;
+
+    margin:20px;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    background:#000;
+
+    color:#777;
+
+}
+
+
+
+/* ANIMAÇÃO */
+
+
+@keyframes subir{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+/* CELULAR */
+
+
+@media(max-width:900px){
+
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+.hero-text h1{
+
+    font-size:36px;
+
+}
+
+
+
+.hero-text p{
+
+    font-size:17px;
+
+}
+
+
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.servicos-home h1,
+.destaque h1,
+.contato-home h1{
+
+    font-size:32px;
+
+}
+
+
+
+}
