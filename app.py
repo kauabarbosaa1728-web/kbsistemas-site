@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def sobre():
     return render_template("sobre.html")
 
 
-# Serviços (sistemas, sites, aplicativos)
+# Serviços
 @app.route("/servicos")
 def servicos():
     return render_template("servicos.html")
@@ -39,5 +40,12 @@ def orcamento():
     return render_template("orcamento.html")
 
 
+# Teste de funcionamento
+@app.route("/ping")
+def ping():
+    return "ok"
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    porta = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=porta)
