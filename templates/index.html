@@ -1,439 +1,226 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
 
-body{
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    background:#050505;
-    color:white;
+<title>KBSistemas | Tecnologia</title>
 
-}
+<link rel="stylesheet" href="/static/css/style.css">
 
+</head>
 
-/* HEADER */
 
-header{
+<body>
 
-    width:100%;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#080808;
-    border-bottom:1px solid #222;
 
-}
+<header>
 
+<div class="logo">
+    <h1>KB<span>Sistemas</span></h1>
+</div>
 
-.logo h1{
 
-    font-size:32px;
-    color:white;
+<nav>
 
-}
+<a href="/">Início</a>
+<a href="/sobre">Sobre</a>
+<a href="/servicos">Serviços</a>
+<a href="/planos">Soluções</a>
+<a href="/contato">Contato</a>
 
+</nav>
 
-.logo span{
 
-    color:#00eaff;
+</header>
 
-}
 
 
 
-nav{
+<section class="hero">
 
-    display:flex;
-    gap:25px;
 
-}
+<div class="hero-text">
 
 
-nav a{
+<h1>
+Transformando ideias em soluções digitais.
+</h1>
 
-    color:white;
-    text-decoration:none;
-    font-size:17px;
-    transition:.3s;
 
-}
+<p>
+Desenvolvimento de sistemas, sites, aplicativos e lojas virtuais
+para empresas que querem crescer através da tecnologia.
+</p>
 
 
-nav a:hover{
 
-    color:#00eaff;
+<a 
+href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento"
+class="botao">
 
-}
+Quero fazer um orçamento
 
+</a>
 
 
-/* HERO */
+</div>
 
-.hero{
 
-    min-height:85vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+</section>
 
-    padding:40px 10%;
 
-    background:
 
-    linear-gradient(
-    rgba(0,0,0,.7),
-    rgba(0,0,0,.8)
-    ),
 
-    url("/static/img/tecnologia.jpg");
 
-    background-size:cover;
-    background-position:center;
+<section class="servicos-home">
 
-}
 
+<h1>
+Nossas soluções
+</h1>
 
 
-.hero-text h1{
+<div class="cards">
 
-    font-size:55px;
-    max-width:900px;
 
-    animation:subir 1s;
 
-}
+<div class="card">
 
+<h2>💻 Sistemas</h2>
 
+<p>
+Criamos sistemas personalizados para controle,
+gestão, estoque e automação de empresas.
+</p>
 
-.hero-text p{
+</div>
 
-    margin-top:25px;
-    font-size:21px;
-    color:#ccc;
-    max-width:800px;
 
-}
 
 
+<div class="card">
 
-.botao{
+<h2>🌐 Sites</h2>
 
-    display:inline-block;
+<p>
+Sites modernos, rápidos e responsivos para
+apresentar sua empresa na internet.
+</p>
 
-    margin-top:35px;
+</div>
 
-    padding:15px 35px;
 
-    background:#00eaff;
 
-    color:#000;
 
-    font-weight:bold;
+<div class="card">
 
-    border-radius:30px;
+<h2>📱 Aplicativos</h2>
 
-    text-decoration:none;
+<p>
+Aplicativos personalizados para melhorar
+processos e atendimento.
+</p>
 
-    transition:.3s;
+</div>
 
-}
 
 
-.botao:hover{
 
-    transform:scale(1.08);
+<div class="card">
 
-    box-shadow:0 0 25px #00eaff;
+<h2>🛒 Lojas Virtuais</h2>
 
-}
+<p>
+Criamos lojas online para você vender
+seus produtos pela internet.
+</p>
 
+</div>
 
 
 
-/* SERVICOS */
+</div>
 
 
-.servicos-home{
+</section>
 
-    padding:70px 8%;
-    text-align:center;
 
-}
 
 
-.servicos-home h1{
 
-    font-size:40px;
-    margin-bottom:40px;
 
-}
+<section class="destaque">
 
 
+<h1>
+Por que escolher a KBSistemas?
+</h1>
 
-.cards{
 
-    display:grid;
+<p>
+Criamos soluções digitais sob medida para cada cliente,
+unindo tecnologia, inovação e praticidade.
+</p>
 
-    grid-template-columns:repeat(4,1fr);
 
-    gap:25px;
 
-}
+<div class="frases">
 
+<h2>🚀 Tecnologia para crescer</h2>
 
+<h2>⚡ Mais produtividade</h2>
 
-.card{
+<h2>🔒 Sistemas seguros</h2>
 
+</div>
 
-    background:#111;
 
-    padding:30px;
+</section>
 
-    border-radius:20px;
 
-    border:1px solid #222;
 
-    transition:.4s;
 
 
-}
 
+<section class="contato-home">
 
 
-.card:hover{
+<h1>
+Vamos criar seu projeto?
+</h1>
 
-    transform:translateY(-10px);
 
-    border-color:#00eaff;
+<p>
+Faça um orçamento sem compromisso.
+</p>
 
-    box-shadow:0 0 25px rgba(0,234,255,.3);
 
-}
+<a href="/contato" class="botao">
 
+Entrar em contato
 
+</a>
 
-.card h2{
 
-    color:#00eaff;
+</section>
 
-    margin-bottom:15px;
 
-}
 
 
 
-.card p{
+<footer>
 
-    color:#bbb;
+<p>
+© 2026 KBSistemas - Todos os direitos reservados.
+</p>
 
-    line-height:1.6;
+</footer>
 
-}
 
 
+</body>
 
-
-/* DESTAQUE */
-
-
-.destaque{
-
-    padding:80px 10%;
-
-    text-align:center;
-
-    background:#080808;
-
-}
-
-
-.destaque h1{
-
-    font-size:40px;
-
-}
-
-
-.destaque p{
-
-    margin:25px auto;
-
-    max-width:800px;
-
-    color:#bbb;
-
-    font-size:18px;
-
-}
-
-
-.frases{
-
-    margin-top:40px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:30px;
-
-    flex-wrap:wrap;
-
-}
-
-
-.frases h2{
-
-    background:#111;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    border:1px solid #222;
-
-}
-
-
-
-/* CONTATO */
-
-
-.contato-home{
-
-    text-align:center;
-
-    padding:80px 10%;
-
-}
-
-
-.contato-home h1{
-
-    font-size:42px;
-
-}
-
-
-.contato-home p{
-
-    color:#bbb;
-
-    margin:20px;
-
-}
-
-
-
-/* FOOTER */
-
-
-footer{
-
-    text-align:center;
-
-    padding:25px;
-
-    background:#000;
-
-    color:#777;
-
-}
-
-
-
-/* ANIMAÇÃO */
-
-
-@keyframes subir{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-
-/* CELULAR */
-
-
-@media(max-width:900px){
-
-
-header{
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-
-
-nav{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-
-
-.hero-text h1{
-
-    font-size:36px;
-
-}
-
-
-
-.hero-text p{
-
-    font-size:17px;
-
-}
-
-
-
-.cards{
-
-    grid-template-columns:1fr;
-
-}
-
-
-
-.servicos-home h1,
-.destaque h1,
-.contato-home h1{
-
-    font-size:32px;
-
-}
-
-
-
-}
+</html>
