@@ -22,6 +22,12 @@ def servicos():
     return render_template("servicos.html")
 
 
+# Projetos
+@app.route("/projetos")
+def projetos():
+    return render_template("projetos.html")
+
+
 # Planos e soluções
 @app.route("/planos")
 def planos():
