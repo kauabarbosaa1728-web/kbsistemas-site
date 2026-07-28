@@ -36,7 +36,6 @@ header{
 .logo h1{
 
     color:#4ea3ff;
-
     font-size:32px;
 
 }
@@ -53,11 +52,8 @@ header{
 nav a{
 
     color:white;
-
     text-decoration:none;
-
     margin-left:30px;
-
     transition:.3s;
 
 }
@@ -74,15 +70,12 @@ nav a:hover{
 
 /* HERO */
 
-
 .hero{
 
     min-height:85vh;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
@@ -119,7 +112,6 @@ nav a:hover{
 .hero h1{
 
     font-size:55px;
-
     margin-bottom:25px;
 
 }
@@ -142,7 +134,7 @@ nav a:hover{
 
 
 
-/* BOTÃO */
+/* BOTÕES */
 
 
 .botao{
@@ -180,7 +172,6 @@ nav a:hover{
 
 
 /* SERVIÇOS */
-
 
 .servicos-home{
 
@@ -231,6 +222,8 @@ nav a:hover{
 
     transition:.3s;
 
+    animation:subir .8s;
+
 }
 
 
@@ -264,7 +257,6 @@ nav a:hover{
     line-height:28px;
 
 }
-
 
 
 
@@ -354,24 +346,79 @@ nav a:hover{
 
 
 
-.projetos h1{
+/* FORMULÁRIO */
 
-    font-size:40px;
+
+form{
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:left;
+
+}
+
+
+
+form label{
+
+    color:#4ea3ff;
+
+    font-weight:bold;
+
+}
+
+
+
+form input,
+form select,
+form textarea{
+
+
+    width:100%;
+
+    margin-top:10px;
 
     margin-bottom:20px;
 
+    padding:15px;
+
+    background:#070b14;
+
+    color:white;
+
+    border:1px solid #1d2b45;
+
+    border-radius:10px;
+
+    font-size:16px;
+
 }
 
 
 
-.projetos > p{
+form textarea{
 
-    color:#b5b5b5;
+    height:150px;
 
-    margin-bottom:40px;
+    resize:none;
 
 }
 
+
+
+form input:focus,
+form select:focus,
+form textarea:focus{
+
+    outline:none;
+
+    border-color:#2979ff;
+
+    box-shadow:0 0 15px rgba(41,121,255,.3);
+
+}
 
 
 
@@ -406,6 +453,65 @@ nav a:hover{
 
 
 
+/* WHATSAPP FLUTUANTE */
+
+
+.whatsapp{
+
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+
+    width:65px;
+
+    height:65px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    background:#25d366;
+
+    color:white;
+
+
+    border-radius:50%;
+
+
+    font-size:32px;
+
+
+    text-decoration:none;
+
+
+    box-shadow:0 0 25px rgba(37,211,102,.5);
+
+
+    z-index:999;
+
+
+    transition:.3s;
+
+}
+
+
+
+.whatsapp:hover{
+
+    transform:scale(1.15);
+
+}
+
+
+
 /* FOOTER */
 
 
@@ -425,6 +531,34 @@ footer{
 
 
 
+/* ANIMAÇÃO */
+
+
+@keyframes subir{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
 /* CELULAR */
 
 
@@ -438,6 +572,7 @@ header{
     gap:20px;
 
 }
+
 
 
 nav{
@@ -476,16 +611,6 @@ nav a{
 
 }
 
-
-
-.servicos-home h1,
-.destaque h1,
-.projetos h1,
-.contato-home h1{
-
-    font-size:32px;
-
-}
 
 
 .card{
