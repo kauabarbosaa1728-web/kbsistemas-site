@@ -621,3 +621,214 @@ nav a{
 
 
 }
+/* ===========================================
+   ESTILO PREMIUM - PÁGINA DE SERVIÇOS
+===========================================*/
+
+.preco{
+
+    font-size:32px;
+    color:#4ea3ff;
+    font-weight:bold;
+    margin:20px 0;
+    text-align:center;
+
+}
+
+.beneficios{
+
+    list-style:none;
+    margin-top:25px;
+    margin-bottom:30px;
+    padding:0;
+
+}
+
+.beneficios li{
+
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    color:#d6d6d6;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+.beneficios li:hover{
+
+    color:white;
+    padding-left:8px;
+
+}
+
+.card{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+    );
+
+    transition:.8s;
+
+}
+
+.card:hover::before{
+
+    left:100%;
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(41,121,255,.25);
+
+}
+
+.card h2{
+
+    font-size:28px;
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    margin-top:10px;
+    margin-bottom:20px;
+
+}
+
+.destaque-card{
+
+    border:2px solid #2979ff !important;
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 35px rgba(41,121,255,.30);
+
+}
+
+.destaque-card:hover{
+
+    transform:translateY(-12px) scale(1.05);
+
+}
+
+.badge{
+
+    position:absolute;
+
+    top:18px;
+    right:-45px;
+
+    background:#2979ff;
+
+    color:white;
+
+    padding:8px 50px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transform:rotate(45deg);
+
+    letter-spacing:1px;
+
+    box-shadow:0 0 15px rgba(41,121,255,.5);
+
+}
+
+.botao{
+
+    width:100%;
+    text-align:center;
+
+}
+
+.botao:hover{
+
+    box-shadow:0 0 30px #2979ff;
+
+}
+
+.cards{
+
+    margin-top:50px;
+
+}
+
+.servicos-home{
+
+    background:#070b14;
+
+}
+
+.destaque{
+
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.frases h2{
+
+    transition:.3s;
+
+}
+
+.frases h2:hover{
+
+    transform:translateY(-6px);
+
+    background:#2979ff;
+
+    color:white;
+
+    box-shadow:0 0 20px rgba(41,121,255,.30);
+
+}
+
+@media(max-width:900px){
+
+.badge{
+
+    right:-60px;
+
+    font-size:10px;
+
+}
+
+.preco{
+
+    font-size:26px;
+
+}
+
+.card h2{
+
+    font-size:23px;
+
+}
+
+}
