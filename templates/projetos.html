@@ -1,182 +1,735 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Projetos - KBSistemas</title>
+<meta name="description" content="Conheça os projetos desenvolvidos pela KBSistemas: ERP, Estoque Inteligente com KIRA IA, logística reversa, sites e catálogos digitais.">
+<title>Portfólio de Projetos | KBSistemas</title>
 
 <link rel="stylesheet" href="/static/css/style.css">
 
+<style>
+/* Estilos exclusivos do portfólio */
+.portfolio {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 22px 80px;
+}
+
+.portfolio-intro {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.portfolio-intro h2 {
+    font-size: clamp(25px, 4vw, 38px);
+    margin-bottom: 12px;
+}
+
+.portfolio-intro p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    opacity: .8;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.projeto-card {
+    background: #fff;
+    color: #172238;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 38px rgba(0,0,0,.12);
+    transition: transform .25s, box-shadow .25s;
+    min-width: 0;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.18);
+}
+
+.projeto-imagem {
+    height: 265px;
+    background: #eaf0f8;
+    overflow: hidden;
+    position: relative;
+}
+
+.projeto-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    cursor: zoom-in;
+    transition: transform .3s;
+}
+
+.projeto-imagem img:hover {
+    transform: scale(1.025);
+}
+
+.projeto-corpo {
+    padding: 25px;
+}
+
+.projeto-tag {
+    display: inline-block;
+    background: #eaf1ff;
+    color: #1856b7;
+    border-radius: 30px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.projeto-corpo h3 {
+    font-size: 23px;
+    line-height: 1.3;
+    margin: 0 0 13px;
+    color: #101b32;
+}
+
+.projeto-corpo p {
+    color: #566277;
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+
+.projeto-recursos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 23px;
+}
+
+.projeto-recursos span {
+    background: #f0f4fa;
+    color: #33445f;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.projeto-fotos {
+    display: flex;
+    gap: 9px;
+    padding: 12px;
+    overflow-x: auto;
+    background: #f7f9fc;
+    border-top: 1px solid #e6eaf0;
+}
+
+.projeto-fotos button {
+    flex: 0 0 85px;
+    height: 58px;
+    padding: 0;
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.projeto-fotos button.ativo {
+    border-color: #2563eb;
+}
+
+.projeto-fotos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.projeto-botoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.projeto-botoes a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 12px 17px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: opacity .2s;
+}
+
+.projeto-botoes a:hover {
+    opacity: .85;
+}
+
+.btn-projeto {
+    background: #2563eb;
+    color: white !important;
+}
+
+.btn-secundario {
+    background: #edf2f8;
+    color: #1d3557 !important;
+}
+
+.portfolio-servicos {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.portfolio-servicos h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.portfolio-servicos > p {
+    margin-bottom: 28px;
+    opacity: .8;
+}
+
+.servicos-extra {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.servico-extra {
+    background: #fff;
+    color: #172238;
+    padding: 27px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.servico-extra h3 {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.servico-extra p {
+    line-height: 1.7;
+    color: #566277;
+    font-size: 14px;
+}
+
+/* Visualização ampliada */
+.visualizador {
+    position: fixed;
+    inset: 0;
+    background: rgba(4,10,24,.94);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 25px;
+}
+
+.visualizador.aberto {
+    display: flex;
+}
+
+.visualizador img {
+    max-width: 95%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.fechar-visualizador {
+    position: absolute;
+    top: 15px;
+    right: 22px;
+    background: white;
+    color: #111;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+@media (max-width: 850px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servicos-extra {
+        grid-template-columns: 1fr;
+    }
+
+    .projeto-imagem {
+        height: 230px;
+    }
+
+    .projeto-corpo {
+        padding: 20px;
+    }
+
+    .portfolio {
+        padding: 35px 15px 60px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .projeto-card,
+    .projeto-imagem img {
+        transition: none;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
+    <div class="logo">
+        <h1>KB<span>Sistemas</span></h1>
+    </div>
 
-<div class="logo">
-<h1>KB<span>Sistemas</span></h1>
-</div>
-
-<nav>
-
-<a href="/">Início</a>
-<a href="/sobre">Sobre</a>
-<a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
-<a href="/planos">Soluções</a>
-<a href="/contato">Contato</a>
-
-</nav>
-
+    <nav>
+        <a href="/">Início</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/servicos">Serviços</a>
+        <a href="/projetos">Projetos</a>
+        <a href="/planos">Soluções</a>
+        <a href="/contato">Contato</a>
+    </nav>
 </header>
 
 <section class="destaque">
-
-<h1>Nossos Projetos</h1>
-
-<p>
-Conheça alguns dos trabalhos desenvolvidos pela KBSistemas. Cada projeto é criado de forma personalizada para atender às necessidades de cada cliente.
-</p>
-
+    <h1>Projetos Desenvolvidos</h1>
+    <p>
+        Conheça as soluções criadas pela KBSistemas.
+        Sistemas empresariais, plataformas digitais,
+        automações e sites personalizados para diferentes negócios.
+    </p>
 </section>
 
-<section class="servicos-home">
+<main class="portfolio">
 
-<div class="cards">
+    <div class="portfolio-intro">
+        <h2>🚀 Nosso Portfólio</h2>
+        <p>
+            Cada projeto representa uma solução desenvolvida
+            para uma necessidade específica. Explore as imagens
+            e descubra o que podemos criar para sua empresa.
+        </p>
+    </div>
 
-<div class="card">
+    <div class="portfolio-grid">
 
-<img src="/static/img/kbsistemas.png" alt="KBSistemas ERP" style="width:100%;border-radius:12px;margin-bottom:20px;">
+        <!-- PROJETO 1: ERP -->
+        <article class="projeto-card">
 
-<h2>💻 KBSistemas ERP</h2>
+            <div class="projeto-imagem">
+                <img
+                    src="/static/img/projetos/erp-1.png"
+                    alt="Dashboard do KBSistemas ERP"
+                    loading="lazy"
+                    onclick="abrirImagem(this.src, this.alt)"
+                >
+            </div>
 
-<p>
-Sistema completo de gestão empresarial com controle de estoque, financeiro, usuários, relatórios, movimentações e painel administrativo.
-</p>
+            <div class="projeto-fotos">
+                <button class="ativo" onclick="trocarFoto(this, '/static/img/projetos/erp-1.png')" aria-label="Ver dashboard ERP">
+                    <img src="/static/img/projetos/erp-1.png" alt="Dashboard ERP">
+                </button>
+                <button onclick="trocarFoto(this, '/static/img/projetos/erp-2.png')" aria-label="Ver administração ERP">
+                    <img src="/static/img/projetos/erp-2.png" alt="Administração ERP">
+                </button>
+                <button onclick="trocarFoto(this, '/static/img/projetos/erp-3.png')" aria-label="Ver módulo de veículos">
+                    <img src="/static/img/projetos/erp-3.png" alt="Veículos ERP">
+                </button>
+                <button onclick="trocarFoto(this, '/static/img/projetos/erp-4.png')" aria-label="Ver relatórios">
+                    <img src="/static/img/projetos/erp-4.png" alt="Relatórios ERP">
+                </button>
+                <button onclick="trocarFoto(this, '/static/img/projetos/erp-5.png')" aria-label="Ver financeiro">
+                    <img src="/static/img/projetos/erp-5.png" alt="Financeiro ERP">
+                </button>
+            </div>
 
-<a href="/orcamento" class="botao">
+            <div class="projeto-corpo">
+                <span class="projeto-tag">GESTÃO EMPRESARIAL</span>
 
-Quero um sistema
+                <h3>💻 KBSistemas ERP</h3>
 
-</a>
+                <p>
+                    Sistema de gestão empresarial desenvolvido para
+                    centralizar as operações de uma empresa.
+                    Reúne controle de estoque, financeiro, veículos,
+                    relatórios e administração em uma única plataforma.
+                </p>
 
-</div>
+                <div class="projeto-recursos">
+                    <span>📦 Estoque</span>
+                    <span>💰 Financeiro</span>
+                    <span>🚗 Veículos</span>
+                    <span>📊 Relatórios</span>
+                    <span>👥 Usuários</span>
+                    <span>📈 Dashboard</span>
+                </div>
 
+                <div class="projeto-botoes">
+                    <a class="btn-projeto" href="/orcamento">
+                        Solicitar ERP
+                    </a>
+                </div>
+            </div>
+        </article>
 
+        <!-- PROJETO 2: ESTOQUE INTELIGENTE -->
+        <article class="projeto-card">
 
-<div class="card">
+            <div class="projeto-imagem">
+                <img
+                    src="/static/img/projetos/estoque-1.png"
+                    alt="Dashboard do Estoque Inteligente"
+                    loading="lazy"
+                    onclick="abrirImagem(this.src, this.alt)"
+                >
+            </div>
 
-<img src="/static/img/site.png" alt="Sites Profissionais" style="width:100%;border-radius:12px;margin-bottom:20px;">
+            <div class="projeto-fotos">
+                <button class="ativo" onclick="trocarFoto(this, '/static/img/projetos/estoque-1.png')" aria-label="Ver dashboard">
+                    <img src="/static/img/projetos/estoque-1.png" alt="Dashboard">
+                </button>
+                <button onclick="trocarFoto(this, '/static/img/projetos/estoque-2.png')" aria-label="Ver KIRA IA">
+                    <img src="/static/img/projetos/estoque-2.png" alt="KIRA IA">
+                </button>
+                <button onclick="trocarFoto(this, '/static/img/projetos/estoque-3.png')" aria-label="Ver estoque geral">
+                    <img src="/static/img/projetos/estoque-3.png" alt="Estoque geral">
+                </button>
+                <button onclick="trocarFoto(this, '/static/img/projetos/estoque-4.png')" aria-label="Ver histórico">
+                    <img src="/static/img/projetos/estoque-4.png" alt="Histórico">
+                </button>
+            </div>
 
-<h2>🌐 Sites Profissionais</h2>
+            <div class="projeto-corpo">
+                <span class="projeto-tag">CONTROLE DE ESTOQUE + ASSISTENTE VIRTUAL</span>
 
-<p>
-Sites modernos, rápidos e totalmente responsivos para empresas que desejam fortalecer sua presença digital.
-</p>
+                <h3>🤖 Estoque Inteligente + KIRA IA</h3>
 
-<a href="/orcamento" class="botao">
+                <p>
+                    Plataforma para gerenciamento de equipamentos
+                    e materiais, com indicadores, controle de entradas
+                    e retiradas, histórico de movimentações e
+                    assistente virtual KIRA IA para consultas ao estoque.
+                </p>
 
-Solicitar site
+                <div class="projeto-recursos">
+                    <span>📊 Dashboard</span>
+                    <span>📦 Equipamentos</span>
+                    <span>🔄 Movimentações</span>
+                    <span>🤖 KIRA IA</span>
+                    <span>📅 Calendário</span>
+                    <span>🔎 Consultas</span>
+                </div>
 
-</a>
+                <div class="projeto-botoes">
+                    <a class="btn-projeto" href="/orcamento">
+                        Quero esse sistema
+                    </a>
+                </div>
+            </div>
+        </article>
 
-</div>
+        <!-- PROJETO 3: LOGISTICA REVERSA -->
+        <article class="projeto-card">
 
+            <div class="projeto-imagem">
+                <img
+                    src="/static/img/projetos/reversa-1.png"
+                    alt="Painel de controle da logística reversa"
+                    loading="lazy"
+                    onclick="abrirImagem(this.src, this.alt)"
+                >
+            </div>
 
+            <div class="projeto-fotos">
+                <button class="ativo" onclick="trocarFoto(this, '/static/img/projetos/reversa-1.png')" aria-label="Ver painel da reversa">
+                    <img src="/static/img/projetos/reversa-1.png" alt="Painel da reversa">
+                </button>
+                <button onclick="trocarFoto(this, '/static/img/projetos/reversa-2.png')" aria-label="Ver tela de acesso">
+                    <img src="/static/img/projetos/reversa-2.png" alt="Tela de acesso">
+                </button>
+            </div>
 
-<div class="card">
+            <div class="projeto-corpo">
+                <span class="projeto-tag">LOGÍSTICA REVERSA • WEB APP</span>
 
-<img src="/static/img/app.png" alt="Aplicativos" style="width:100%;border-radius:12px;margin-bottom:20px;">
+                <h3>♻️ Reversa e Lixo Eletrônico</h3>
 
-<h2>📱 Aplicativos</h2>
+                <p>
+                    Sistema para controle de roteadores e equipamentos
+                    devolvidos. Acompanhe recebimentos, testes,
+                    aprovações, consertos, descarte eletrônico
+                    e histórico de operações.
+                    Pode ser instalado no celular como aplicativo web.
+                </p>
 
-<p>
-Aplicativos personalizados desenvolvidos para automatizar processos e melhorar a experiência dos usuários.
-</p>
+                <div class="projeto-recursos">
+                    <span>♻️ Reversa</span>
+                    <span>📱 Instalável</span>
+                    <span>🔎 Busca</span>
+                    <span>📋 Histórico</span>
+                    <span>📤 CSV</span>
+                    <span>👥 Usuários</span>
+                </div>
 
-<a href="/orcamento" class="botao">
+                <div class="projeto-botoes">
+                    <a class="btn-projeto" href="/orcamento">
+                        Solicitar sistema
+                    </a>
+                </div>
+            </div>
+        </article>
 
-Criar aplicativo
+        <!-- PROJETO 4: KB LASHES -->
+        <article class="projeto-card">
 
-</a>
+            <div class="projeto-imagem">
+                <img
+                    src="/static/img/projetos/lashes-1.png"
+                    alt="Site KB Lashes de cílios e sobrancelhas"
+                    loading="lazy"
+                    onclick="abrirImagem(this.src, this.alt)"
+                >
+            </div>
 
-</div>
+            <div class="projeto-corpo">
+                <span class="projeto-tag">SITE COMERCIAL • BELEZA</span>
 
+                <h3>💗 KB Lashes</h3>
 
+                <p>
+                    Site personalizado para um negócio de beleza,
+                    especializado em cílios e sobrancelhas.
+                    Conta com identidade visual, apresentação
+                    dos serviços, valores e acesso ao agendamento.
+                </p>
 
-<div class="card">
+                <div class="projeto-recursos">
+                    <span>💅 Beleza</span>
+                    <span>📅 Agendamento</span>
+                    <span>💰 Valores</span>
+                    <span>📱 Site responsivo</span>
+                </div>
 
-<img src="/static/img/loja.png" alt="Loja Virtual" style="width:100%;border-radius:12px;margin-bottom:20px;">
+                <div class="projeto-botoes">
+                    <a class="btn-projeto" href="/orcamento">
+                        Quero um site assim
+                    </a>
+                </div>
+            </div>
+        </article>
 
-<h2>🛒 Lojas Virtuais</h2>
+        <!-- PROJETO 5: CAMPEONATO -->
+        <article class="projeto-card">
 
-<p>
-Lojas virtuais completas para vender produtos online com segurança, organização e praticidade.
-</p>
+            <div class="projeto-imagem">
+                <img
+                    src="/static/img/projetos/warzone-1.png"
+                    alt="Site Resurgence 100 Duos Championship"
+                    loading="lazy"
+                    onclick="abrirImagem(this.src, this.alt)"
+                >
+            </div>
 
-<a href="/orcamento" class="botao">
+            <div class="projeto-corpo">
+                <span class="projeto-tag">EVENTOS • CAMPEONATOS GAMER</span>
 
-Criar loja
+                <h3>🎮 Resurgence 100 — Duos Championship</h3>
 
-</a>
+                <p>
+                    Site criado para um campeonato de Warzone,
+                    com apresentação do evento, regulamento,
+                    sistema de pontuação e informações
+                    para os participantes.
+                </p>
 
-</div>
+                <div class="projeto-recursos">
+                    <span>🏆 Campeonato</span>
+                    <span>🎮 Games</span>
+                    <span>📋 Regras</span>
+                    <span>📊 Pontuação</span>
+                </div>
 
-</div>
+                <div class="projeto-botoes">
+                    <a
+                        class="btn-secundario"
+                        href="https://campwarzone.onrender.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ver projeto ↗
+                    </a>
 
-</section>
+                    <a class="btn-projeto" href="/orcamento">
+                        Criar site parecido
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- OUTROS SERVICOS -->
+    <section class="portfolio-servicos">
+        <h2>💼 Outros Serviços da KBSistemas</h2>
+
+        <p>
+            Além dos projetos apresentados, desenvolvemos
+            soluções personalizadas para diferentes negócios.
+        </p>
+
+        <div class="servicos-extra">
+
+            <div class="servico-extra">
+                <h3>🌐 Sites Profissionais</h3>
+                <p>
+                    Sites institucionais, landing pages
+                    e páginas comerciais para empresas
+                    e profissionais autônomos.
+                </p>
+            </div>
+
+            <div class="servico-extra">
+                <h3>🛍️ Catálogos Digitais</h3>
+                <p>
+                    Catálogos personalizados para apresentar
+                    produtos, serviços, preços e contatos
+                    de forma organizada.
+                </p>
+            </div>
+
+            <div class="servico-extra">
+                <h3>🛒 Lojas Virtuais</h3>
+                <p>
+                    Desenvolvimento de lojas e vitrines
+                    digitais conforme as necessidades
+                    de cada negócio.
+                </p>
+            </div>
+
+        </div>
+
+        <div style="margin-top:30px;">
+            <a href="/servicos" class="botao">
+                Conhecer todos os serviços
+            </a>
+        </div>
+    </section>
+
+</main>
 
 <section class="destaque">
+    <h1>Por que escolher a KBSistemas?</h1>
 
-<h1>Por que nossos projetos se destacam?</h1>
-
-<div class="frases">
-
-<h2>🚀 Desenvolvimento Sob Medida</h2>
-
-<h2>⚡ Alto Desempenho</h2>
-
-<h2>🔒 Segurança</h2>
-
-<h2>📱 Design Responsivo</h2>
-
-</div>
-
+    <div class="frases">
+        <h2>🚀 Desenvolvimento Sob Medida</h2>
+        <h2>⚡ Soluções Modernas</h2>
+        <h2>🔒 Controle de Acesso</h2>
+        <h2>📱 Design Responsivo</h2>
+    </div>
 </section>
 
 <section class="contato-home">
+    <h1>Gostou dos nossos projetos?</h1>
 
-<h1>Gostou dos nossos projetos?</h1>
+    <p>
+        Conte sua ideia e solicite um orçamento
+        para desenvolver uma solução personalizada.
+    </p>
 
-<p>
-Vamos desenvolver uma solução personalizada para o seu negócio.
-</p>
-
-<a href="/orcamento" class="botao">
-
-Solicitar orçamento
-
-</a>
-
+    <a href="/orcamento" class="botao">
+        Solicitar orçamento
+    </a>
 </section>
 
-<a href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" class="whatsapp">
-
-📱
-
+<a
+    href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Entrar em contato pelo WhatsApp"
+>
+    📱
 </a>
 
 <footer>
-
-<p>
-© 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
-</p>
-
+    <p>
+        © 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
+    </p>
 </footer>
 
-</body>
+<!-- VISUALIZADOR DE IMAGENS -->
+<div class="visualizador" id="visualizador" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+    <button
+        class="fechar-visualizador"
+        onclick="fecharImagem()"
+        aria-label="Fechar imagem"
+    >
+        ×
+    </button>
 
+    <img id="imagem-ampliada" src="" alt="">
+</div>
+
+<script>
+function trocarFoto(botao, caminho) {
+    const card = botao.closest(".projeto-card");
+    const principal = card.querySelector(".projeto-imagem img");
+
+    principal.src = caminho;
+
+    card.querySelectorAll(".projeto-fotos button").forEach(function(item) {
+        item.classList.remove("ativo");
+    });
+
+    botao.classList.add("ativo");
+}
+
+function abrirImagem(caminho, descricao) {
+    const visualizador = document.getElementById("visualizador");
+    const imagem = document.getElementById("imagem-ampliada");
+
+    imagem.src = caminho;
+    imagem.alt = descricao || "Imagem do projeto";
+
+    visualizador.classList.add("aberto");
+    document.body.style.overflow = "hidden";
+}
+
+function fecharImagem() {
+    document.getElementById("visualizador").classList.remove("aberto");
+    document.getElementById("imagem-ampliada").src = "";
+    document.body.style.overflow = "";
+}
+
+document.getElementById("visualizador").addEventListener("click", function(evento) {
+    if (evento.target === this) {
+        fecharImagem();
+    }
+});
+
+document.addEventListener("keydown", function(evento) {
+    if (evento.key === "Escape") {
+        fecharImagem();
+    }
+});
+</script>
+
+</body>
 </html>
