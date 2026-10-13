@@ -1,14 +1,177 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KBSistemas | Sistemas, Sites e Aplicativos</title>
 
 <link rel="stylesheet" href="/static/css/style.css">
+
+<style>
+/* BOTÃO DE PORTFÓLIO EM DESTAQUE */
+
+.portfolio-chamada {
+    margin-top: 32px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.portfolio-selo {
+    display: inline-block;
+    padding: 8px 17px;
+    border-radius: 30px;
+    background: rgba(255, 193, 7, 0.12);
+    border: 1px solid rgba(255, 193, 7, 0.45);
+    color: #ffd86b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.botao-portfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 900px;
+    min-height: 76px;
+    margin: 0 auto;
+    padding: 20px 25px;
+    border-radius: 18px;
+
+    background: linear-gradient(
+        120deg,
+        #ffb700,
+        #ffe16a,
+        #ffb700
+    );
+
+    color: #161616 !important;
+    text-decoration: none;
+    font-size: clamp(17px, 2.5vw, 23px);
+    font-weight: 900;
+    text-align: center;
+
+    border: 2px solid #ffeaa0;
+    box-shadow:
+        0 0 20px rgba(255, 193, 7, 0.45),
+        0 0 45px rgba(255, 193, 7, 0.18);
+
+    position: relative;
+    overflow: hidden;
+
+    animation: brilhoPortfolio 2.5s infinite;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.botao-portfolio::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: reflexoPortfolio 3.5s infinite;
+}
+
+.botao-portfolio:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow:
+        0 0 30px rgba(255, 193, 7, .7),
+        0 0 60px rgba(255, 193, 7, .3);
+}
+
+.portfolio-legenda {
+    margin: 12px auto 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #d6dce8 !important;
+}
+
+.hero-acoes {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-acoes .botao {
+    width: auto;
+    min-width: 220px;
+    margin-top: 10px;
+}
+
+@keyframes brilhoPortfolio {
+    0%, 100% {
+        box-shadow: 0 0 18px rgba(255,193,7,.35);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(255,193,7,.7),
+            0 0 55px rgba(255,193,7,.3);
+    }
+}
+
+@keyframes reflexoPortfolio {
+    0% {
+        left: -100%;
+    }
+    55%, 100% {
+        left: 150%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 75px 18px !important;
+        min-height: auto !important;
+    }
+
+    .hero h1 {
+        font-size: 32px !important;
+    }
+
+    .hero p {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+    }
+
+    .botao-portfolio {
+        min-height: 72px;
+        padding: 17px 14px;
+        font-size: 17px;
+    }
+
+    .hero-acoes {
+        flex-direction: column;
+    }
+
+    .hero-acoes .botao {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .botao-portfolio,
+    .botao-portfolio::after {
+        animation: none;
+    }
+}
+</style>
 
 </head>
 
@@ -21,19 +184,18 @@
 </div>
 
 <nav>
-
 <a href="/">Início</a>
 <a href="/sobre">Sobre</a>
 <a href="/servicos">Serviços</a>
 <a href="/projetos">Projetos</a>
 <a href="/planos">Soluções</a>
 <a href="/contato">Contato</a>
-
 </nav>
 
 </header>
 
 
+<!-- PÁGINA INICIAL -->
 
 <section class="hero">
 
@@ -49,30 +211,50 @@ aplicativos e lojas virtuais para empresas que desejam crescer
 com tecnologia, inovação e segurança.
 </p>
 
+
+<!-- PORTFÓLIO EM DESTAQUE -->
+
+<div class="portfolio-chamada">
+
+<div class="portfolio-selo">
+✨ CONHEÇA NOSSOS TRABALHOS
+</div>
+
+<a href="/projetos" class="botao-portfolio">
+🚀 VENHA CONHECER MEU PORTFÓLIO →
+</a>
+
+<p class="portfolio-legenda">
+💻 Veja nossos sistemas, sites e projetos desenvolvidos!
+</p>
+
+</div>
+
+
+<!-- OUTROS BOTÕES -->
+
+<div class="hero-acoes">
+
 <a href="/orcamento" class="botao">
-
 Solicitar orçamento
-
 </a>
 
-<a href="/projetos" class="botao">
-
-Ver nossos projetos
-
+<a href="/servicos" class="botao">
+Conhecer nossos serviços
 </a>
+
+</div>
 
 </div>
 
 </section>
 
 
-
+<!-- SERVIÇOS -->
 
 <section class="servicos-home">
 
-<h1>
-Nossos Serviços
-</h1>
+<h1>Nossos Serviços</h1>
 
 <div class="cards">
 
@@ -125,13 +307,11 @@ e segurança.
 </section>
 
 
-
+<!-- DESTAQUE -->
 
 <section class="destaque">
 
-<h1>
-Por que escolher a KBSistemas?
-</h1>
+<h1>Por que escolher a KBSistemas?</h1>
 
 <p>
 Cada projeto é desenvolvido pensando nas necessidades do cliente,
@@ -151,13 +331,11 @@ buscando desempenho, organização, segurança e facilidade de uso.
 </section>
 
 
-
+<!-- PROJETOS -->
 
 <section class="projetos">
 
-<h1>
-Projetos Desenvolvidos
-</h1>
+<h1>Projetos Desenvolvidos</h1>
 
 <p>
 Conheça algumas das soluções criadas pela KBSistemas.
@@ -200,24 +378,18 @@ o atendimento aos clientes.
 
 </div>
 
-<br><br>
-
 <a href="/projetos" class="botao">
-
 Conhecer todos os projetos
-
 </a>
 
 </section>
 
 
-
+<!-- CONTATO -->
 
 <section class="contato-home">
 
-<h1>
-Vamos desenvolver seu projeto?
-</h1>
+<h1>Vamos desenvolver seu projeto?</h1>
 
 <p>
 Solicite um orçamento sem compromisso e descubra como a
@@ -225,35 +397,32 @@ KBSistemas pode ajudar sua empresa.
 </p>
 
 <a href="/orcamento" class="botao">
-
 Solicitar orçamento
-
 </a>
 
 </section>
 
 
+<!-- WHATSAPP -->
 
-
-<a href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento" class="whatsapp">
-
+<a
+href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+class="whatsapp"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Solicitar orçamento pelo WhatsApp"
+>
 📱
-
 </a>
-
-
 
 
 <footer>
 
 <p>
-
 © 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
-
 </p>
 
 </footer>
 
 </body>
-
 </html>
