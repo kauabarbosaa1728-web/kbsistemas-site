@@ -3,425 +3,1012 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KBSistemas | Sistemas, Sites e Aplicativos</title>
+    <meta name="description"
+          content="KBSistemas: sistemas empresariais, sites profissionais, aplicativos e soluções digitais personalizadas. Conheça nosso portfólio.">
 
-<link rel="stylesheet" href="/static/css/style.css">
+    <title>KBSistemas | Soluções Digitais</title>
 
-<style>
-/* BOTÃO DE PORTFÓLIO EM DESTAQUE */
+    <link rel="stylesheet" href="/static/css/style.css">
 
-.portfolio-chamada {
-    margin-top: 32px;
-    margin-bottom: 18px;
-    text-align: center;
-}
+    <style>
+        /* =====================================
+           HOME PREMIUM - KBSISTEMAS
+           ===================================== */
 
-.portfolio-selo {
-    display: inline-block;
-    padding: 8px 17px;
-    border-radius: 30px;
-    background: rgba(255, 193, 7, 0.12);
-    border: 1px solid rgba(255, 193, 7, 0.45);
-    color: #ffd86b;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
+        .home-hero {
+            min-height: 610px;
+            padding: 85px 7%;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(
+                    circle at 75% 45%,
+                    rgba(39, 112, 193, .11),
+                    transparent 45%
+                ),
+                #080c12;
+        }
 
-.botao-portfolio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    max-width: 900px;
-    min-height: 76px;
-    margin: 0 auto;
-    padding: 20px 25px;
-    border-radius: 18px;
+        .home-hero-container {
+            width: 100%;
+            max-width: 1180px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            align-items: center;
+            gap: 65px;
+        }
 
-    background: linear-gradient(
-        120deg,
-        #ffb700,
-        #ffe16a,
-        #ffb700
-    );
+        .home-hero-content {
+            min-width: 0;
+        }
 
-    color: #161616 !important;
-    text-decoration: none;
-    font-size: clamp(17px, 2.5vw, 23px);
-    font-weight: 900;
-    text-align: center;
+        .home-etiqueta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 22px;
+            padding: 7px 13px;
+            background: #111e2d;
+            border: 1px solid #28415b;
+            border-radius: 9px;
+            color: #9bd0ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
-    border: 2px solid #ffeaa0;
-    box-shadow:
-        0 0 20px rgba(255, 193, 7, 0.45),
-        0 0 45px rgba(255, 193, 7, 0.18);
+        .home-hero h1 {
+            margin: 0 0 23px;
+            font-size: clamp(37px, 4.6vw, 62px);
+            line-height: 1.13;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: #f2f6fc;
+        }
 
-    position: relative;
-    overflow: hidden;
+        .home-hero h1 span {
+            color: #3ca5f5;
+        }
 
-    animation: brilhoPortfolio 2.5s infinite;
-    transition: transform .25s, box-shadow .25s;
-}
+        .home-hero-content > p {
+            max-width: 540px;
+            margin-bottom: 26px;
+            color: #aab8c8;
+            font-size: 17px;
+            line-height: 1.8;
+        }
 
-.botao-portfolio::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.55),
-        transparent
-    );
-    transform: skewX(-20deg);
-    animation: reflexoPortfolio 3.5s infinite;
-}
+        .home-hero-buttons {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
-.botao-portfolio:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow:
-        0 0 30px rgba(255, 193, 7, .7),
-        0 0 60px rgba(255, 193, 7, .3);
-}
+        .home-hero-buttons .botao {
+            margin: 0;
+            min-height: 48px;
+            padding: 13px 21px;
+            font-size: 14px;
+            border-radius: 11px;
+        }
 
-.portfolio-legenda {
-    margin: 12px auto 0 !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-    color: #d6dce8 !important;
-}
+        .home-hero-buttons .botao-outline {
+            background: #101720;
+            color: #f2f6fc;
+            border: 1px solid #344255;
+        }
 
-.hero-acoes {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
+        .home-hero-buttons .botao-outline:hover {
+            background: #1b2938;
+            color: white;
+        }
 
-.hero-acoes .botao {
-    width: auto;
-    min-width: 220px;
-    margin-top: 10px;
-}
+        .home-beneficios {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 34px;
+        }
 
-@keyframes brilhoPortfolio {
-    0%, 100% {
-        box-shadow: 0 0 18px rgba(255,193,7,.35);
-    }
-    50% {
-        box-shadow:
-            0 0 30px rgba(255,193,7,.7),
-            0 0 55px rgba(255,193,7,.3);
-    }
-}
+        .home-beneficios span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #9fadc0;
+            font-size: 12px;
+            font-weight: 500;
+        }
 
-@keyframes reflexoPortfolio {
-    0% {
-        left: -100%;
-    }
-    55%, 100% {
-        left: 150%;
-    }
-}
+        .home-beneficios strong {
+            color: #6db8ff;
+            font-size: 17px;
+        }
 
-@media (max-width: 600px) {
-    .hero {
-        padding: 75px 18px !important;
-        min-height: auto !important;
-    }
+        .home-hero-imagem {
+            position: relative;
+            min-width: 0;
+        }
 
-    .hero h1 {
-        font-size: 32px !important;
-    }
+        .home-hero-imagem img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1.18 / 1;
+            object-fit: contain;
+            background: #0c1521;
+            border: 1px solid #27364a;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+        }
 
-    .hero p {
-        font-size: 16px !important;
-        line-height: 1.6 !important;
-    }
+        .home-imagem-legenda {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            padding: 9px 13px;
+            background: rgba(9, 17, 27, .92);
+            border: 1px solid #30465f;
+            border-radius: 9px;
+            color: #d7e8f8;
+            font-size: 12px;
+            backdrop-filter: blur(10px);
+        }
 
-    .botao-portfolio {
-        min-height: 72px;
-        padding: 17px 14px;
-        font-size: 17px;
-    }
+        /* TÍTULOS DAS SEÇÕES */
 
-    .hero-acoes {
-        flex-direction: column;
-    }
+        .home-section-header {
+            max-width: 780px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
 
-    .hero-acoes .botao {
-        width: 100%;
-        min-width: 0;
-    }
-}
+        .home-section-tag {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #77bdff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
 
-@media (prefers-reduced-motion: reduce) {
-    .botao-portfolio,
-    .botao-portfolio::after {
-        animation: none;
-    }
-}
-</style>
+        .home-section-header h2 {
+            margin-bottom: 15px;
+            color: #f2f6fc;
+            font-size: clamp(30px, 3.6vw, 43px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
 
+        .home-section-header p {
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* SERVIÇOS */
+
+        .home-servicos {
+            padding: 85px 7%;
+            border-top: 1px solid rgba(255,255,255,.05);
+            background: #0b1018;
+        }
+
+        .home-servicos .cards {
+            max-width: 1180px;
+            margin: 38px auto 0;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .home-servico-card {
+            padding: 26px 22px;
+        }
+
+        .home-servico-icone {
+            width: 47px;
+            height: 47px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            background: #14263a;
+            border: 1px solid #263f5c;
+            border-radius: 12px;
+            font-size: 23px;
+        }
+
+        .home-servico-card h3 {
+            margin-bottom: 13px;
+            font-size: 18px;
+            line-height: 1.35;
+            color: #edf5ff;
+        }
+
+        .home-servico-card p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.75;
+            color: #a5b2c3;
+        }
+
+        .home-servicos-link {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* PORTFÓLIO */
+
+        .home-portfolio {
+            padding: 90px 7%;
+            background: #080c12;
+        }
+
+        .home-projetos-grid {
+            max-width: 1180px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .home-projeto {
+            min-width: 0;
+            overflow: hidden;
+            background: #111a26;
+            border: 1px solid #253142;
+            border-radius: 16px;
+            transition: transform .2s, border-color .2s;
+        }
+
+        .home-projeto:hover {
+            transform: translateY(-4px);
+            border-color: #3b6893;
+        }
+
+        .home-projeto-imagem {
+            height: 200px;
+            overflow: hidden;
+            background: #0c1420;
+            border-bottom: 1px solid #253142;
+        }
+
+        .home-projeto-imagem img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform .3s;
+        }
+
+        .home-projeto:hover img {
+            transform: scale(1.03);
+        }
+
+        .home-projeto-conteudo {
+            padding: 24px;
+        }
+
+        .home-projeto-tag {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #78bfff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+        }
+
+        .home-projeto h3 {
+            margin-bottom: 12px;
+            color: #f1f5fb;
+            font-size: 19px;
+        }
+
+        .home-projeto p {
+            min-height: 78px;
+            margin-bottom: 18px;
+            color: #a5b2c3;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .home-projeto a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #75beff;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .home-projeto a:hover {
+            color: #b3deff;
+        }
+
+        .home-portfolio-final {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        /* DIFERENCIAIS */
+
+        .home-diferenciais {
+            padding: 85px 7%;
+            background: #0d141e;
+            border-top: 1px solid #1d2a3a;
+            border-bottom: 1px solid #1d2a3a;
+        }
+
+        .home-diferenciais-grid {
+            max-width: 1050px;
+            margin: 35px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .home-diferencial {
+            padding: 26px;
+            background: #111c29;
+            border: 1px solid #263548;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .home-diferencial-icone {
+            display: block;
+            margin-bottom: 14px;
+            font-size: 28px;
+        }
+
+        .home-diferencial h3 {
+            margin-bottom: 10px;
+            color: #f2f6fc;
+            font-size: 18px;
+        }
+
+        .home-diferencial p {
+            color: #a5b2c3;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* CHAMADA FINAL */
+
+        .home-cta {
+            padding: 100px 7%;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(33, 98, 162, .13),
+                    transparent 65%
+                ),
+                #080c12;
+            text-align: center;
+        }
+
+        .home-cta h2 {
+            max-width: 760px;
+            margin: 0 auto 20px;
+            color: #f2f6fc;
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .home-cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #a5b2c3;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .home-cta-acoes {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .home-cta-acoes .botao {
+            margin: 0;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 1050px) {
+            .home-hero-container {
+                gap: 35px;
+            }
+
+            .home-servicos .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .home-projetos-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .home-hero {
+                padding: 55px 22px 70px;
+                min-height: auto;
+            }
+
+            .home-hero-container {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .home-hero h1 {
+                font-size: clamp(35px, 8vw, 48px);
+                letter-spacing: -1.5px;
+            }
+
+            .home-hero-content > p {
+                font-size: 16px;
+            }
+
+            .home-hero-imagem img {
+                aspect-ratio: 16 / 10;
+            }
+
+            .home-beneficios {
+                gap: 12px 20px;
+            }
+
+            .home-servicos,
+            .home-portfolio,
+            .home-diferenciais,
+            .home-cta {
+                padding: 70px 20px;
+            }
+
+            .home-projetos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-diferenciais-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-projeto-imagem {
+                height: 230px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-servicos .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .home-hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .home-hero-buttons .botao {
+                width: 100%;
+            }
+
+            .home-projeto-imagem {
+                height: 190px;
+            }
+
+            .home-cta-acoes {
+                flex-direction: column;
+            }
+
+            .home-cta-acoes .botao {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- =====================================
+     MENU
+     ===================================== -->
+
 <header>
+    <div class="logo">
+        <h1>KB<span>Sistemas</span></h1>
+    </div>
 
-<div class="logo">
-<h1>KB<span>Sistemas</span></h1>
-</div>
-
-<nav>
-<a href="/">Início</a>
-<a href="/sobre">Sobre</a>
-<a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
-<a href="/planos">Soluções</a>
-<a href="/contato">Contato</a>
-</nav>
-
+    <nav aria-label="Menu principal">
+        <a href="/" aria-current="page">Início</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/servicos">Serviços</a>
+        <a href="/projetos">Portfólio</a>
+        <a href="/planos">Soluções</a>
+        <a href="/contato">Contato</a>
+    </nav>
 </header>
 
+<main>
 
-<!-- PÁGINA INICIAL -->
+    <!-- =====================================
+         APRESENTAÇÃO PRINCIPAL
+         ===================================== -->
 
-<section class="hero">
+    <section class="home-hero">
 
-<div class="hero-text">
+        <div class="home-hero-container">
 
-<h1>
-Transformamos ideias em soluções digitais.
-</h1>
+            <div class="home-hero-content">
 
-<p>
-Desenvolvemos sistemas personalizados, sites profissionais,
-aplicativos e lojas virtuais para empresas que desejam crescer
-com tecnologia, inovação e segurança.
-</p>
+                <span class="home-etiqueta">
+                    ✦ AGÊNCIA DE TECNOLOGIA
+                </span>
 
+                <h1>
+                    Transformamos ideias em
+                    <span>soluções digitais.</span>
+                </h1>
 
-<!-- PORTFÓLIO EM DESTAQUE -->
+                <p>
+                    Desenvolvemos sistemas empresariais,
+                    sites profissionais, aplicativos e
+                    soluções personalizadas para empresas
+                    que querem crescer com tecnologia.
+                </p>
+
+                <div class="home-hero-buttons">
+
+                    <a href="/projetos" class="botao">
+                        Ver portfólio →
+                    </a>
+
+                    <a href="/orcamento"
+                       class="botao botao-outline">
+                        Solicitar orçamento
+                    </a>
+
+                </div>
+
+                <div class="home-beneficios">
+                    <span><strong>✓</strong> Soluções sob medida</span>
+                    <span><strong>✓</strong> Tecnologia moderna</span>
+                    <span><strong>✓</strong> Atendimento personalizado</span>
+                </div>
+
+            </div>
+
+            <div class="home-hero-imagem">
+
+                <img
+                    src="/static/img/projetos/erp-1.png"
+                    alt="Sistema ERP empresarial desenvolvido pela KBSistemas"
+                    loading="eager"
+                >
 
-<div class="portfolio-chamada">
+                <div class="home-imagem-legenda">
+                    ● KBSistemas ERP — Gestão empresarial
+                </div>
 
-<div class="portfolio-selo">
-✨ CONHEÇA NOSSOS TRABALHOS
-</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         SERVIÇOS
+         ===================================== -->
+
+    <section class="home-servicos">
 
-<a href="/projetos" class="botao-portfolio">
-🚀 VENHA CONHECER MEU PORTFÓLIO →
-</a>
+        <div class="home-section-header">
 
-<p class="portfolio-legenda">
-💻 Veja nossos sistemas, sites e projetos desenvolvidos!
-</p>
+            <span class="home-section-tag">
+                O QUE FAZEMOS
+            </span>
 
-</div>
+            <h2>
+                Soluções para o seu negócio
+            </h2>
+
+            <p>
+                Desenvolvemos ferramentas digitais para
+                ajudar empresas e empreendedores a
+                trabalhar com mais organização,
+                eficiência e praticidade.
+            </p>
 
+        </div>
 
-<!-- OUTROS BOTÕES -->
+        <div class="cards">
 
-<div class="hero-acoes">
+            <article class="card home-servico-card">
+                <div class="home-servico-icone">💻</div>
+                <h3>Sistemas Empresariais</h3>
+                <p>
+                    Sistemas ERP, controle de estoque,
+                    financeiro, usuários, relatórios
+                    e gestão de processos.
+                </p>
+            </article>
+
+            <article class="card home-servico-card">
+                <div class="home-servico-icone">🌐</div>
+                <h3>Sites Profissionais</h3>
+                <p>
+                    Sites modernos e responsivos
+                    para apresentar sua empresa,
+                    serviços e produtos.
+                </p>
+            </article>
+
+            <article class="card home-servico-card">
+                <div class="home-servico-icone">📱</div>
+                <h3>Aplicações Web</h3>
+                <p>
+                    Aplicações personalizadas
+                    acessíveis pelo navegador,
+                    inclusive em dispositivos móveis.
+                </p>
+            </article>
+
+            <article class="card home-servico-card">
+                <div class="home-servico-icone">🛒</div>
+                <h3>Lojas Virtuais</h3>
+                <p>
+                    Soluções para apresentar
+                    produtos e facilitar as vendas
+                    pela internet.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="home-servicos-link">
+            <a href="/servicos" class="botao botao-outline">
+                Conhecer nossos serviços →
+            </a>
+        </div>
 
-<a href="/orcamento" class="botao">
-Solicitar orçamento
-</a>
+    </section>
 
-<a href="/servicos" class="botao">
-Conhecer nossos serviços
-</a>
+    <!-- =====================================
+         PORTFÓLIO COM IMAGENS REAIS
+         ===================================== -->
 
-</div>
+    <section class="home-portfolio">
+
+        <div class="home-section-header">
 
-</div>
+            <span class="home-section-tag">
+                NOSSO PORTFÓLIO
+            </span>
 
-</section>
+            <h2>
+                Projetos desenvolvidos
+            </h2>
 
+            <p>
+                Conheça algumas das soluções que
+                desenvolvemos, com foco em
+                organização, tecnologia e
+                experiência do usuário.
+            </p>
 
-<!-- SERVIÇOS -->
+        </div>
 
-<section class="servicos-home">
+        <div class="home-projetos-grid">
 
-<h1>Nossos Serviços</h1>
+            <!-- ERP -->
 
-<div class="cards">
+            <article class="home-projeto">
 
-<div class="card">
+                <div class="home-projeto-imagem">
+                    <img
+                        src="/static/img/projetos/erp-1.png"
+                        alt="Tela do sistema KBSistemas ERP"
+                        loading="lazy"
+                    >
+                </div>
 
-<h2>💻 Sistemas Empresariais</h2>
+                <div class="home-projeto-conteudo">
 
-<p>
-Desenvolvimento de sistemas completos para gestão de empresas,
-controle de estoque, financeiro, vendas e usuários.
-</p>
+                    <span class="home-projeto-tag">
+                        SISTEMA EMPRESARIAL
+                    </span>
 
-</div>
+                    <h3>KBSistemas ERP</h3>
 
-<div class="card">
+                    <p>
+                        Plataforma de gestão empresarial
+                        com estoque, financeiro,
+                        relatórios e controle de usuários.
+                    </p>
 
-<h2>🌐 Sites Profissionais</h2>
+                    <a href="/projetos">
+                        Ver projeto →
+                    </a>
 
-<p>
-Sites modernos, rápidos e totalmente responsivos para fortalecer
-a presença digital da sua empresa.
-</p>
+                </div>
 
-</div>
+            </article>
 
-<div class="card">
+            <!-- ESTOQUE INTELIGENTE -->
 
-<h2>📱 Aplicativos</h2>
+            <article class="home-projeto">
 
-<p>
-Aplicativos personalizados para Android e soluções sob medida
-para diferentes tipos de negócio.
-</p>
+                <div class="home-projeto-imagem">
+                    <img
+                        src="/static/img/projetos/estoque-1.png"
+                        alt="Tela do Estoque Inteligente com KIRA IA"
+                        loading="lazy"
+                    >
+                </div>
 
-</div>
+                <div class="home-projeto-conteudo">
 
-<div class="card">
+                    <span class="home-projeto-tag">
+                        GESTÃO DE ESTOQUE
+                    </span>
 
-<h2>🛒 Lojas Virtuais</h2>
+                    <h3>Estoque Inteligente + KIRA IA</h3>
 
-<p>
-Lojas online completas para vender produtos com praticidade
-e segurança.
-</p>
+                    <p>
+                        Controle de equipamentos,
+                        materiais e movimentações
+                        com assistente virtual integrado.
+                    </p>
 
-</div>
+                    <a href="/projetos">
+                        Ver projeto →
+                    </a>
 
-</div>
+                </div>
 
-</section>
+            </article>
 
+            <!-- REVERSA -->
 
-<!-- DESTAQUE -->
+            <article class="home-projeto">
 
-<section class="destaque">
+                <div class="home-projeto-imagem">
+                    <img
+                        src="/static/img/projetos/reversa-1.png"
+                        alt="Tela do sistema de logística reversa"
+                        loading="lazy"
+                    >
+                </div>
 
-<h1>Por que escolher a KBSistemas?</h1>
+                <div class="home-projeto-conteudo">
 
-<p>
-Cada projeto é desenvolvido pensando nas necessidades do cliente,
-buscando desempenho, organização, segurança e facilidade de uso.
-</p>
+                    <span class="home-projeto-tag">
+                        CONTROLE OPERACIONAL
+                    </span>
 
-<div class="frases">
+                    <h3>Reversa e Lixo Eletrônico</h3>
 
-<h2>🚀 Inovação</h2>
+                    <p>
+                        Gerenciamento de devoluções,
+                        testes, equipamentos,
+                        manutenção e descarte eletrônico.
+                    </p>
 
-<h2>⚡ Tecnologia</h2>
+                    <a href="/projetos">
+                        Ver projeto →
+                    </a>
 
-<h2>🔒 Segurança</h2>
+                </div>
 
-</div>
+            </article>
 
-</section>
+            <!-- KB LASHES -->
 
+            <article class="home-projeto">
 
-<!-- PROJETOS -->
+                <div class="home-projeto-imagem">
+                    <img
+                        src="/static/img/projetos/lashes-1.png"
+                        alt="Site de beleza KB Lashes"
+                        loading="lazy"
+                    >
+                </div>
 
-<section class="projetos">
+                <div class="home-projeto-conteudo">
 
-<h1>Projetos Desenvolvidos</h1>
+                    <span class="home-projeto-tag">
+                        SITE PROFISSIONAL
+                    </span>
 
-<p>
-Conheça algumas das soluções criadas pela KBSistemas.
-</p>
+                    <h3>KB Lashes</h3>
 
-<div class="cards">
+                    <p>
+                        Site para apresentação de
+                        serviços de beleza, valores
+                        e informações para agendamento.
+                    </p>
 
-<div class="card">
+                    <a href="/projetos">
+                        Ver projeto →
+                    </a>
 
-<h2>📊 ERP Empresarial</h2>
+                </div>
 
-<p>
-Sistema completo para controle de estoque, financeiro,
-usuários, relatórios e gestão empresarial.
-</p>
+            </article>
 
-</div>
+            <!-- WARZONE -->
 
-<div class="card">
+            <article class="home-projeto">
 
-<h2>🌐 Sistemas Web</h2>
+                <div class="home-projeto-imagem">
+                    <img
+                        src="/static/img/projetos/warzone-1.png"
+                        alt="Site Resurgence 100 Duos Championship"
+                        loading="lazy"
+                    >
+                </div>
 
-<p>
-Aplicações online desenvolvidas para empresas de diversos
-segmentos.
-</p>
+                <div class="home-projeto-conteudo">
 
-</div>
+                    <span class="home-projeto-tag">
+                        SITE DE EVENTOS
+                    </span>
 
-<div class="card">
+                    <h3>Resurgence 100</h3>
 
-<h2>📱 Aplicativos</h2>
+                    <p>
+                        Plataforma de campeonato
+                        com regulamento, pontuação
+                        e informações para participantes.
+                    </p>
 
-<p>
-Aplicativos modernos para automatizar processos e melhorar
-o atendimento aos clientes.
-</p>
+                    <a href="/projetos">
+                        Ver projeto →
+                    </a>
 
-</div>
+                </div>
 
-</div>
+            </article>
 
-<a href="/projetos" class="botao">
-Conhecer todos os projetos
-</a>
+        </div>
 
-</section>
+        <div class="home-portfolio-final">
+            <a href="/projetos" class="botao">
+                Conhecer portfólio completo →
+            </a>
+        </div>
 
+    </section>
 
-<!-- CONTATO -->
+    <!-- =====================================
+         DIFERENCIAIS
+         ===================================== -->
 
-<section class="contato-home">
+    <section class="home-diferenciais">
 
-<h1>Vamos desenvolver seu projeto?</h1>
+        <div class="home-section-header">
 
-<p>
-Solicite um orçamento sem compromisso e descubra como a
-KBSistemas pode ajudar sua empresa.
-</p>
+            <span class="home-section-tag">
+                NOSSO COMPROMISSO
+            </span>
 
-<a href="/orcamento" class="botao">
-Solicitar orçamento
-</a>
+            <h2>
+                Tecnologia feita para você
+            </h2>
 
-</section>
+            <p>
+                Cada solução é desenvolvida
+                considerando as necessidades
+                e os objetivos de cada projeto.
+            </p>
 
+        </div>
 
-<!-- WHATSAPP -->
+        <div class="home-diferenciais-grid">
+
+            <article class="home-diferencial">
+                <span class="home-diferencial-icone">⚙️</span>
+                <h3>Personalização</h3>
+                <p>
+                    Soluções adaptadas aos processos
+                    e necessidades do seu negócio.
+                </p>
+            </article>
+
+            <article class="home-diferencial">
+                <span class="home-diferencial-icone">⚡</span>
+                <h3>Praticidade</h3>
+                <p>
+                    Interfaces organizadas e
+                    ferramentas para facilitar
+                    as tarefas do dia a dia.
+                </p>
+            </article>
+
+            <article class="home-diferencial">
+                <span class="home-diferencial-icone">🤝</span>
+                <h3>Atendimento</h3>
+                <p>
+                    Comunicação próxima durante
+                    o desenvolvimento do projeto.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         CHAMADA FINAL
+         ===================================== -->
+
+    <section class="home-cta">
+
+        <span class="home-section-tag">
+            VAMOS CONVERSAR?
+        </span>
+
+        <h2>
+            Seu próximo projeto começa aqui.
+        </h2>
+
+        <p>
+            Tem uma ideia para um sistema, site ou
+            aplicação? Entre em contato e descubra
+            como podemos transformar essa ideia
+            em uma solução digital.
+        </p>
+
+        <div class="home-cta-acoes">
+
+            <a
+                href="https://wa.me/5511911524799?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20com%20a%20KBSistemas."
+                class="botao"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Falar no WhatsApp
+            </a>
+
+            <a
+                href="/orcamento"
+                class="botao botao-outline"
+            >
+                Solicitar orçamento →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- WHATSAPP FLUTUANTE -->
 
 <a
-href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
-class="whatsapp"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Solicitar orçamento pelo WhatsApp"
+    href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Solicitar orçamento pelo WhatsApp"
 >
-📱
+    ☎
 </a>
 
+<!-- RODAPÉ -->
 
 <footer>
-
-<p>
-© 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
-</p>
-
+    <p>
+        © 2026 KBSistemas — Desenvolvimento de Sistemas,
+        Sites e Aplicações Web.
+    </p>
 </footer>
 
 </body>
