@@ -1,174 +1,822 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Conheça a KBSistemas, seus valores e suas soluções em sistemas empresariais, sites profissionais e aplicações web.">
 
-<title>Sobre - KBSistemas</title>
+    <title>Sobre Nós | KBSistemas</title>
 
-<link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
+    <style>
+        /* =====================================
+           SOBRE - KBSISTEMAS PREMIUM
+           ===================================== */
+
+        .sobre-hero {
+            padding: 90px 7% 85px;
+            background:
+                radial-gradient(
+                    ellipse at 75% 35%,
+                    rgba(39, 112, 193, .12),
+                    transparent 50%
+                ),
+                #080c12;
+            border-bottom: 1px solid #1d2938;
+        }
+
+        .sobre-hero-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .sobre-etiqueta {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 22px;
+            padding: 7px 13px;
+            border: 1px solid #28415b;
+            border-radius: 8px;
+            background: #122235;
+            color: #8ac9ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .sobre-hero h1 {
+            margin-bottom: 24px;
+            color: #f2f6fc;
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.15;
+            letter-spacing: -2px;
+        }
+
+        .sobre-hero h1 span {
+            color: #3ca5f5;
+        }
+
+        .sobre-hero p {
+            margin-bottom: 19px;
+            color: #aab8c8;
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .sobre-acoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .sobre-acoes .botao {
+            margin: 0;
+        }
+
+        .sobre-botao-outline {
+            background: #101720;
+            color: #f2f6fc;
+            border: 1px solid #344255;
+        }
+
+        .sobre-botao-outline:hover {
+            background: #1b2938;
+            color: #fff;
+        }
+
+        /* PAINEL VISUAL */
+
+        .sobre-painel {
+            padding: 28px;
+            border: 1px solid #293b50;
+            border-radius: 20px;
+            background: #101925;
+            box-shadow: 0 20px 55px rgba(0,0,0,.2);
+        }
+
+        .sobre-painel-topo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .sobre-painel-logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #3ca5f5;
+        }
+
+        .sobre-painel-logo span {
+            color: #fff;
+        }
+
+        .sobre-painel-status {
+            padding: 6px 10px;
+            border: 1px solid #275b4a;
+            border-radius: 7px;
+            background: #123328;
+            color: #72e1b0;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .sobre-painel-imagem {
+            overflow: hidden;
+            border: 1px solid #293b50;
+            border-radius: 12px;
+            background: #0a121d;
+        }
+
+        .sobre-painel-imagem img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: contain;
+        }
+
+        .sobre-painel-rodape {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 19px;
+            color: #a5b2c3;
+            font-size: 12px;
+        }
+
+        .sobre-painel-rodape strong {
+            color: #8ac9ff;
+        }
+
+        /* SEÇÕES */
+
+        .sobre-secao {
+            padding: 90px 7%;
+            background: #080c12;
+        }
+
+        .sobre-secao-alt {
+            background: #0d141e;
+            border-top: 1px solid #1d2938;
+            border-bottom: 1px solid #1d2938;
+        }
+
+        .sobre-container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .sobre-titulo {
+            max-width: 760px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .sobre-titulo > span {
+            display: inline-block;
+            margin-bottom: 13px;
+            color: #7dbfff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.3px;
+        }
+
+        .sobre-titulo h2 {
+            margin-bottom: 15px;
+            color: #f2f6fc;
+            font-size: clamp(30px, 3.8vw, 43px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .sobre-titulo p {
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* VALORES */
+
+        .sobre-valores-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .sobre-valor {
+            min-width: 0;
+            padding: 28px 23px;
+            border: 1px solid #263447;
+            border-radius: 16px;
+            background: #111a26;
+            transition:
+                transform .2s,
+                border-color .2s;
+        }
+
+        .sobre-valor:hover {
+            transform: translateY(-4px);
+            border-color: #3c668c;
+        }
+
+        .sobre-valor-icone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 21px;
+            border: 1px solid #28435f;
+            border-radius: 12px;
+            background: #14263a;
+            font-size: 23px;
+        }
+
+        .sobre-valor h3 {
+            margin-bottom: 13px;
+            color: #f1f5fb;
+            font-size: 19px;
+            line-height: 1.35;
+        }
+
+        .sobre-valor p {
+            color: #a5b2c3;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* SOLUÇÕES */
+
+        .sobre-solucoes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .sobre-solucao {
+            padding: 30px 26px;
+            border: 1px solid #263447;
+            border-radius: 16px;
+            background: #111a26;
+            transition:
+                transform .2s,
+                border-color .2s;
+        }
+
+        .sobre-solucao:hover {
+            transform: translateY(-4px);
+            border-color: #3c668c;
+        }
+
+        .sobre-solucao-icone {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 29px;
+        }
+
+        .sobre-solucao h3 {
+            margin-bottom: 14px;
+            color: #f1f5fb;
+            font-size: 21px;
+        }
+
+        .sobre-solucao p {
+            color: #a5b2c3;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .sobre-link-central {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        /* PROJETO EM DESTAQUE */
+
+        .sobre-projeto {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .sobre-projeto-imagem {
+            padding: 14px;
+            border: 1px solid #293b50;
+            border-radius: 17px;
+            background: #101925;
+        }
+
+        .sobre-projeto-imagem img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: contain;
+            border-radius: 9px;
+            background: #0a121d;
+        }
+
+        .sobre-projeto-conteudo > span {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #7dbfff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .sobre-projeto-conteudo h2 {
+            margin-bottom: 20px;
+            color: #f2f6fc;
+            font-size: clamp(29px, 3.5vw, 40px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .sobre-projeto-conteudo p {
+            margin-bottom: 23px;
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .sobre-projeto-conteudo .botao {
+            margin: 0;
+        }
+
+        /* CHAMADA FINAL */
+
+        .sobre-cta {
+            padding: 95px 7%;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(33, 98, 162, .12),
+                    transparent 65%
+                ),
+                #080c12;
+            text-align: center;
+        }
+
+        .sobre-cta h2 {
+            max-width: 760px;
+            margin: 0 auto 20px;
+            color: #f2f6fc;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+        }
+
+        .sobre-cta p {
+            max-width: 650px;
+            margin: 0 auto 26px;
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .sobre-cta .botao {
+            margin: 0;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 1050px) {
+            .sobre-hero-container {
+                gap: 35px;
+            }
+
+            .sobre-valores-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .sobre-hero {
+                padding: 65px 22px;
+            }
+
+            .sobre-hero-container,
+            .sobre-projeto {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .sobre-hero h1 {
+                font-size: clamp(36px, 8vw, 48px);
+                letter-spacing: -1.5px;
+            }
+
+            .sobre-secao {
+                padding: 70px 20px;
+            }
+
+            .sobre-solucoes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sobre-cta {
+                padding: 75px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sobre-valores-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sobre-acoes {
+                flex-direction: column;
+            }
+
+            .sobre-acoes .botao {
+                width: 100%;
+            }
+
+            .sobre-painel {
+                padding: 18px;
+            }
+
+            .sobre-painel-topo {
+                flex-wrap: wrap;
+            }
+
+            .sobre-cta .botao {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sobre-valor,
+            .sobre-solucao {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- MENU -->
+
 <header>
+    <div class="logo">
+        <h1>KB<span>Sistemas</span></h1>
+    </div>
 
-<div class="logo">
-<h1>KB<span>Sistemas</span></h1>
-</div>
-
-<nav>
-
-<a href="/">Início</a>
-<a href="/sobre">Sobre</a>
-<a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
-<a href="/planos">Soluções</a>
-<a href="/contato">Contato</a>
-
-</nav>
-
+    <nav aria-label="Menu principal">
+        <a href="/">Início</a>
+        <a href="/sobre" aria-current="page">Sobre</a>
+        <a href="/servicos">Serviços</a>
+        <a href="/projetos">Portfólio</a>
+        <a href="/planos">Soluções</a>
+        <a href="/contato">Contato</a>
+    </nav>
 </header>
 
-<section class="destaque">
+<main>
 
-<h1>Sobre a KBSistemas</h1>
+    <!-- =====================================
+         APRESENTAÇÃO DA EMPRESA
+         ===================================== -->
 
-<p>
-A KBSistemas é especializada no desenvolvimento de soluções digitais para empresas que desejam modernizar seus processos, aumentar a produtividade e crescer com tecnologia.
-</p>
+    <section class="sobre-hero">
 
-<p>
-Criamos sistemas personalizados, sites profissionais, aplicativos e lojas virtuais, sempre buscando unir inovação, desempenho e facilidade de uso.
-</p>
+        <div class="sobre-hero-container">
 
-</section>
+            <div>
 
-<section class="servicos-home">
+                <span class="sobre-etiqueta">
+                    ✦ QUEM SOMOS
+                </span>
 
-<h1>Nossos Valores</h1>
+                <h1>
+                    Conheça a
+                    <span>KBSistemas.</span>
+                </h1>
 
-<div class="cards">
+                <p>
+                    A KBSistemas desenvolve soluções digitais
+                    para empresas e empreendedores que desejam
+                    modernizar seus processos, organizar
+                    informações e crescer com tecnologia.
+                </p>
 
-<div class="card">
+                <p>
+                    Criamos sistemas empresariais personalizados,
+                    sites profissionais, aplicações web e
+                    lojas virtuais, sempre buscando unir
+                    praticidade, organização e facilidade de uso.
+                </p>
 
-<h2>🚀 Inovação</h2>
+                <div class="sobre-acoes">
 
-<p>
-Buscamos constantemente novas tecnologias para entregar soluções modernas e eficientes.
-</p>
+                    <a href="/projetos" class="botao">
+                        Conhecer portfólio →
+                    </a>
 
-</div>
+                    <a href="/contato"
+                       class="botao sobre-botao-outline">
+                        Entrar em contato
+                    </a>
 
-<div class="card">
+                </div>
 
-<h2>💡 Soluções Personalizadas</h2>
+            </div>
 
-<p>
-Cada projeto é desenvolvido de acordo com a necessidade de cada cliente, sem modelos prontos.
-</p>
+            <!-- PAINEL COM PROJETO REAL -->
 
-</div>
+            <div class="sobre-painel">
 
-<div class="card">
+                <div class="sobre-painel-topo">
 
-<h2>🤝 Compromisso</h2>
+                    <div class="sobre-painel-logo">
+                        KB<span>Sistemas</span>
+                    </div>
 
-<p>
-Nosso objetivo é entregar qualidade, organização e resultados que façam a diferença para nossos clientes.
-</p>
+                    <span class="sobre-painel-status">
+                        DESENVOLVIMENTO WEB
+                    </span>
 
-</div>
+                </div>
 
-<div class="card">
+                <div class="sobre-painel-imagem">
+                    <img
+                        src="/static/img/projetos/erp-1.png"
+                        alt="Sistema ERP desenvolvido pela KBSistemas"
+                        loading="lazy"
+                    >
+                </div>
 
-<h2>🔒 Segurança</h2>
+                <div class="sobre-painel-rodape">
+                    <span>Projeto: <strong>KBSistemas ERP</strong></span>
+                    <span>Sistemas sob medida</span>
+                </div>
 
-<p>
-Desenvolvemos sistemas com foco em estabilidade, segurança e confiabilidade das informações.
-</p>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </section>
 
-</section>
+    <!-- =====================================
+         VALORES
+         ===================================== -->
 
-<section class="projetos">
+    <section class="sobre-secao sobre-secao-alt">
 
-<h1>O que desenvolvemos?</h1>
+        <div class="sobre-container">
 
-<div class="cards">
+            <div class="sobre-titulo">
 
-<div class="card">
+                <span>NOSSOS PRINCÍPIOS</span>
 
-<h2>💻 Sistemas Web</h2>
+                <h2>
+                    Valores que orientam nosso trabalho
+                </h2>
 
-<p>
-ERPs, controles de estoque, financeiro, vendas, cadastros e gestão empresarial.
-</p>
+                <p>
+                    Buscamos desenvolver soluções
+                    com atenção aos detalhes e
+                    às necessidades de cada projeto.
+                </p>
 
-</div>
+            </div>
 
-<div class="card">
+            <div class="sobre-valores-grid">
 
-<h2>🌐 Sites Profissionais</h2>
+                <article class="sobre-valor">
+                    <div class="sobre-valor-icone">🚀</div>
+                    <h3>Inovação</h3>
+                    <p>
+                        Exploramos tecnologias e ferramentas
+                        modernas para desenvolver soluções
+                        úteis e eficientes.
+                    </p>
+                </article>
 
-<p>
-Sites modernos, rápidos e totalmente responsivos para empresas e profissionais.
-</p>
+                <article class="sobre-valor">
+                    <div class="sobre-valor-icone">💡</div>
+                    <h3>Personalização</h3>
+                    <p>
+                        Cada projeto é pensado conforme
+                        as necessidades e os objetivos
+                        de cada cliente.
+                    </p>
+                </article>
 
-</div>
+                <article class="sobre-valor">
+                    <div class="sobre-valor-icone">🤝</div>
+                    <h3>Compromisso</h3>
+                    <p>
+                        Valorizamos organização,
+                        comunicação e atenção
+                        durante o desenvolvimento.
+                    </p>
+                </article>
 
-<div class="card">
+                <article class="sobre-valor">
+                    <div class="sobre-valor-icone">🔒</div>
+                    <h3>Segurança</h3>
+                    <p>
+                        Consideramos boas práticas
+                        de proteção de informações
+                        e controle de acesso.
+                    </p>
+                </article>
 
-<h2>📱 Aplicativos</h2>
+            </div>
 
-<p>
-Aplicativos personalizados para facilitar processos e melhorar a experiência dos usuários.
-</p>
+        </div>
 
-</div>
+    </section>
 
-</div>
+    <!-- =====================================
+         O QUE DESENVOLVEMOS
+         ===================================== -->
 
-</section>
+    <section class="sobre-secao">
 
-<section class="contato-home">
+        <div class="sobre-container">
 
-<h1>Vamos construir seu projeto?</h1>
+            <div class="sobre-titulo">
 
-<p>
-Entre em contato conosco e descubra como a tecnologia pode transformar o seu negócio.
-</p>
+                <span>NOSSAS ESPECIALIDADES</span>
 
-<a href="/orcamento" class="botao">
+                <h2>
+                    O que desenvolvemos?
+                </h2>
 
-Solicitar orçamento
+                <p>
+                    Soluções digitais para
+                    diferentes tipos de negócios,
+                    de sites comerciais a sistemas
+                    de gestão mais completos.
+                </p>
 
+            </div>
+
+            <div class="sobre-solucoes-grid">
+
+                <article class="sobre-solucao">
+                    <span class="sobre-solucao-icone">💻</span>
+                    <h3>Sistemas Empresariais</h3>
+                    <p>
+                        Sistemas ERP, controle de estoque,
+                        gestão de equipamentos, financeiro,
+                        cadastros, relatórios e
+                        processos administrativos.
+                    </p>
+                </article>
+
+                <article class="sobre-solucao">
+                    <span class="sobre-solucao-icone">🌐</span>
+                    <h3>Sites Profissionais</h3>
+                    <p>
+                        Sites institucionais,
+                        páginas comerciais,
+                        catálogos digitais e
+                        lojas virtuais responsivas.
+                    </p>
+                </article>
+
+                <article class="sobre-solucao">
+                    <span class="sobre-solucao-icone">📱</span>
+                    <h3>Aplicações Web</h3>
+                    <p>
+                        Sistemas acessíveis pelo navegador,
+                        inclusive em celulares, com
+                        interfaces adaptadas e recursos
+                        personalizados para cada projeto.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="sobre-link-central">
+                <a href="/servicos" class="botao">
+                    Conhecer todos os serviços →
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         PROJETO EM DESTAQUE
+         ===================================== -->
+
+    <section class="sobre-secao sobre-secao-alt">
+
+        <div class="sobre-container">
+
+            <div class="sobre-projeto">
+
+                <div class="sobre-projeto-imagem">
+                    <img
+                        src="/static/img/projetos/estoque-1.png"
+                        alt="Dashboard do Estoque Inteligente com KIRA IA"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="sobre-projeto-conteudo">
+
+                    <span>PROJETO EM DESTAQUE</span>
+
+                    <h2>
+                        Estoque Inteligente
+                        com KIRA IA
+                    </h2>
+
+                    <p>
+                        Uma das soluções desenvolvidas
+                        pela KBSistemas é o Estoque
+                        Inteligente, uma aplicação
+                        voltada ao controle de
+                        equipamentos e materiais.
+                    </p>
+
+                    <p>
+                        O projeto reúne indicadores,
+                        movimentações, histórico
+                        e um assistente virtual
+                        integrado para auxiliar
+                        nas consultas ao estoque.
+                    </p>
+
+                    <a href="/projetos" class="botao">
+                        Explorar nossos projetos →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         CHAMADA FINAL
+         ===================================== -->
+
+    <section class="sobre-cta">
+
+        <h2>
+            Vamos transformar sua ideia
+            em uma solução digital?
+        </h2>
+
+        <p>
+            Seja para desenvolver um sistema
+            empresarial, um site profissional
+            ou uma aplicação personalizada,
+            estamos prontos para conversar
+            sobre o seu projeto.
+        </p>
+
+        <a href="/orcamento" class="botao">
+            Solicitar orçamento →
+        </a>
+
+    </section>
+
+</main>
+
+<!-- WHATSAPP -->
+
+<a
+    href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Entrar em contato pelo WhatsApp"
+>
+    ☎
 </a>
 
-</section>
-
-<a href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento" class="whatsapp">
-
-📱
-
-</a>
+<!-- RODAPÉ -->
 
 <footer>
-
-<p>
-
-© 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
-
-</p>
-
+    <p>
+        © 2026 KBSistemas — Desenvolvimento de Sistemas,
+        Sites e Aplicações Web.
+    </p>
 </footer>
 
 </body>
-
 </html>
