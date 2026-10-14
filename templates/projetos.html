@@ -1,201 +1,348 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Conheça os projetos desenvolvidos pela KBSistemas: ERP, Estoque Inteligente com KIRA IA, logística reversa, sites e catálogos digitais.">
+
+<meta name="description"
+content="Conheça os projetos desenvolvidos pela KBSistemas: ERP, Estoque Inteligente com KIRA IA, logística reversa, sites e catálogos digitais.">
+
 <title>Portfólio de Projetos | KBSistemas</title>
 
 <link rel="stylesheet" href="/static/css/style.css">
 
 <style>
-/* Estilos exclusivos do portfólio */
+
+/* =========================================
+   PORTFÓLIO PREMIUM - KBSISTEMAS
+   ========================================= */
+
+.portfolio-hero {
+    padding: 85px 22px 65px;
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(40, 113, 190, .14),
+            transparent 60%
+        ),
+        #080c12;
+    border-bottom: 1px solid #1d2938;
+}
+
+.portfolio-etiqueta {
+    display: inline-block;
+    margin-bottom: 17px;
+    padding: 7px 13px;
+    background: #122235;
+    border: 1px solid #284461;
+    border-radius: 8px;
+    color: #8ac9ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.portfolio-hero h1 {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    color: #f2f6fc;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+}
+
+.portfolio-hero h1 span {
+    color: #3ca5f5;
+}
+
+.portfolio-hero p {
+    max-width: 730px;
+    margin: auto;
+    color: #a5b2c3;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* CONTEÚDO */
+
 .portfolio {
+    width: 100%;
     max-width: 1250px;
     margin: 0 auto;
-    padding: 55px 22px 80px;
+    padding: 70px 25px 90px;
 }
 
 .portfolio-intro {
+    margin-bottom: 38px;
     text-align: center;
-    margin-bottom: 42px;
 }
 
 .portfolio-intro h2 {
-    font-size: clamp(25px, 4vw, 38px);
-    margin-bottom: 12px;
+    margin-bottom: 13px;
+    font-size: clamp(28px, 3.5vw, 39px);
+    color: #f1f5fb;
+    letter-spacing: -1px;
 }
 
 .portfolio-intro p {
-    max-width: 750px;
+    max-width: 720px;
     margin: auto;
+    color: #a5b2c3;
+    font-size: 16px;
     line-height: 1.8;
-    opacity: .8;
 }
+
+/* GRID */
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
+    align-items: stretch;
+    gap: 24px;
 }
 
+/* CARDS */
+
 .projeto-card {
-    background: #fff;
-    color: #172238;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 12px 38px rgba(0,0,0,.12);
-    transition: transform .25s, box-shadow .25s;
+    display: flex;
+    flex-direction: column;
     min-width: 0;
+    overflow: hidden;
+    background: #111a26;
+    color: #f1f5fb;
+    border: 1px solid #263447;
+    border-radius: 17px;
+    box-shadow: none;
+    transition:
+        transform .22s,
+        border-color .22s;
 }
 
 .projeto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(0,0,0,.18);
+    transform: translateY(-4px);
+    border-color: #3c668c;
+    box-shadow: none;
 }
 
+/* IMAGEM PRINCIPAL */
+
 .projeto-imagem {
-    height: 265px;
-    background: #eaf0f8;
-    overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 290px;
+    padding: 13px;
+    overflow: hidden;
+    background: #0a121d;
+    border-bottom: 1px solid #243448;
 }
 
 .projeto-imagem img {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 9px;
     cursor: zoom-in;
-    transition: transform .3s;
+    transition: transform .25s;
 }
 
 .projeto-imagem img:hover {
-    transform: scale(1.025);
+    transform: scale(1.015);
 }
 
+.projeto-ampliar {
+    position: absolute;
+    right: 22px;
+    bottom: 21px;
+    padding: 7px 11px;
+    border: 1px solid #31465d;
+    border-radius: 8px;
+    background: rgba(9, 17, 28, .9);
+    color: #d7e8f8;
+    font-size: 11px;
+    pointer-events: none;
+}
+
+/* MINIATURAS */
+
+.projeto-fotos {
+    display: flex;
+    gap: 10px;
+    padding: 13px 15px;
+    overflow-x: auto;
+    background: #0d1622;
+    border-bottom: 1px solid #263447;
+    scrollbar-width: thin;
+    scrollbar-color: #3d536b #0d1622;
+}
+
+.projeto-fotos button {
+    flex: 0 0 86px;
+    width: 86px;
+    height: 62px;
+    margin: 0;
+    padding: 4px;
+    overflow: hidden;
+    border: 1px solid #34445a;
+    border-radius: 9px;
+    background: #111c2b;
+    cursor: pointer;
+    transition: border-color .2s;
+}
+
+.projeto-fotos button:hover {
+    border-color: #75bbf4;
+}
+
+.projeto-fotos button.ativo {
+    border: 2px solid #3ca5f5;
+    background: #19304a;
+}
+
+.projeto-fotos img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 5px;
+}
+
+/* CONTEÚDO DOS CARDS */
+
 .projeto-corpo {
-    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 26px;
 }
 
 .projeto-tag {
+    align-self: flex-start;
     display: inline-block;
-    background: #eaf1ff;
-    color: #1856b7;
-    border-radius: 30px;
-    padding: 7px 12px;
-    font-size: 12px;
+    max-width: 100%;
+    margin-bottom: 16px;
+    padding: 7px 11px;
+    background: #162b40;
+    border: 1px solid #2a4967;
+    border-radius: 7px;
+    color: #8bcaff;
+    font-size: 10px;
     font-weight: 700;
-    margin-bottom: 12px;
+    letter-spacing: .6px;
+    line-height: 1.5;
 }
 
 .projeto-corpo h3 {
+    margin: 0 0 14px;
+    color: #f2f6fc;
     font-size: 23px;
     line-height: 1.3;
-    margin: 0 0 13px;
-    color: #101b32;
+    letter-spacing: -.4px;
 }
 
 .projeto-corpo p {
-    color: #566277;
-    line-height: 1.75;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
+    color: #aab7c7;
+    font-size: 15px;
+    line-height: 1.8;
 }
+
+/* RECURSOS */
 
 .projeto-recursos {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 23px;
+    margin-bottom: 24px;
 }
 
 .projeto-recursos span {
-    background: #f0f4fa;
-    color: #33445f;
     padding: 7px 10px;
-    border-radius: 8px;
+    background: #1a2737;
+    border: 1px solid #2a3b50;
+    border-radius: 7px;
+    color: #bdccdc;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
-.projeto-fotos {
-    display: flex;
-    gap: 9px;
-    padding: 12px;
-    overflow-x: auto;
-    background: #f7f9fc;
-    border-top: 1px solid #e6eaf0;
-}
-
-.projeto-fotos button {
-    flex: 0 0 85px;
-    height: 58px;
-    padding: 0;
-    background: white;
-    border: 2px solid transparent;
-    border-radius: 9px;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.projeto-fotos button.ativo {
-    border-color: #2563eb;
-}
-
-.projeto-fotos img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-}
+/* BOTÕES */
 
 .projeto-botoes {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
 }
 
 .projeto-botoes a {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    text-decoration: none;
+    justify-content: center;
+    min-height: 44px;
+    margin: 0;
+    padding: 11px 17px;
+    border: 1px solid transparent;
     border-radius: 10px;
-    padding: 12px 17px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
-    transition: opacity .2s;
+    line-height: 1.4;
+    text-decoration: none;
+    transition:
+        background .2s,
+        transform .2s;
 }
 
 .projeto-botoes a:hover {
-    opacity: .85;
+    transform: translateY(-2px);
 }
 
 .btn-projeto {
-    background: #2563eb;
-    color: white !important;
+    background: #3ca5f5;
+    color: #07111d !important;
+}
+
+.btn-projeto:hover {
+    background: #79c6ff;
 }
 
 .btn-secundario {
-    background: #edf2f8;
-    color: #1d3557 !important;
+    background: #182435;
+    color: #e1edf9 !important;
+    border-color: #34485e !important;
 }
 
+.btn-secundario:hover {
+    background: #22354b;
+}
+
+/* OUTROS SERVIÇOS */
+
 .portfolio-servicos {
-    margin-top: 70px;
+    margin-top: 90px;
     text-align: center;
 }
 
 .portfolio-servicos h2 {
-    font-size: 30px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+    font-size: clamp(28px, 3.5vw, 38px);
+    letter-spacing: -1px;
 }
 
 .portfolio-servicos > p {
-    margin-bottom: 28px;
-    opacity: .8;
+    max-width: 690px;
+    margin: 0 auto 32px;
+    color: #a5b2c3;
+    line-height: 1.8;
 }
 
 .servicos-extra {
@@ -205,34 +352,37 @@
 }
 
 .servico-extra {
-    background: #fff;
-    color: #172238;
-    padding: 27px 20px;
+    padding: 28px 23px;
+    border: 1px solid #263447;
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    background: #111a26;
+    color: #f1f5fb;
+    text-align: left;
 }
 
 .servico-extra h3 {
-    margin-bottom: 12px;
+    margin-bottom: 13px;
     font-size: 19px;
+    color: #eaf4ff;
 }
 
 .servico-extra p {
-    line-height: 1.7;
-    color: #566277;
+    color: #a5b2c3;
     font-size: 14px;
+    line-height: 1.75;
 }
 
-/* Visualização ampliada */
+/* VISUALIZADOR DE IMAGENS */
+
 .visualizador {
     position: fixed;
     inset: 0;
-    background: rgba(4,10,24,.94);
     z-index: 9999;
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px 25px;
+    padding: 75px 70px;
+    background: rgba(3, 7, 14, .97);
 }
 
 .visualizador.aberto {
@@ -240,27 +390,72 @@
 }
 
 .visualizador img {
-    max-width: 95%;
+    display: block;
+    max-width: 100%;
     max-height: 85vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
+    border-radius: 8px;
+}
+
+.fechar-visualizador,
+.navegar-visualizador {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #172434;
+    border: 1px solid #3b4e65;
     border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.fechar-visualizador:hover,
+.navegar-visualizador:hover {
+    background: #284360;
 }
 
 .fechar-visualizador {
-    position: absolute;
-    top: 15px;
-    right: 22px;
-    background: white;
-    color: #111;
-    border: none;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    font-size: 25px;
+    top: 18px;
+    right: 20px;
+    width: 43px;
+    height: 43px;
+    font-size: 26px;
 }
 
+.navegar-visualizador {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 55px;
+    font-size: 30px;
+}
+
+.navegar-anterior {
+    left: 14px;
+}
+
+.navegar-proximo {
+    right: 14px;
+}
+
+.visualizador-contador {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #b7c7d8;
+    font-size: 13px;
+}
+
+/* RESPONSIVIDADE */
+
 @media (max-width: 850px) {
+
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -269,16 +464,79 @@
         grid-template-columns: 1fr;
     }
 
+    .portfolio {
+        padding: 45px 18px 70px;
+    }
+
     .projeto-imagem {
-        height: 230px;
+        height: 260px;
+    }
+
+    .portfolio-servicos {
+        margin-top: 65px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .portfolio-hero {
+        padding: 60px 20px 50px;
+    }
+
+    .portfolio-hero p {
+        font-size: 15px;
+    }
+
+    .projeto-imagem {
+        height: 210px;
+        padding: 9px;
     }
 
     .projeto-corpo {
-        padding: 20px;
+        padding: 21px;
     }
 
-    .portfolio {
-        padding: 35px 15px 60px;
+    .projeto-corpo h3 {
+        font-size: 21px;
+    }
+
+    .projeto-fotos {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .projeto-fotos button {
+        flex-basis: 73px;
+        width: 73px;
+        height: 54px;
+    }
+
+    .projeto-botoes a {
+        flex: 1 1 auto;
+    }
+
+    .visualizador {
+        padding: 75px 12px;
+    }
+
+    .navegar-visualizador {
+        top: auto;
+        bottom: 20px;
+        transform: none;
+        width: 42px;
+        height: 42px;
+    }
+
+    .navegar-anterior {
+        left: 20px;
+    }
+
+    .navegar-proximo {
+        right: 20px;
+    }
+
+    .visualizador-contador {
+        bottom: 32px;
     }
 }
 
@@ -288,49 +546,75 @@
         transition: none;
     }
 }
+
 </style>
 </head>
 
 <body>
+
+<!-- MENU -->
 
 <header>
     <div class="logo">
         <h1>KB<span>Sistemas</span></h1>
     </div>
 
-    <nav>
+    <nav aria-label="Menu principal">
         <a href="/">Início</a>
         <a href="/sobre">Sobre</a>
         <a href="/servicos">Serviços</a>
-        <a href="/projetos">Projetos</a>
+        <a href="/projetos" aria-current="page">Portfólio</a>
         <a href="/planos">Soluções</a>
         <a href="/contato">Contato</a>
     </nav>
 </header>
 
-<section class="destaque">
-    <h1>Projetos Desenvolvidos</h1>
+<main>
+
+<!-- CABEÇALHO DO PORTFÓLIO -->
+
+<section class="portfolio-hero">
+
+    <span class="portfolio-etiqueta">
+        ✦ PORTFÓLIO KBSISTEMAS
+    </span>
+
+    <h1>
+        Projetos que transformam
+        <span>ideias em soluções.</span>
+    </h1>
+
     <p>
-        Conheça as soluções criadas pela KBSistemas.
-        Sistemas empresariais, plataformas digitais,
-        automações e sites personalizados para diferentes negócios.
+        Conheça nossos sistemas empresariais,
+        plataformas digitais e sites personalizados.
+        Explore cada projeto e veja nossas soluções
+        em funcionamento por meio das imagens.
     </p>
+
 </section>
 
-<main class="portfolio">
+<!-- PORTFÓLIO -->
+
+<section class="portfolio">
 
     <div class="portfolio-intro">
-        <h2>🚀 Nosso Portfólio</h2>
+
+        <h2>Nossos projetos</h2>
+
         <p>
-            Cada projeto representa uma solução desenvolvida
-            para uma necessidade específica. Explore as imagens
-            e descubra o que podemos criar para sua empresa.
+            Sistemas, sites e aplicações desenvolvidos
+            com foco em organização, praticidade
+            e experiência do usuário.
         </p>
+
     </div>
 
     <div class="portfolio-grid">
 
-        <!-- PROJETO 1: ERP -->
+        <!-- =====================================
+             PROJETO 1 - ERP
+             ===================================== -->
+
         <article class="projeto-card">
 
             <div class="projeto-imagem">
@@ -338,38 +622,66 @@
                     src="/static/img/projetos/erp-1.png"
                     alt="Dashboard do KBSistemas ERP"
                     loading="lazy"
-                    onclick="abrirImagem(this.src, this.alt)"
+                    onclick="abrirImagem(this)"
                 >
+                <span class="projeto-ampliar">
+                    ⤢ Ampliar imagem
+                </span>
             </div>
 
             <div class="projeto-fotos">
-                <button class="ativo" onclick="trocarFoto(this, '/static/img/projetos/erp-1.png')" aria-label="Ver dashboard ERP">
-                    <img src="/static/img/projetos/erp-1.png" alt="Dashboard ERP">
+
+                <button class="ativo"
+                    type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/erp-1.png')"
+                    aria-label="Ver dashboard ERP">
+                    <img src="/static/img/projetos/erp-1.png"
+                         alt="Dashboard ERP">
                 </button>
-                <button onclick="trocarFoto(this, '/static/img/projetos/erp-2.png')" aria-label="Ver administração ERP">
-                    <img src="/static/img/projetos/erp-2.png" alt="Administração ERP">
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/erp-2.png')"
+                    aria-label="Ver administração ERP">
+                    <img src="/static/img/projetos/erp-2.png"
+                         alt="Administração ERP">
                 </button>
-                <button onclick="trocarFoto(this, '/static/img/projetos/erp-3.png')" aria-label="Ver módulo de veículos">
-                    <img src="/static/img/projetos/erp-3.png" alt="Veículos ERP">
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/erp-3.png')"
+                    aria-label="Ver módulo de veículos">
+                    <img src="/static/img/projetos/erp-3.png"
+                         alt="Veículos ERP">
                 </button>
-                <button onclick="trocarFoto(this, '/static/img/projetos/erp-4.png')" aria-label="Ver relatórios">
-                    <img src="/static/img/projetos/erp-4.png" alt="Relatórios ERP">
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/erp-4.png')"
+                    aria-label="Ver relatórios ERP">
+                    <img src="/static/img/projetos/erp-4.png"
+                         alt="Relatórios ERP">
                 </button>
-                <button onclick="trocarFoto(this, '/static/img/projetos/erp-5.png')" aria-label="Ver financeiro">
-                    <img src="/static/img/projetos/erp-5.png" alt="Financeiro ERP">
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/erp-5.png')"
+                    aria-label="Ver financeiro ERP">
+                    <img src="/static/img/projetos/erp-5.png"
+                         alt="Financeiro ERP">
                 </button>
+
             </div>
 
             <div class="projeto-corpo">
-                <span class="projeto-tag">GESTÃO EMPRESARIAL</span>
+
+                <span class="projeto-tag">
+                    GESTÃO EMPRESARIAL
+                </span>
 
                 <h3>💻 KBSistemas ERP</h3>
 
                 <p>
-                    Sistema de gestão empresarial desenvolvido para
-                    centralizar as operações de uma empresa.
-                    Reúne controle de estoque, financeiro, veículos,
-                    relatórios e administração em uma única plataforma.
+                    Sistema de gestão empresarial desenvolvido
+                    para centralizar operações em uma única
+                    plataforma, incluindo estoque, financeiro,
+                    veículos, relatórios e administração.
                 </p>
 
                 <div class="projeto-recursos">
@@ -383,13 +695,18 @@
 
                 <div class="projeto-botoes">
                     <a class="btn-projeto" href="/orcamento">
-                        Solicitar ERP
+                        Solicitar ERP →
                     </a>
                 </div>
+
             </div>
+
         </article>
 
-        <!-- PROJETO 2: ESTOQUE INTELIGENTE -->
+        <!-- =====================================
+             PROJETO 2 - ESTOQUE INTELIGENTE
+             ===================================== -->
+
         <article class="projeto-card">
 
             <div class="projeto-imagem">
@@ -397,35 +714,66 @@
                     src="/static/img/projetos/estoque-1.png"
                     alt="Dashboard do Estoque Inteligente"
                     loading="lazy"
-                    onclick="abrirImagem(this.src, this.alt)"
+                    onclick="abrirImagem(this)"
                 >
+                <span class="projeto-ampliar">
+                    ⤢ Ampliar imagem
+                </span>
             </div>
 
             <div class="projeto-fotos">
-                <button class="ativo" onclick="trocarFoto(this, '/static/img/projetos/estoque-1.png')" aria-label="Ver dashboard">
-                    <img src="/static/img/projetos/estoque-1.png" alt="Dashboard">
+
+                <button class="ativo" type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/estoque-1.png')"
+                    aria-label="Ver dashboard do estoque">
+                    <img src="/static/img/projetos/estoque-1.png"
+                         alt="Dashboard">
                 </button>
-                <button onclick="trocarFoto(this, '/static/img/projetos/estoque-2.png')" aria-label="Ver KIRA IA">
-                    <img src="/static/img/projetos/estoque-2.png" alt="KIRA IA">
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/estoque-2.png')"
+                    aria-label="Ver assistente KIRA IA">
+                    <img src="/static/img/projetos/estoque-2.png"
+                         alt="KIRA IA">
                 </button>
-                <button onclick="trocarFoto(this, '/static/img/projetos/estoque-3.png')" aria-label="Ver estoque geral">
-                    <img src="/static/img/projetos/estoque-3.png" alt="Estoque geral">
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/estoque-3.png')"
+                    aria-label="Ver estoque geral">
+                    <img src="/static/img/projetos/estoque-3.png"
+                         alt="Estoque geral">
                 </button>
-                <button onclick="trocarFoto(this, '/static/img/projetos/estoque-4.png')" aria-label="Ver histórico">
-                    <img src="/static/img/projetos/estoque-4.png" alt="Histórico">
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/estoque-4.png')"
+                    aria-label="Ver histórico de movimentações">
+                    <img src="/static/img/projetos/estoque-4.png"
+                         alt="Histórico">
                 </button>
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/estoque-5.png')"
+                    aria-label="Ver outra tela do Estoque Inteligente">
+                    <img src="/static/img/projetos/estoque-5.png"
+                         alt="Outra tela do estoque">
+                </button>
+
             </div>
 
             <div class="projeto-corpo">
-                <span class="projeto-tag">CONTROLE DE ESTOQUE + ASSISTENTE VIRTUAL</span>
+
+                <span class="projeto-tag">
+                    ESTOQUE + ASSISTENTE VIRTUAL
+                </span>
 
                 <h3>🤖 Estoque Inteligente + KIRA IA</h3>
 
                 <p>
                     Plataforma para gerenciamento de equipamentos
-                    e materiais, com indicadores, controle de entradas
-                    e retiradas, histórico de movimentações e
-                    assistente virtual KIRA IA para consultas ao estoque.
+                    e materiais, com indicadores, controle de
+                    entradas e retiradas, histórico de
+                    movimentações e assistente virtual
+                    KIRA IA para consultas ao estoque.
                 </p>
 
                 <div class="projeto-recursos">
@@ -439,13 +787,18 @@
 
                 <div class="projeto-botoes">
                     <a class="btn-projeto" href="/orcamento">
-                        Quero esse sistema
+                        Quero esse sistema →
                     </a>
                 </div>
+
             </div>
+
         </article>
 
-        <!-- PROJETO 3: LOGISTICA REVERSA -->
+        <!-- =====================================
+             PROJETO 3 - REVERSA
+             ===================================== -->
+
         <article class="projeto-card">
 
             <div class="projeto-imagem">
@@ -453,29 +806,44 @@
                     src="/static/img/projetos/reversa-1.png"
                     alt="Painel de controle da logística reversa"
                     loading="lazy"
-                    onclick="abrirImagem(this.src, this.alt)"
+                    onclick="abrirImagem(this)"
                 >
+                <span class="projeto-ampliar">
+                    ⤢ Ampliar imagem
+                </span>
             </div>
 
             <div class="projeto-fotos">
-                <button class="ativo" onclick="trocarFoto(this, '/static/img/projetos/reversa-1.png')" aria-label="Ver painel da reversa">
-                    <img src="/static/img/projetos/reversa-1.png" alt="Painel da reversa">
+
+                <button class="ativo" type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/reversa-1.png')"
+                    aria-label="Ver painel da reversa">
+                    <img src="/static/img/projetos/reversa-1.png"
+                         alt="Painel da reversa">
                 </button>
-                <button onclick="trocarFoto(this, '/static/img/projetos/reversa-2.png')" aria-label="Ver tela de acesso">
-                    <img src="/static/img/projetos/reversa-2.png" alt="Tela de acesso">
+
+                <button type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/reversa-2.png')"
+                    aria-label="Ver tela de acesso">
+                    <img src="/static/img/projetos/reversa-2.png"
+                         alt="Tela de acesso">
                 </button>
+
             </div>
 
             <div class="projeto-corpo">
-                <span class="projeto-tag">LOGÍSTICA REVERSA • WEB APP</span>
+
+                <span class="projeto-tag">
+                    LOGÍSTICA REVERSA • WEB APP
+                </span>
 
                 <h3>♻️ Reversa e Lixo Eletrônico</h3>
 
                 <p>
-                    Sistema para controle de roteadores e equipamentos
-                    devolvidos. Acompanhe recebimentos, testes,
-                    aprovações, consertos, descarte eletrônico
-                    e histórico de operações.
+                    Sistema para controle de roteadores e
+                    equipamentos devolvidos. Permite acompanhar
+                    recebimentos, testes, aprovações, consertos,
+                    descarte eletrônico e histórico de operações.
                     Pode ser instalado no celular como aplicativo web.
                 </p>
 
@@ -490,13 +858,18 @@
 
                 <div class="projeto-botoes">
                     <a class="btn-projeto" href="/orcamento">
-                        Solicitar sistema
+                        Solicitar sistema →
                     </a>
                 </div>
+
             </div>
+
         </article>
 
-        <!-- PROJETO 4: KB LASHES -->
+        <!-- =====================================
+             PROJETO 4 - KB LASHES
+             ===================================== -->
+
         <article class="projeto-card">
 
             <div class="projeto-imagem">
@@ -504,38 +877,49 @@
                     src="/static/img/projetos/lashes-1.png"
                     alt="Site KB Lashes de cílios e sobrancelhas"
                     loading="lazy"
-                    onclick="abrirImagem(this.src, this.alt)"
+                    onclick="abrirImagem(this)"
                 >
+                <span class="projeto-ampliar">
+                    ⤢ Ampliar imagem
+                </span>
             </div>
 
             <div class="projeto-corpo">
-                <span class="projeto-tag">SITE COMERCIAL • BELEZA</span>
+
+                <span class="projeto-tag">
+                    SITE COMERCIAL • BELEZA
+                </span>
 
                 <h3>💗 KB Lashes</h3>
 
                 <p>
-                    Site personalizado para um negócio de beleza,
-                    especializado em cílios e sobrancelhas.
-                    Conta com identidade visual, apresentação
-                    dos serviços, valores e acesso ao agendamento.
+                    Site personalizado para um negócio de
+                    beleza, especializado em cílios e
+                    sobrancelhas. Apresenta identidade visual,
+                    serviços, valores e acesso ao agendamento.
                 </p>
 
                 <div class="projeto-recursos">
                     <span>💅 Beleza</span>
                     <span>📅 Agendamento</span>
                     <span>💰 Valores</span>
-                    <span>📱 Site responsivo</span>
+                    <span>📱 Responsivo</span>
                 </div>
 
                 <div class="projeto-botoes">
                     <a class="btn-projeto" href="/orcamento">
-                        Quero um site assim
+                        Quero um site assim →
                     </a>
                 </div>
+
             </div>
+
         </article>
 
-        <!-- PROJETO 5: CAMPEONATO -->
+        <!-- =====================================
+             PROJETO 5 - WARZONE
+             ===================================== -->
+
         <article class="projeto-card">
 
             <div class="projeto-imagem">
@@ -543,19 +927,25 @@
                     src="/static/img/projetos/warzone-1.png"
                     alt="Site Resurgence 100 Duos Championship"
                     loading="lazy"
-                    onclick="abrirImagem(this.src, this.alt)"
+                    onclick="abrirImagem(this)"
                 >
+                <span class="projeto-ampliar">
+                    ⤢ Ampliar imagem
+                </span>
             </div>
 
             <div class="projeto-corpo">
-                <span class="projeto-tag">EVENTOS • CAMPEONATOS GAMER</span>
+
+                <span class="projeto-tag">
+                    EVENTOS • CAMPEONATOS GAMER
+                </span>
 
                 <h3>🎮 Resurgence 100 — Duos Championship</h3>
 
                 <p>
-                    Site criado para um campeonato de Warzone,
-                    com apresentação do evento, regulamento,
-                    sistema de pontuação e informações
+                    Site desenvolvido para um campeonato
+                    de Warzone, com apresentação do evento,
+                    regulamento, pontuação e informações
                     para os participantes.
                 </p>
 
@@ -567,85 +957,106 @@
                 </div>
 
                 <div class="projeto-botoes">
-                    <a
-                        class="btn-secundario"
-                        href="https://campwarzone.onrender.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+
+                    <a class="btn-secundario"
+                       href="https://campwarzone.onrender.com"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         Ver projeto ↗
                     </a>
 
                     <a class="btn-projeto" href="/orcamento">
-                        Criar site parecido
+                        Criar site parecido →
                     </a>
+
                 </div>
+
             </div>
+
         </article>
 
     </div>
 
-    <!-- OUTROS SERVICOS -->
+    <!-- =====================================
+         OUTROS SERVIÇOS
+         ===================================== -->
+
     <section class="portfolio-servicos">
-        <h2>💼 Outros Serviços da KBSistemas</h2>
+
+        <h2>Outras soluções da KBSistemas</h2>
 
         <p>
             Além dos projetos apresentados, desenvolvemos
-            soluções personalizadas para diferentes negócios.
+            soluções personalizadas para diferentes
+            empresas e empreendedores.
         </p>
 
         <div class="servicos-extra">
 
-            <div class="servico-extra">
+            <article class="servico-extra">
                 <h3>🌐 Sites Profissionais</h3>
                 <p>
                     Sites institucionais, landing pages
                     e páginas comerciais para empresas
                     e profissionais autônomos.
                 </p>
-            </div>
+            </article>
 
-            <div class="servico-extra">
+            <article class="servico-extra">
                 <h3>🛍️ Catálogos Digitais</h3>
                 <p>
-                    Catálogos personalizados para apresentar
-                    produtos, serviços, preços e contatos
-                    de forma organizada.
+                    Catálogos personalizados para
+                    apresentar produtos, serviços,
+                    preços e contatos de forma organizada.
                 </p>
-            </div>
+            </article>
 
-            <div class="servico-extra">
+            <article class="servico-extra">
                 <h3>🛒 Lojas Virtuais</h3>
                 <p>
-                    Desenvolvimento de lojas e vitrines
-                    digitais conforme as necessidades
-                    de cada negócio.
+                    Desenvolvimento de lojas e
+                    vitrines digitais conforme
+                    as necessidades de cada negócio.
                 </p>
-            </div>
+            </article>
 
         </div>
 
         <div style="margin-top:30px;">
             <a href="/servicos" class="botao">
-                Conhecer todos os serviços
+                Conhecer todos os serviços →
             </a>
         </div>
+
     </section>
 
-</main>
-
-<section class="destaque">
-    <h1>Por que escolher a KBSistemas?</h1>
-
-    <div class="frases">
-        <h2>🚀 Desenvolvimento Sob Medida</h2>
-        <h2>⚡ Soluções Modernas</h2>
-        <h2>🔒 Controle de Acesso</h2>
-        <h2>📱 Design Responsivo</h2>
-    </div>
 </section>
 
+<!-- DIFERENCIAIS -->
+
+<section class="destaque">
+
+    <h1>Por que escolher a KBSistemas?</h1>
+
+    <p>
+        Desenvolvemos soluções digitais com foco
+        em organização, praticidade e nas
+        necessidades de cada projeto.
+    </p>
+
+    <div class="frases">
+        <h2>🚀 Sob medida</h2>
+        <h2>⚡ Tecnologia moderna</h2>
+        <h2>🔒 Controle de acesso</h2>
+        <h2>📱 Design responsivo</h2>
+    </div>
+
+</section>
+
+<!-- CONTATO -->
+
 <section class="contato-home">
+
     <h1>Gostou dos nossos projetos?</h1>
 
     <p>
@@ -654,9 +1065,14 @@
     </p>
 
     <a href="/orcamento" class="botao">
-        Solicitar orçamento
+        Solicitar orçamento →
     </a>
+
 </section>
+
+</main>
+
+<!-- WHATSAPP -->
 
 <a
     href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento"
@@ -665,70 +1081,239 @@
     rel="noopener noreferrer"
     aria-label="Entrar em contato pelo WhatsApp"
 >
-    📱
+    ☎
 </a>
 
 <footer>
     <p>
-        © 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
+        © 2026 KBSistemas — Desenvolvimento de
+        Sistemas, Sites e Aplicações Web.
     </p>
 </footer>
 
-<!-- VISUALIZADOR DE IMAGENS -->
-<div class="visualizador" id="visualizador" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+<!-- =====================================
+     VISUALIZADOR DE IMAGENS
+     ===================================== -->
+
+<div
+    class="visualizador"
+    id="visualizador"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visualização ampliada de imagens"
+    aria-hidden="true"
+    tabindex="-1"
+>
+
     <button
         class="fechar-visualizador"
+        type="button"
         onclick="fecharImagem()"
         aria-label="Fechar imagem"
     >
         ×
     </button>
 
+    <button
+        class="navegar-visualizador navegar-anterior"
+        type="button"
+        onclick="navegarImagem(-1)"
+        aria-label="Imagem anterior"
+    >
+        ‹
+    </button>
+
     <img id="imagem-ampliada" src="" alt="">
+
+    <button
+        class="navegar-visualizador navegar-proximo"
+        type="button"
+        onclick="navegarImagem(1)"
+        aria-label="Próxima imagem"
+    >
+        ›
+    </button>
+
+    <span class="visualizador-contador" id="contador-imagens">
+        1 / 1
+    </span>
+
 </div>
 
 <script>
+
+/* =========================================
+   TROCAR IMAGEM PRINCIPAL
+   ========================================= */
+
 function trocarFoto(botao, caminho) {
+
     const card = botao.closest(".projeto-card");
+
     const principal = card.querySelector(".projeto-imagem img");
+
+    const miniatura = botao.querySelector("img");
 
     principal.src = caminho;
 
-    card.querySelectorAll(".projeto-fotos button").forEach(function(item) {
-        item.classList.remove("ativo");
-    });
+    principal.alt = miniatura.alt;
+
+    card.querySelectorAll(".projeto-fotos button")
+        .forEach(function(item) {
+            item.classList.remove("ativo");
+        });
 
     botao.classList.add("ativo");
 }
 
-function abrirImagem(caminho, descricao) {
-    const visualizador = document.getElementById("visualizador");
-    const imagem = document.getElementById("imagem-ampliada");
+/* =========================================
+   VISUALIZADOR
+   ========================================= */
 
-    imagem.src = caminho;
-    imagem.alt = descricao || "Imagem do projeto";
+let imagensAtuais = [];
+let indiceAtual = 0;
+let elementoAnterior = null;
 
-    visualizador.classList.add("aberto");
+function abrirImagem(imagemClicada) {
+
+    const card = imagemClicada.closest(".projeto-card");
+
+    const miniaturas = Array.from(
+        card.querySelectorAll(".projeto-fotos img")
+    );
+
+    if (miniaturas.length > 0) {
+
+        imagensAtuais = miniaturas.map(function(img) {
+            return {
+                src: img.src,
+                alt: img.alt
+            };
+        });
+
+        indiceAtual = imagensAtuais.findIndex(function(item) {
+            return item.src === imagemClicada.src;
+        });
+
+        if (indiceAtual < 0) {
+            indiceAtual = 0;
+        }
+
+    } else {
+
+        imagensAtuais = [{
+            src: imagemClicada.src,
+            alt: imagemClicada.alt
+        }];
+
+        indiceAtual = 0;
+    }
+
+    elementoAnterior = document.activeElement;
+
+    document.getElementById("visualizador")
+        .classList.add("aberto");
+
+    document.getElementById("visualizador")
+        .setAttribute("aria-hidden", "false");
+
     document.body.style.overflow = "hidden";
+
+    atualizarVisualizador();
+
+    document.querySelector(".fechar-visualizador").focus();
+}
+
+function atualizarVisualizador() {
+
+    const imagem = imagensAtuais[indiceAtual];
+
+    if (!imagem) {
+        return;
+    }
+
+    const ampliada = document.getElementById("imagem-ampliada");
+
+    ampliada.src = imagem.src;
+    ampliada.alt = imagem.alt || "Imagem do projeto";
+
+    document.getElementById("contador-imagens")
+        .textContent = (indiceAtual + 1) + " / " + imagensAtuais.length;
+
+    const mostrarNavegacao = imagensAtuais.length > 1;
+
+    document.querySelector(".navegar-anterior")
+        .style.display = mostrarNavegacao ? "flex" : "none";
+
+    document.querySelector(".navegar-proximo")
+        .style.display = mostrarNavegacao ? "flex" : "none";
+}
+
+function navegarImagem(direcao) {
+
+    if (imagensAtuais.length === 0) {
+        return;
+    }
+
+    indiceAtual = (
+        indiceAtual + direcao + imagensAtuais.length
+    ) % imagensAtuais.length;
+
+    atualizarVisualizador();
 }
 
 function fecharImagem() {
-    document.getElementById("visualizador").classList.remove("aberto");
-    document.getElementById("imagem-ampliada").src = "";
+
+    const visualizador = document.getElementById("visualizador");
+
+    visualizador.classList.remove("aberto");
+    visualizador.setAttribute("aria-hidden", "true");
+
+    document.getElementById("imagem-ampliada").removeAttribute("src");
+
     document.body.style.overflow = "";
+
+    if (elementoAnterior && typeof elementoAnterior.focus === "function") {
+        elementoAnterior.focus();
+    }
 }
 
-document.getElementById("visualizador").addEventListener("click", function(evento) {
-    if (evento.target === this) {
-        fecharImagem();
-    }
-});
+/* FECHAR CLICANDO FORA */
+
+document.getElementById("visualizador")
+    .addEventListener("click", function(evento) {
+
+        if (evento.target === this) {
+            fecharImagem();
+        }
+
+    });
+
+/* TECLADO */
 
 document.addEventListener("keydown", function(evento) {
+
+    const aberto = document.getElementById("visualizador")
+        .classList.contains("aberto");
+
+    if (!aberto) {
+        return;
+    }
+
     if (evento.key === "Escape") {
         fecharImagem();
     }
+
+    if (evento.key === "ArrowRight") {
+        navegarImagem(1);
+    }
+
+    if (evento.key === "ArrowLeft") {
+        navegarImagem(-1);
+    }
+
 });
+
 </script>
 
 </body>
