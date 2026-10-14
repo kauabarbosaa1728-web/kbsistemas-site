@@ -1,428 +1,1118 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Serviços - KBSistemas</title>
+<meta name="description"
+content="Conheça os serviços da KBSistemas: landing pages, sites profissionais, catálogos digitais, sistemas empresariais, ERP, lojas virtuais, aplicativos e automações.">
+
+<title>Serviços | KBSistemas</title>
 
 <link rel="stylesheet" href="/static/css/style.css">
 
+<style>
+
+/* =========================================
+   SERVIÇOS PREMIUM - KBSISTEMAS
+   ========================================= */
+
+.servicos-hero {
+    padding: 85px 22px 70px;
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(40, 113, 190, .13),
+            transparent 60%
+        ),
+        #080c12;
+    border-bottom: 1px solid #1d2938;
+}
+
+.servicos-etiqueta {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 7px 13px;
+    background: #122235;
+    border: 1px solid #284461;
+    border-radius: 8px;
+    color: #8ac9ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.servicos-hero h1 {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    color: #f2f6fc;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+}
+
+.servicos-hero h1 span {
+    color: #3ca5f5;
+}
+
+.servicos-hero p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #a5b2c3;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* CONTEÚDO */
+
+.servicos-catalogo {
+    padding: 75px 7% 95px;
+    background: #080c12;
+}
+
+.servicos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicos-intro {
+    max-width: 780px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.servicos-intro h2 {
+    margin-bottom: 15px;
+    color: #f2f6fc;
+    font-size: clamp(29px, 3.5vw, 40px);
+    letter-spacing: -1px;
+}
+
+.servicos-intro p {
+    color: #a5b2c3;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* GRID */
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 23px;
+}
+
+/* CARDS */
+
+.servico-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: #111a26;
+    border: 1px solid #263447;
+    border-radius: 17px;
+    transition:
+        transform .22s,
+        border-color .22s;
+}
+
+.servico-card:hover {
+    transform: translateY(-4px);
+    border-color: #3c668c;
+}
+
+.servico-card-destaque {
+    border-color: #3b80b8;
+}
+
+/* IMAGENS */
+
+.servico-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 190px;
+    padding: 13px;
+    overflow: hidden;
+    background: #0b1420;
+    border-bottom: 1px solid #263447;
+}
+
+.servico-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 9px;
+}
+
+/* CORPO */
+
+.servico-corpo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 25px;
+}
+
+.servico-categoria {
+    align-self: flex-start;
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    background: #172c40;
+    border: 1px solid #294763;
+    border-radius: 7px;
+    color: #8ac9ff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .6px;
+}
+
+.servico-card h2 {
+    margin-bottom: 13px;
+    color: #f2f6fc;
+    font-size: 21px;
+    line-height: 1.35;
+}
+
+.servico-preco {
+    margin-bottom: 15px;
+    color: #65b8ff;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.servico-preco small {
+    display: block;
+    margin-bottom: 3px;
+    color: #9daec1;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.servico-descricao {
+    margin-bottom: 20px;
+    color: #a5b2c3;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* BENEFÍCIOS */
+
+.servico-beneficios {
+    margin: 0 0 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.servico-beneficios li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    color: #bdc9d8;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.servico-beneficios li::before {
+    content: "✓";
+    flex-shrink: 0;
+    color: #56cba4;
+    font-weight: 800;
+}
+
+/* BOTÕES */
+
+.servico-acoes {
+    margin-top: auto;
+}
+
+.servico-acoes .botao {
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 11px 17px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+/* SELO */
+
+.servico-selo {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    padding: 7px 10px;
+    border: 1px solid #34618a;
+    border-radius: 7px;
+    background: #18354e;
+    color: #a4d8ff;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* DIFERENCIAIS */
+
+.servicos-diferenciais {
+    padding: 85px 7%;
+    background: #0d141e;
+    border-top: 1px solid #1d2938;
+    border-bottom: 1px solid #1d2938;
+}
+
+.servicos-diferenciais-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.servicos-titulo-secao {
+    max-width: 760px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.servicos-titulo-secao > span {
+    display: inline-block;
+    margin-bottom: 13px;
+    color: #7dbfff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.servicos-titulo-secao h2 {
+    margin-bottom: 16px;
+    color: #f2f6fc;
+    font-size: clamp(30px, 3.8vw, 42px);
+    line-height: 1.2;
+}
+
+.servicos-titulo-secao p {
+    color: #a5b2c3;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.servicos-diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.servicos-diferencial {
+    padding: 25px 20px;
+    background: #111a26;
+    border: 1px solid #263447;
+    border-radius: 14px;
+}
+
+.servicos-diferencial span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.servicos-diferencial h3 {
+    margin-bottom: 10px;
+    color: #f2f6fc;
+    font-size: 17px;
+}
+
+.servicos-diferencial p {
+    color: #a5b2c3;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* CHAMADA FINAL */
+
+.servicos-cta {
+    padding: 95px 7%;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(33, 98, 162, .12),
+            transparent 65%
+        ),
+        #080c12;
+    text-align: center;
+}
+
+.servicos-cta h2 {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: #f2f6fc;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+}
+
+.servicos-cta p {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    color: #a5b2c3;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.servicos-cta .botao {
+    margin: 0;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1050px) {
+
+    .servicos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .servicos-diferenciais-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+
+    .servicos-hero {
+        padding: 60px 20px 55px;
+    }
+
+    .servicos-hero p {
+        font-size: 15px;
+    }
+
+    .servicos-catalogo {
+        padding: 60px 18px 75px;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .servico-imagem {
+        height: 190px;
+    }
+
+    .servico-corpo {
+        padding: 23px;
+    }
+
+    .servicos-diferenciais {
+        padding: 70px 20px;
+    }
+
+    .servicos-diferenciais-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servicos-cta {
+        padding: 75px 20px;
+    }
+
+    .servicos-cta .botao {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .servico-card {
+        transition: none;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- MENU -->
+
 <header>
+    <div class="logo">
+        <h1>KB<span>Sistemas</span></h1>
+    </div>
 
-<div class="logo">
-<h1>KB<span>Sistemas</span></h1>
-</div>
-
-<nav>
-
-<a href="/">Início</a>
-<a href="/sobre">Sobre</a>
-<a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
-<a href="/planos">Soluções</a>
-<a href="/contato">Contato</a>
-
-</nav>
-
+    <nav aria-label="Menu principal">
+        <a href="/">Início</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/servicos" aria-current="page">Serviços</a>
+        <a href="/projetos">Portfólio</a>
+        <a href="/planos">Soluções</a>
+        <a href="/contato">Contato</a>
+    </nav>
 </header>
 
-<section class="destaque">
+<main>
 
-<h1>Nossos Serviços</h1>
+<!-- APRESENTAÇÃO -->
 
-<p>
-Soluções tecnológicas modernas para empresas que desejam crescer, automatizar processos e aumentar seus resultados.
-</p>
+<section class="servicos-hero">
+
+    <span class="servicos-etiqueta">
+        ✦ SOLUÇÕES DIGITAIS
+    </span>
+
+    <h1>
+        Serviços para levar seu negócio
+        <span>mais longe.</span>
+    </h1>
+
+    <p>
+        Desenvolvemos sistemas, sites, aplicações
+        e soluções tecnológicas personalizadas
+        para empresas que desejam modernizar
+        seus processos e crescer.
+    </p>
 
 </section>
 
-<section class="servicos-home">
+<!-- CATÁLOGO DE SERVIÇOS -->
+
+<section class="servicos-catalogo">
+
+    <div class="servicos-container">
+
+        <div class="servicos-intro">
+            <h2>Encontre a solução ideal</h2>
+            <p>
+                Conheça nossos serviços e escolha
+                a solução que melhor atende às
+                necessidades do seu negócio.
+            </p>
+        </div>
+
+        <div class="servicos-grid">
+
+            <!-- 1. LANDING PAGE -->
+
+            <article class="servico-card">
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/landing-page.png"
+                        alt="Exemplo de landing page"
+                        loading="lazy"
+                    >
+                </div>
 
-<div class="cards">
-
-<!-- LANDING PAGE -->
-
-<div class="card">
-
-<img src="/static/css/landing-page.png" class="card-img" alt="Landing Page">
-
-<h2>🌐 Landing Page</h2>
-
-<h3 class="preco">A partir de R$299</h3>
-
-<p>
-Ideal para divulgar sua empresa, captar clientes e fortalecer sua presença digital.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Design moderno</li>
-<li>✔ Responsivo</li>
-<li>✔ Botão WhatsApp</li>
-<li>✔ Formulário de contato</li>
-<li>✔ SEO Básico</li>
-<li>✔ Entrega rápida</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-
-<!-- SITE INSTITUCIONAL -->
-
-<div class="card">
-
-<img src="/static/css/landing-page.png" class="card-img" alt="Site Institucional">
-
-<h2>🏢 Site Institucional</h2>
-
-<h3 class="preco">A partir de R$799</h3>
-
-<p>
-Perfeito para empresas que desejam transmitir profissionalismo e conquistar novos clientes.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Até 10 páginas</li>
-<li>✔ Design exclusivo</li>
-<li>✔ WhatsApp integrado</li>
-<li>✔ Google Maps</li>
-<li>✔ Formulário</li>
-<li>✔ SEO</li>
-<li>✔ Hospedagem disponível</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-
-<!-- CATÁLOGO DIGITAL -->
-
-<div class="card destaque-card">
-
-<span class="badge">⭐ MAIS VENDIDO</span>
-
-<img src="/static/css/landing-page.png" class="card-img" alt="Catálogo Digital">
-
-<h2>📱 Catálogo Digital</h2>
-
-<h3 class="preco">R$199</h3>
-
-<p>
-Apresente seus produtos de forma profissional e aumente suas vendas.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Até 100 produtos</li>
-<li>✔ Categorias</li>
-<li>✔ Banner personalizado</li>
-<li>✔ WhatsApp integrado</li>
-<li>✔ Design Premium</li>
-<li>✔ Alterações por 7 dias</li>
-<li>✔ Responsivo</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-
-<!-- SISTEMA PERSONALIZADO -->
-
-<div class="card">
-
-<img src="/static/css/sistema.png" class="card-img" alt="Sistema Personalizado">
-
-<h2>💻 Sistema Personalizado</h2>
-
-<h3 class="preco">Sob orçamento</h3>
-
-<p>
-Criamos sistemas exclusivos para atender exatamente as necessidades da sua empresa.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Controle de Estoque</li>
-<li>✔ Financeiro</li>
-<li>✔ Cadastro de Clientes</li>
-<li>✔ Dashboard Inteligente</li>
-<li>✔ Login Seguro</li>
-<li>✔ Banco de Dados</li>
-<li>✔ Relatórios</li>
-<li>✔ Multiusuários</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-<!-- ERP -->
-
-<div class="card">
-
-<img src="/static/css/estoque.png" class="card-img" alt="ERP Empresarial">
-
-<h2>🏢 ERP Empresarial</h2>
-
-<h3 class="preco">A partir de R$2.500</h3>
-
-<p>
-Gerencie toda sua empresa em um único sistema.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Estoque</li>
-<li>✔ Financeiro</li>
-<li>✔ Vendas</li>
-<li>✔ Produtos</li>
-<li>✔ Funcionários</li>
-<li>✔ Dashboard</li>
-<li>✔ Relatórios</li>
-<li>✔ Controle de Usuários</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-
-<!-- LOJA VIRTUAL -->
-
-<div class="card">
-
-<img src="/static/css/loja.png" class="card-img" alt="Loja Virtual">
-
-<h2>🛒 Loja Virtual</h2>
-
-<h3 class="preco">A partir de R$1.499</h3>
-
-<p>
-Venda seus produtos pela internet com uma loja moderna, rápida e segura.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Catálogo de Produtos</li>
-<li>✔ Carrinho de Compras</li>
-<li>✔ Integração PIX</li>
-<li>✔ Painel Administrativo</li>
-<li>✔ Cadastro Ilimitado</li>
-<li>✔ Responsivo</li>
-<li>✔ Design Premium</li>
-<li>✔ Segurança</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-
-<!-- APLICATIVOS -->
-
-<div class="card">
-
-<img src="/static/css/sistema.png" class="card-img" alt="Aplicativos">
-
-<h2>📱 Aplicativos Android</h2>
-
-<h3 class="preco">Sob orçamento</h3>
-
-<p>
-Aplicativos personalizados para automatizar processos e aproximar sua empresa dos clientes.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Aplicativo Exclusivo</li>
-<li>✔ Alto Desempenho</li>
-<li>✔ Interface Moderna</li>
-<li>✔ Login Seguro</li>
-<li>✔ Banco de Dados</li>
-<li>✔ Integração com Sistemas</li>
-<li>✔ Atualizações</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-
-<!-- AUTOMAÇÃO -->
-
-<div class="card">
-
-<img src="/static/css/sistema.png" class="card-img" alt="Automação">
-
-<h2>⚙️ Automação de Processos</h2>
-
-<h3 class="preco">A partir de R$499</h3>
-
-<p>
-Automatize tarefas repetitivas e aumente a produtividade da sua empresa.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Economia de Tempo</li>
-<li>✔ Redução de Erros</li>
-<li>✔ Processos Inteligentes</li>
-<li>✔ Integração entre Sistemas</li>
-<li>✔ Maior Produtividade</li>
-<li>✔ Solução Personalizada</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-
-<!-- DASHBOARDS -->
-
-<div class="card">
-
-<img src="/static/css/estoque.png" class="card-img" alt="Dashboards">
-
-<h2>📊 Dashboards e Relatórios</h2>
-
-<h3 class="preco">A partir de R$599</h3>
-
-<p>
-Transforme dados em informações para tomar decisões mais rápidas e inteligentes.
-</p>
-
-<ul class="beneficios">
-
-<li>✔ Indicadores em Tempo Real</li>
-<li>✔ Relatórios Inteligentes</li>
-<li>✔ Gráficos Interativos</li>
-<li>✔ Exportação PDF e Excel</li>
-<li>✔ Controle Total</li>
-<li>✔ Fácil Visualização</li>
-
-</ul>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</div>
-
-</div>
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        PRESENÇA DIGITAL
+                    </span>
+
+                    <h2>🌐 Landing Page</h2>
+
+                    <div class="servico-preco">
+                        <small>A partir de</small>
+                        R$ 299
+                    </div>
+
+                    <p class="servico-descricao">
+                        Ideal para divulgar sua empresa,
+                        captar clientes e fortalecer
+                        sua presença digital.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Design moderno</li>
+                        <li>Responsivo</li>
+                        <li>Botão WhatsApp</li>
+                        <li>Formulário de contato</li>
+                        <li>SEO básico</li>
+                        <li>Entrega rápida</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- 2. SITE INSTITUCIONAL -->
+
+            <article class="servico-card">
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/landing-page.png"
+                        alt="Exemplo de site institucional"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        SITES PROFISSIONAIS
+                    </span>
+
+                    <h2>🏢 Site Institucional</h2>
+
+                    <div class="servico-preco">
+                        <small>A partir de</small>
+                        R$ 799
+                    </div>
+
+                    <p class="servico-descricao">
+                        Para empresas que desejam
+                        apresentar seus serviços com
+                        profissionalismo e conquistar
+                        novos clientes.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Até 10 páginas</li>
+                        <li>Design exclusivo</li>
+                        <li>WhatsApp integrado</li>
+                        <li>Google Maps</li>
+                        <li>Formulário</li>
+                        <li>SEO</li>
+                        <li>Hospedagem disponível</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- 3. CATÁLOGO DIGITAL -->
+
+            <article class="servico-card servico-card-destaque">
+
+                <span class="servico-selo">
+                    DESTAQUE
+                </span>
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/landing-page.png"
+                        alt="Exemplo de catálogo digital"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        CATÁLOGO ONLINE
+                    </span>
+
+                    <h2>📱 Catálogo Digital</h2>
+
+                    <div class="servico-preco">
+                        <small>Valor anunciado</small>
+                        R$ 199
+                    </div>
+
+                    <p class="servico-descricao">
+                        Apresente seus produtos de
+                        forma organizada e profissional
+                        para facilitar o atendimento
+                        e as vendas.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Até 100 produtos</li>
+                        <li>Categorias</li>
+                        <li>Banner personalizado</li>
+                        <li>WhatsApp integrado</li>
+                        <li>Design premium</li>
+                        <li>Alterações por 7 dias</li>
+                        <li>Responsivo</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- 4. SISTEMA PERSONALIZADO -->
+
+            <article class="servico-card">
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/sistema.png"
+                        alt="Exemplo de sistema personalizado"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        DESENVOLVIMENTO SOB MEDIDA
+                    </span>
+
+                    <h2>💻 Sistema Personalizado</h2>
+
+                    <div class="servico-preco">
+                        <small>Valor conforme o projeto</small>
+                        Sob orçamento
+                    </div>
+
+                    <p class="servico-descricao">
+                        Sistemas exclusivos para atender
+                        às necessidades específicas
+                        da sua empresa.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Controle de estoque</li>
+                        <li>Financeiro</li>
+                        <li>Cadastro de clientes</li>
+                        <li>Dashboard inteligente</li>
+                        <li>Login seguro</li>
+                        <li>Banco de dados</li>
+                        <li>Relatórios</li>
+                        <li>Multiusuários</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- 5. ERP EMPRESARIAL -->
+
+            <article class="servico-card">
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/estoque.png"
+                        alt="Exemplo de sistema ERP empresarial"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        GESTÃO EMPRESARIAL
+                    </span>
+
+                    <h2>🏢 ERP Empresarial</h2>
+
+                    <div class="servico-preco">
+                        <small>A partir de</small>
+                        R$ 2.500
+                    </div>
+
+                    <p class="servico-descricao">
+                        Centralize a gestão da
+                        sua empresa em uma única
+                        plataforma digital.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Estoque</li>
+                        <li>Financeiro</li>
+                        <li>Vendas</li>
+                        <li>Produtos</li>
+                        <li>Funcionários</li>
+                        <li>Dashboard</li>
+                        <li>Relatórios</li>
+                        <li>Controle de usuários</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- 6. LOJA VIRTUAL -->
+
+            <article class="servico-card">
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/loja.png"
+                        alt="Exemplo de loja virtual"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        COMÉRCIO DIGITAL
+                    </span>
+
+                    <h2>🛒 Loja Virtual</h2>
+
+                    <div class="servico-preco">
+                        <small>A partir de</small>
+                        R$ 1.499
+                    </div>
+
+                    <p class="servico-descricao">
+                        Venda seus produtos pela
+                        internet com uma loja
+                        moderna e responsiva.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Catálogo de produtos</li>
+                        <li>Carrinho de compras</li>
+                        <li>Integração PIX</li>
+                        <li>Painel administrativo</li>
+                        <li>Cadastro ilimitado</li>
+                        <li>Responsivo</li>
+                        <li>Design premium</li>
+                        <li>Segurança</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- 7. APLICATIVOS -->
+
+            <article class="servico-card">
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/sistema.png"
+                        alt="Exemplo de aplicação personalizada"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        APLICATIVOS
+                    </span>
+
+                    <h2>📱 Aplicativos Android</h2>
+
+                    <div class="servico-preco">
+                        <small>Valor conforme o projeto</small>
+                        Sob orçamento
+                    </div>
+
+                    <p class="servico-descricao">
+                        Aplicativos personalizados
+                        para automatizar processos
+                        e aproximar sua empresa
+                        dos clientes.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Aplicativo exclusivo</li>
+                        <li>Alto desempenho</li>
+                        <li>Interface moderna</li>
+                        <li>Login seguro</li>
+                        <li>Banco de dados</li>
+                        <li>Integração com sistemas</li>
+                        <li>Atualizações</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- 8. AUTOMAÇÃO -->
+
+            <article class="servico-card">
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/sistema.png"
+                        alt="Exemplo de automação de processos"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        AUTOMAÇÃO EMPRESARIAL
+                    </span>
+
+                    <h2>⚙️ Automação de Processos</h2>
+
+                    <div class="servico-preco">
+                        <small>A partir de</small>
+                        R$ 499
+                    </div>
+
+                    <p class="servico-descricao">
+                        Automatize tarefas repetitivas
+                        para ganhar tempo e
+                        melhorar a produtividade.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Economia de tempo</li>
+                        <li>Redução de erros</li>
+                        <li>Processos inteligentes</li>
+                        <li>Integração entre sistemas</li>
+                        <li>Maior produtividade</li>
+                        <li>Solução personalizada</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- 9. DASHBOARDS -->
+
+            <article class="servico-card">
+
+                <div class="servico-imagem">
+                    <img
+                        src="/static/css/estoque.png"
+                        alt="Exemplo de dashboard e relatórios"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="servico-corpo">
+
+                    <span class="servico-categoria">
+                        DADOS E RELATÓRIOS
+                    </span>
+
+                    <h2>📊 Dashboards e Relatórios</h2>
+
+                    <div class="servico-preco">
+                        <small>A partir de</small>
+                        R$ 599
+                    </div>
+
+                    <p class="servico-descricao">
+                        Transforme dados em informações
+                        organizadas para apoiar
+                        decisões empresariais.
+                    </p>
+
+                    <ul class="servico-beneficios">
+                        <li>Indicadores em tempo real</li>
+                        <li>Relatórios inteligentes</li>
+                        <li>Gráficos interativos</li>
+                        <li>Exportação PDF e Excel</li>
+                        <li>Controle total</li>
+                        <li>Fácil visualização</li>
+                    </ul>
+
+                    <div class="servico-acoes">
+                        <a href="/orcamento" class="botao">
+                            Solicitar orçamento →
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
 
 </section>
-<section class="destaque">
 
-<h1>Por que escolher a KB Sistemas?</h1>
+<!-- DIFERENCIAIS -->
 
-<p>
+<section class="servicos-diferenciais">
 
-Mais do que desenvolver sistemas, criamos soluções tecnológicas que ajudam empresas a crescer com inovação, segurança e desempenho.
+    <div class="servicos-diferenciais-container">
 
-</p>
+        <div class="servicos-titulo-secao">
 
-<div class="frases">
+            <span>POR QUE A KBSISTEMAS?</span>
 
-<h2>🚀 Desenvolvimento Personalizado</h2>
+            <h2>
+                Tecnologia pensada para o seu negócio
+            </h2>
 
-<h2>⚡ Alta Performance</h2>
+            <p>
+                Nosso foco é desenvolver soluções
+                digitais organizadas, práticas e
+                alinhadas às necessidades
+                de cada projeto.
+            </p>
 
-<h2>🔒 Segurança de Dados</h2>
+        </div>
 
-<h2>📱 100% Responsivo</h2>
+        <div class="servicos-diferenciais-grid">
 
-<h2>💬 Suporte Especializado</h2>
+            <article class="servicos-diferencial">
+                <span>🚀</span>
+                <h3>Desenvolvimento personalizado</h3>
+                <p>
+                    Soluções adaptadas às necessidades
+                    de cada empresa.
+                </p>
+            </article>
 
-<h2>🎯 Foco em Resultados</h2>
+            <article class="servicos-diferencial">
+                <span>⚡</span>
+                <h3>Praticidade</h3>
+                <p>
+                    Interfaces intuitivas e processos
+                    mais organizados.
+                </p>
+            </article>
 
-<h2>☁️ Hospedagem Segura</h2>
+            <article class="servicos-diferencial">
+                <span>🔒</span>
+                <h3>Controle de acesso</h3>
+                <p>
+                    Recursos de autenticação e
+                    gerenciamento de usuários
+                    conforme o projeto.
+                </p>
+            </article>
 
-<h2>💼 Atendimento Profissional</h2>
+            <article class="servicos-diferencial">
+                <span>📱</span>
+                <h3>Design responsivo</h3>
+                <p>
+                    Layouts adaptados para diferentes
+                    tamanhos de tela.
+                </p>
+            </article>
 
-</div>
+            <article class="servicos-diferencial">
+                <span>💬</span>
+                <h3>Atendimento</h3>
+                <p>
+                    Comunicação para entender as
+                    necessidades do seu projeto.
+                </p>
+            </article>
+
+            <article class="servicos-diferencial">
+                <span>🎯</span>
+                <h3>Foco em resultados</h3>
+                <p>
+                    Ferramentas voltadas à organização
+                    e produtividade.
+                </p>
+            </article>
+
+            <article class="servicos-diferencial">
+                <span>☁️</span>
+                <h3>Hospedagem</h3>
+                <p>
+                    Possibilidade de publicação online,
+                    conforme os requisitos do projeto.
+                </p>
+            </article>
+
+            <article class="servicos-diferencial">
+                <span>💼</span>
+                <h3>Profissionalismo</h3>
+                <p>
+                    Atenção ao visual, à organização
+                    e à experiência de uso.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
 
 </section>
 
-<section class="contato-home">
+<!-- CHAMADA FINAL -->
 
-<h1>Transforme sua empresa com tecnologia.</h1>
+<section class="servicos-cta">
 
-<p>
+    <h2>
+        Transforme sua empresa com tecnologia.
+    </h2>
 
-Solicite um orçamento sem compromisso e descubra como podemos desenvolver a solução ideal para o seu negócio.
+    <p>
+        Solicite um orçamento sem compromisso
+        e descubra como podemos desenvolver
+        a solução ideal para o seu negócio.
+    </p>
 
-</p>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
+    <a href="/orcamento" class="botao">
+        Solicitar orçamento →
+    </a>
 
 </section>
 
-<a href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento" class="whatsapp">
+</main>
 
-📱
+<!-- WHATSAPP -->
 
+<a
+    href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Entrar em contato pelo WhatsApp"
+>
+    ☎
 </a>
 
 <footer>
-
-<p>
-
-© 2026 KB Sistemas - Todos os direitos reservados.
-
-</p>
-
+    <p>
+        © 2026 KBSistemas — Desenvolvimento de
+        Sistemas, Sites e Aplicações Web.
+    </p>
 </footer>
 
 </body>
-
 </html>
