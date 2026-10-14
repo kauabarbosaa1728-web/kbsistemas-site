@@ -1,246 +1,883 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Entre em contato com a KBSistemas. Solicite orçamento para sistemas empresariais, sites profissionais, aplicativos e soluções digitais personalizadas.">
 
-<title>Contato - KBSistemas</title>
+    <title>Contato | KBSistemas</title>
 
-<link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
+    <style>
+        /* =====================================
+           CONTATO PREMIUM - KBSISTEMAS
+           ===================================== */
+
+        .contato-hero {
+            padding: 85px 7% 75px;
+            background:
+                radial-gradient(
+                    ellipse at 50% 10%,
+                    rgba(39,112,193,.13),
+                    transparent 60%
+                ),
+                #080c12;
+            border-bottom: 1px solid #1d2938;
+            text-align: center;
+        }
+
+        .contato-etiqueta {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 7px 13px;
+            border: 1px solid #284461;
+            border-radius: 8px;
+            background: #122235;
+            color: #8ac9ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contato-hero h1 {
+            max-width: 850px;
+            margin: 0 auto 23px;
+            color: #f2f6fc;
+            font-size: clamp(37px, 5vw, 58px);
+            line-height: 1.15;
+            letter-spacing: -1.8px;
+        }
+
+        .contato-hero h1 span {
+            color: #3ca5f5;
+        }
+
+        .contato-hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #a5b2c3;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* SEÇÃO DE CONTATO */
+
+        .contato-secao {
+            padding: 85px 7% 100px;
+            background: #080c12;
+        }
+
+        .contato-container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .contato-titulo {
+            max-width: 750px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .contato-titulo > span {
+            display: inline-block;
+            margin-bottom: 13px;
+            color: #7dbfff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contato-titulo h2 {
+            margin-bottom: 15px;
+            color: #f2f6fc;
+            font-size: clamp(29px, 3.8vw, 42px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .contato-titulo p {
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* CARDS */
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .contato-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 30px 26px;
+            background: #111a26;
+            border: 1px solid #263447;
+            border-radius: 17px;
+            transition:
+                transform .22s,
+                border-color .22s;
+        }
+
+        .contato-card:hover {
+            transform: translateY(-4px);
+            border-color: #3c668c;
+        }
+
+        .contato-card-principal {
+            border-color: #3b80b8;
+        }
+
+        .contato-icone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            margin-bottom: 22px;
+            background: #14263a;
+            border: 1px solid #28435f;
+            border-radius: 13px;
+            font-size: 25px;
+        }
+
+        .contato-card h3 {
+            margin-bottom: 15px;
+            color: #f2f6fc;
+            font-size: 23px;
+            line-height: 1.35;
+        }
+
+        .contato-card p {
+            margin-bottom: 24px;
+            color: #a5b2c3;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .contato-card-info {
+            display: inline-block;
+            margin-bottom: 23px;
+            padding: 8px 12px;
+            align-self: flex-start;
+            background: #172c40;
+            border: 1px solid #294763;
+            border-radius: 8px;
+            color: #8ac9ff;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .contato-card-acao {
+            margin-top: auto;
+        }
+
+        .contato-card-acao .botao {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            max-width: 100%;
+            min-height: 44px;
+            margin: 0;
+            padding: 12px 19px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+
+        .contato-btn-outline {
+            background: #182434;
+            border: 1px solid #344a62;
+            color: #e5f1ff;
+        }
+
+        .contato-btn-outline:hover {
+            background: #223348;
+        }
+
+        /* ATENDIMENTO */
+
+        .contato-atendimento {
+            padding: 85px 7%;
+            background: #0d141e;
+            border-top: 1px solid #1d2938;
+            border-bottom: 1px solid #1d2938;
+        }
+
+        .contato-atendimento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .contato-atendimento-texto > span {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #7dbfff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contato-atendimento-texto h2 {
+            margin-bottom: 20px;
+            color: #f2f6fc;
+            font-size: clamp(30px, 3.8vw, 43px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .contato-atendimento-texto p {
+            margin-bottom: 24px;
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .contato-atendimento-texto .botao {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            margin: 0;
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .contato-painel {
+            padding: 30px;
+            background: #111a26;
+            border: 1px solid #293b50;
+            border-radius: 18px;
+        }
+
+        .contato-painel-topo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .contato-painel-topo strong {
+            color: #f2f6fc;
+            font-size: 18px;
+        }
+
+        .contato-status {
+            padding: 7px 11px;
+            background: #123328;
+            border: 1px solid #275b4a;
+            border-radius: 8px;
+            color: #72e1b0;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .contato-passo {
+            display: flex;
+            gap: 17px;
+            padding: 19px 0;
+            border-bottom: 1px solid #273447;
+        }
+
+        .contato-passo:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .contato-passo-numero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 37px;
+            height: 37px;
+            background: #172c40;
+            border: 1px solid #294763;
+            border-radius: 10px;
+            color: #8ac9ff;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .contato-passo h3 {
+            margin-bottom: 7px;
+            color: #f2f6fc;
+            font-size: 16px;
+        }
+
+        .contato-passo p {
+            color: #a5b2c3;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* DIFERENCIAIS */
+
+        .contato-diferenciais {
+            padding: 80px 7%;
+            background: #080c12;
+        }
+
+        .contato-diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 19px;
+        }
+
+        .contato-diferencial {
+            padding: 28px 24px;
+            background: #111a26;
+            border: 1px solid #263447;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contato-diferencial span {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 27px;
+        }
+
+        .contato-diferencial h3 {
+            margin-bottom: 10px;
+            color: #f2f6fc;
+            font-size: 19px;
+        }
+
+        .contato-diferencial p {
+            color: #a5b2c3;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        /* CHAMADA FINAL */
+
+        .contato-cta {
+            padding: 95px 7%;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(33,98,162,.12),
+                    transparent 65%
+                ),
+                #0d141e;
+            border-top: 1px solid #1d2938;
+            text-align: center;
+        }
+
+        .contato-cta h2 {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: #f2f6fc;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+        }
+
+        .contato-cta p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .contato-cta .botao {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            margin: 0;
+            padding: 13px 25px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 950px) {
+            .contato-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contato-atendimento-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .contato-hero {
+                padding: 65px 20px;
+            }
+
+            .contato-hero p {
+                font-size: 15px;
+            }
+
+            .contato-secao {
+                padding: 70px 20px;
+            }
+
+            .contato-grid,
+            .contato-atendimento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contato-atendimento {
+                padding: 70px 20px;
+            }
+
+            .contato-diferenciais {
+                padding: 70px 20px;
+            }
+
+            .contato-diferenciais-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contato-cta {
+                padding: 75px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contato-card {
+                padding: 25px 21px;
+            }
+
+            .contato-card-acao .botao {
+                width: 100%;
+            }
+
+            .contato-painel {
+                padding: 22px;
+            }
+
+            .contato-atendimento-texto .botao,
+            .contato-cta .botao {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .contato-card {
+                transition: none;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
+<!-- MENU -->
 
 <header>
+    <div class="logo">
+        <h1>KB<span>Sistemas</span></h1>
+    </div>
 
-<div class="logo">
-
-<h1>
-KB<span>Sistemas</span>
-</h1>
-
-</div>
-
-
-
-<nav>
-
-<a href="/">Início</a>
-<a href="/sobre">Sobre</a>
-<a href="/servicos">Serviços</a>
-<a href="/planos">Soluções</a>
-<a href="/contato">Contato</a>
-
-</nav>
-
-
+    <nav aria-label="Menu principal">
+        <a href="/">Início</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/servicos">Serviços</a>
+        <a href="/projetos">Portfólio</a>
+        <a href="/planos">Soluções</a>
+        <a href="/contato" aria-current="page">Contato</a>
+    </nav>
 </header>
 
+<main>
 
+    <!-- APRESENTAÇÃO -->
 
+    <section class="contato-hero">
 
+        <span class="contato-etiqueta">
+            ✦ FALE COM A KBSISTEMAS
+        </span>
 
-<section class="contato-home">
+        <h1>
+            Sua próxima ideia merece
+            uma <span>grande solução.</span>
+        </h1>
 
+        <p>
+            Tem um projeto em mente?
+            Entre em contato com a KBSistemas
+            e descubra como podemos desenvolver
+            a solução digital ideal para
+            o seu negócio.
+        </p>
 
-<h1>
-Vamos transformar sua ideia em realidade?
-</h1>
+    </section>
 
+    <!-- FORMAS DE CONTATO -->
 
-<p>
+    <section class="contato-secao">
 
-Entre em contato com a KBSistemas e encontre
-a melhor solução digital para sua empresa.
+        <div class="contato-container">
 
-</p>
+            <div class="contato-titulo">
 
+                <span>VAMOS CONVERSAR</span>
 
+                <h2>
+                    Como podemos ajudar você?
+                </h2>
 
+                <p>
+                    Escolha a melhor maneira de
+                    conhecer nossos serviços
+                    ou iniciar seu projeto.
+                </p>
 
-<div class="cards">
+            </div>
 
+            <div class="contato-grid">
 
+                <!-- WHATSAPP -->
 
-<div class="card">
+                <article class="contato-card contato-card-principal">
 
+                    <div class="contato-icone">
+                        💬
+                    </div>
 
-<h2>
-📱 WhatsApp
-</h2>
+                    <h3>WhatsApp</h3>
 
+                    <p>
+                        Fale diretamente com a
+                        KBSistemas para tirar dúvidas,
+                        apresentar sua ideia e conversar
+                        sobre o desenvolvimento
+                        do seu projeto.
+                    </p>
 
-<p>
+                    <span class="contato-card-info">
+                        Atendimento via WhatsApp
+                    </span>
 
-Fale diretamente conosco e tire suas dúvidas
-sobre seu projeto.
+                    <div class="contato-card-acao">
 
-</p>
+                        <a
+                            href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+                            class="botao"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Conversar agora →
+                        </a>
 
+                    </div>
 
+                </article>
 
-<a 
+                <!-- SERVIÇOS -->
 
-href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento"
+                <article class="contato-card">
 
-class="botao">
+                    <div class="contato-icone">
+                        💻
+                    </div>
 
-Conversar agora
+                    <h3>Nossos Serviços</h3>
 
+                    <p>
+                        Desenvolvemos sistemas
+                        empresariais, sites profissionais,
+                        aplicativos, lojas virtuais,
+                        catálogos digitais e
+                        soluções personalizadas.
+                    </p>
+
+                    <span class="contato-card-info">
+                        Soluções digitais
+                    </span>
+
+                    <div class="contato-card-acao">
+
+                        <a
+                            href="/servicos"
+                            class="botao contato-btn-outline"
+                        >
+                            Conhecer serviços →
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- ORÇAMENTO -->
+
+                <article class="contato-card">
+
+                    <div class="contato-icone">
+                        🚀
+                    </div>
+
+                    <h3>Solicite seu Projeto</h3>
+
+                    <p>
+                        Explique sua ideia,
+                        descreva o que sua empresa
+                        precisa e solicite
+                        um orçamento personalizado
+                        sem compromisso.
+                    </p>
+
+                    <span class="contato-card-info">
+                        Orçamento personalizado
+                    </span>
+
+                    <div class="contato-card-acao">
+
+                        <a href="/orcamento" class="botao">
+                            Fazer orçamento →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMO FUNCIONA O ATENDIMENTO -->
+
+    <section class="contato-atendimento">
+
+        <div class="contato-container">
+
+            <div class="contato-atendimento-grid">
+
+                <div class="contato-atendimento-texto">
+
+                    <span>ATENDIMENTO PERSONALIZADO</span>
+
+                    <h2>
+                        Vamos conversar
+                        sobre sua ideia?
+                    </h2>
+
+                    <p>
+                        Cada negócio tem suas
+                        próprias necessidades.
+                        Por isso, buscamos entender
+                        o que você precisa antes
+                        de propor uma solução.
+                    </p>
+
+                    <p>
+                        Seja um site profissional,
+                        um sistema empresarial
+                        ou uma aplicação personalizada,
+                        o primeiro passo é
+                        conhecer seu projeto.
+                    </p>
+
+                    <a
+                        href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto"
+                        class="botao"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Iniciar conversa →
+                    </a>
+
+                </div>
+
+                <div class="contato-painel">
+
+                    <div class="contato-painel-topo">
+
+                        <strong>
+                            Como funciona?
+                        </strong>
+
+                        <span class="contato-status">
+                            ATENDIMENTO
+                        </span>
+
+                    </div>
+
+                    <div class="contato-passo">
+
+                        <span class="contato-passo-numero">
+                            01
+                        </span>
+
+                        <div>
+                            <h3>Entre em contato</h3>
+                            <p>
+                                Envie uma mensagem
+                                ou solicite um orçamento.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contato-passo">
+
+                        <span class="contato-passo-numero">
+                            02
+                        </span>
+
+                        <div>
+                            <h3>Conte sua ideia</h3>
+                            <p>
+                                Explique quais funcionalidades
+                                e objetivos você deseja
+                                para o projeto.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contato-passo">
+
+                        <span class="contato-passo-numero">
+                            03
+                        </span>
+
+                        <div>
+                            <h3>Receba uma proposta</h3>
+                            <p>
+                                Avaliamos as necessidades
+                                para apresentar uma proposta
+                                de desenvolvimento.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DIFERENCIAIS -->
+
+    <section class="contato-diferenciais">
+
+        <div class="contato-container">
+
+            <div class="contato-titulo">
+
+                <span>POR QUE A KBSISTEMAS?</span>
+
+                <h2>
+                    Tecnologia com atenção
+                    ao seu projeto
+                </h2>
+
+                <p>
+                    Desenvolvemos soluções
+                    personalizadas com foco
+                    na organização e na
+                    experiência de uso.
+                </p>
+
+            </div>
+
+            <div class="contato-diferenciais-grid">
+
+                <article class="contato-diferencial">
+                    <span>⚡</span>
+                    <h3>Praticidade</h3>
+                    <p>
+                        Soluções que buscam
+                        facilitar tarefas
+                        e processos.
+                    </p>
+                </article>
+
+                <article class="contato-diferencial">
+                    <span>🔒</span>
+                    <h3>Segurança</h3>
+                    <p>
+                        Atenção às boas práticas
+                        de proteção e controle
+                        de acesso.
+                    </p>
+                </article>
+
+                <article class="contato-diferencial">
+                    <span>🚀</span>
+                    <h3>Inovação</h3>
+                    <p>
+                        Tecnologias modernas
+                        aplicadas às necessidades
+                        de cada negócio.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CHAMADA FINAL -->
+
+    <section class="contato-cta">
+
+        <h2>
+            Vamos tirar seu projeto do papel?
+        </h2>
+
+        <p>
+            Conte sua ideia e descubra
+            como a KBSistemas pode ajudar
+            a transformar seu negócio
+            com tecnologia.
+        </p>
+
+        <a href="/orcamento" class="botao">
+            Solicitar orçamento →
+        </a>
+
+    </section>
+
+</main>
+
+<!-- WHATSAPP FLUTUANTE -->
+
+<a
+    href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Entrar em contato pelo WhatsApp"
+>
+    ☎
 </a>
 
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2>
-💻 Nossos Serviços
-</h2>
-
-
-<p>
-
-Desenvolvemos sistemas, sites, aplicativos,
-lojas virtuais e soluções personalizadas.
-
-</p>
-
-
-
-<a href="/servicos" class="botao">
-
-Conhecer serviços
-
-</a>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2>
-🚀 Solicite seu projeto
-</h2>
-
-
-<p>
-
-Explique sua ideia e receba um orçamento
-sem compromisso.
-
-</p>
-
-
-
-<a href="/orcamento" class="botao">
-
-Fazer orçamento
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section class="destaque">
-
-
-<h1>
-Por que escolher a KBSistemas?
-</h1>
-
-
-<p>
-
-Criamos soluções modernas, seguras e personalizadas
-para ajudar empresas a crescer através da tecnologia.
-
-</p>
-
-
-
-<div class="frases">
-
-
-<h2>
-⚡ Rapidez
-</h2>
-
-
-<h2>
-🔒 Segurança
-</h2>
-
-
-<h2>
-🚀 Inovação
-</h2>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<a 
-
-href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento"
-
-class="whatsapp">
-
-📱
-
-</a>
-
-
-
-
-
+<!-- RODAPÉ -->
 
 <footer>
-
-<p>
-
-© 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
-
-</p>
-
+    <p>
+        © 2026 KBSistemas — Desenvolvimento de
+        Sistemas, Sites e Aplicações Web.
+    </p>
 </footer>
 
-
-
 </body>
-
 </html>
