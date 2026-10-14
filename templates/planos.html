@@ -291,7 +291,9 @@
             font-size: 13px;
         }
 
-        /* ETAPAS */
+        /* =====================================
+           ETAPAS COM CONTORNO AZUL
+           ===================================== */
 
         .solucoes-etapas {
             display: grid;
@@ -302,16 +304,44 @@
         .solucoes-etapa {
             padding: 27px 23px;
             background: #111a26;
-            border: 1px solid #263447;
+
+            /* NOVO CONTORNO AZUL */
+            border: 1px solid #379eff;
             border-radius: 15px;
+            box-shadow: 0 0 13px rgba(55, 158, 255, .10);
+
+            transition:
+                transform .22s ease,
+                border-color .22s ease,
+                box-shadow .22s ease;
+        }
+
+        .solucoes-etapa:hover {
+            transform: translateY(-4px);
+            border-color: #70c2ff;
+            box-shadow: 0 0 20px rgba(55, 158, 255, .20);
         }
 
         .solucoes-etapa-numero {
-            display: block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 57px;
+            height: 57px;
+            padding: 8px;
             margin-bottom: 20px;
+
+            /* NOVO CONTORNO DOS NÚMEROS */
+            background: #14263a;
+            border: 2px solid #379eff;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(55, 158, 255, .13);
+
             color: #65b8ff;
-            font-size: 30px;
+            font-size: 25px;
             font-weight: 800;
+            line-height: 1;
         }
 
         .solucoes-etapa h3 {
@@ -463,8 +493,13 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .solucao-card {
+            .solucao-card,
+            .solucoes-etapa {
                 transition: none;
+            }
+
+            .solucoes-etapa:hover {
+                transform: none;
             }
         }
     </style>
