@@ -1,224 +1,947 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Conheça as soluções digitais da KBSistemas: sistemas personalizados, sites, aplicativos, lojas virtuais, automações e dashboards.">
 
-<title>Soluções - KBSistemas</title>
+    <title>Soluções | KBSistemas</title>
 
-<link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
+    <style>
+        /* =====================================
+           SOLUÇÕES PREMIUM - KBSISTEMAS
+           ===================================== */
+
+        .solucoes-hero {
+            padding: 90px 7% 80px;
+            background:
+                radial-gradient(
+                    ellipse at 70% 30%,
+                    rgba(39, 112, 193, .13),
+                    transparent 55%
+                ),
+                #080c12;
+            border-bottom: 1px solid #1d2938;
+        }
+
+        .solucoes-hero-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .solucoes-etiqueta {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 7px 13px;
+            border: 1px solid #284461;
+            border-radius: 8px;
+            background: #122235;
+            color: #8ac9ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .solucoes-hero h1 {
+            margin-bottom: 22px;
+            color: #f2f6fc;
+            font-size: clamp(38px, 5vw, 59px);
+            line-height: 1.15;
+            letter-spacing: -1.8px;
+        }
+
+        .solucoes-hero h1 span {
+            color: #3ca5f5;
+        }
+
+        .solucoes-hero p {
+            max-width: 620px;
+            margin-bottom: 25px;
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .solucoes-hero-acoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .solucoes-hero-acoes .botao {
+            width: auto;
+            margin: 0;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .solucoes-botao-outline {
+            background: #111a26;
+            border: 1px solid #344255;
+            color: #f2f6fc;
+        }
+
+        .solucoes-botao-outline:hover {
+            background: #1b2938;
+        }
+
+        /* PAINEL ILUSTRATIVO */
+
+        .solucoes-painel {
+            padding: 25px;
+            border: 1px solid #293b50;
+            border-radius: 18px;
+            background: #101925;
+            box-shadow: 0 20px 55px rgba(0,0,0,.2);
+        }
+
+        .solucoes-painel-topo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .solucoes-painel-topo strong {
+            color: #f2f6fc;
+            font-size: 15px;
+        }
+
+        .solucoes-status {
+            padding: 6px 10px;
+            border: 1px solid #275b4a;
+            border-radius: 7px;
+            background: #123328;
+            color: #72e1b0;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .solucoes-painel-imagem {
+            overflow: hidden;
+            border: 1px solid #293b50;
+            border-radius: 12px;
+            background: #0a121d;
+        }
+
+        .solucoes-painel-imagem img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: contain;
+        }
+
+        .solucoes-painel-rodape {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+            color: #a5b2c3;
+            font-size: 12px;
+        }
+
+        .solucoes-painel-rodape strong {
+            color: #8ac9ff;
+        }
+
+        /* SEÇÕES */
+
+        .solucoes-secao {
+            padding: 90px 7%;
+            background: #080c12;
+        }
+
+        .solucoes-secao-alt {
+            background: #0d141e;
+            border-top: 1px solid #1d2938;
+            border-bottom: 1px solid #1d2938;
+        }
+
+        .solucoes-container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .solucoes-titulo {
+            max-width: 770px;
+            margin: 0 auto 42px;
+            text-align: center;
+        }
+
+        .solucoes-titulo > span {
+            display: inline-block;
+            margin-bottom: 13px;
+            color: #7dbfff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .solucoes-titulo h2 {
+            margin-bottom: 16px;
+            color: #f2f6fc;
+            font-size: clamp(30px, 3.8vw, 43px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .solucoes-titulo p {
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* GRID DE SOLUÇÕES */
+
+        .solucoes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 21px;
+        }
+
+        .solucao-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 29px 25px;
+            background: #111a26;
+            border: 1px solid #263447;
+            border-radius: 16px;
+            transition:
+                transform .22s,
+                border-color .22s;
+        }
+
+        .solucao-card:hover {
+            transform: translateY(-4px);
+            border-color: #3c668c;
+        }
+
+        .solucao-icone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 51px;
+            height: 51px;
+            margin-bottom: 22px;
+            background: #14263a;
+            border: 1px solid #28435f;
+            border-radius: 12px;
+            font-size: 24px;
+        }
+
+        .solucao-card h3 {
+            margin-bottom: 15px;
+            color: #f2f6fc;
+            font-size: 21px;
+            line-height: 1.35;
+        }
+
+        .solucao-card p {
+            margin-bottom: 22px;
+            color: #a5b2c3;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .solucao-recursos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 27px;
+        }
+
+        .solucao-recursos span {
+            padding: 7px 10px;
+            background: #172535;
+            border: 1px solid #2a3d51;
+            border-radius: 7px;
+            color: #b8c9db;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .solucao-acao {
+            margin-top: auto;
+        }
+
+        .solucao-acao .botao {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            max-width: 100%;
+            min-height: 43px;
+            margin: 0;
+            padding: 11px 18px;
+            border-radius: 9px;
+            font-size: 13px;
+        }
+
+        /* ETAPAS */
+
+        .solucoes-etapas {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .solucoes-etapa {
+            padding: 27px 23px;
+            background: #111a26;
+            border: 1px solid #263447;
+            border-radius: 15px;
+        }
+
+        .solucoes-etapa-numero {
+            display: block;
+            margin-bottom: 20px;
+            color: #65b8ff;
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .solucoes-etapa h3 {
+            margin-bottom: 12px;
+            color: #f2f6fc;
+            font-size: 19px;
+        }
+
+        .solucoes-etapa p {
+            color: #a5b2c3;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        /* DIFERENCIAIS */
+
+        .solucoes-diferenciais {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .solucoes-diferencial {
+            padding: 25px 20px;
+            background: #111a26;
+            border: 1px solid #263447;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .solucoes-diferencial span {
+            display: block;
+            margin-bottom: 14px;
+            font-size: 27px;
+        }
+
+        .solucoes-diferencial h3 {
+            color: #f2f6fc;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        /* CTA */
+
+        .solucoes-cta {
+            padding: 95px 7%;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(33, 98, 162, .12),
+                    transparent 65%
+                ),
+                #080c12;
+            text-align: center;
+        }
+
+        .solucoes-cta h2 {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: #f2f6fc;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+        }
+
+        .solucoes-cta p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .solucoes-cta .botao {
+            width: auto;
+            margin: 0;
+            padding: 13px 25px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 1050px) {
+            .solucoes-hero-container {
+                gap: 35px;
+            }
+
+            .solucoes-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .solucoes-etapas,
+            .solucoes-diferenciais {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .solucoes-hero {
+                padding: 65px 22px;
+            }
+
+            .solucoes-hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .solucoes-hero h1 {
+                font-size: clamp(36px, 8vw, 48px);
+            }
+
+            .solucoes-secao {
+                padding: 70px 20px;
+            }
+
+            .solucoes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solucoes-cta {
+                padding: 75px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .solucoes-hero-acoes {
+                flex-direction: column;
+            }
+
+            .solucoes-hero-acoes .botao {
+                width: 100%;
+            }
+
+            .solucoes-etapas,
+            .solucoes-diferenciais {
+                grid-template-columns: 1fr;
+            }
+
+            .solucoes-painel {
+                padding: 17px;
+            }
+
+            .solucoes-painel-topo {
+                flex-wrap: wrap;
+            }
+
+            .solucoes-cta .botao {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .solucao-card {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- MENU -->
+
 <header>
+    <div class="logo">
+        <h1>KB<span>Sistemas</span></h1>
+    </div>
 
-<div class="logo">
-<h1>KB<span>Sistemas</span></h1>
-</div>
-
-<nav>
-
-<a href="/">Início</a>
-<a href="/sobre">Sobre</a>
-<a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
-<a href="/planos">Soluções</a>
-<a href="/contato">Contato</a>
-
-</nav>
-
+    <nav aria-label="Menu principal">
+        <a href="/">Início</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/servicos">Serviços</a>
+        <a href="/projetos">Portfólio</a>
+        <a href="/planos" aria-current="page">Soluções</a>
+        <a href="/contato">Contato</a>
+    </nav>
 </header>
 
+<main>
 
+    <!-- APRESENTAÇÃO -->
 
-<section class="destaque">
+    <section class="solucoes-hero">
 
-<h1>Soluções para sua Empresa</h1>
+        <div class="solucoes-hero-container">
 
-<p>
-Cada empresa possui necessidades diferentes. Desenvolvemos soluções personalizadas para aumentar a produtividade, automatizar processos e impulsionar o crescimento do seu negócio.
-</p>
+            <div>
 
-</section>
+                <span class="solucoes-etiqueta">
+                    ✦ TECNOLOGIA SOB MEDIDA
+                </span>
 
+                <h1>
+                    Soluções digitais
+                    para sua
+                    <span>empresa crescer.</span>
+                </h1>
 
+                <p>
+                    Cada empresa possui necessidades
+                    diferentes. Desenvolvemos soluções
+                    personalizadas para organizar
+                    operações, automatizar processos
+                    e facilitar o dia a dia do seu negócio.
+                </p>
 
-<section class="servicos-home">
+                <div class="solucoes-hero-acoes">
 
-<div class="cards">
+                    <a href="/orcamento" class="botao">
+                        Solicitar orçamento →
+                    </a>
 
-<div class="card">
+                    <a
+                        href="/projetos"
+                        class="botao solucoes-botao-outline"
+                    >
+                        Ver portfólio
+                    </a>
 
-<h2>💻 Sistema Personalizado</h2>
+                </div>
 
-<p>
-Sistemas completos para controle de estoque, vendas, financeiro, usuários, relatórios e gestão empresarial.
-</p>
+            </div>
 
-<a href="/orcamento" class="botao">
+            <!-- IMAGEM DE PROJETO REAL -->
 
-Solicitar Projeto
+            <div class="solucoes-painel">
 
+                <div class="solucoes-painel-topo">
+
+                    <strong>KBSistemas ERP</strong>
+
+                    <span class="solucoes-status">
+                        SISTEMA WEB
+                    </span>
+
+                </div>
+
+                <div class="solucoes-painel-imagem">
+
+                    <img
+                        src="/static/img/projetos/erp-1.png"
+                        alt="Dashboard do ERP desenvolvido pela KBSistemas"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="solucoes-painel-rodape">
+                    <span>Gestão empresarial</span>
+                    <strong>Projeto KBSistemas</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOLUÇÕES -->
+
+    <section class="solucoes-secao">
+
+        <div class="solucoes-container">
+
+            <div class="solucoes-titulo">
+
+                <span>O QUE PODEMOS DESENVOLVER</span>
+
+                <h2>
+                    Uma solução para cada necessidade
+                </h2>
+
+                <p>
+                    Conheça algumas das tecnologias
+                    e ferramentas que podemos criar
+                    para o seu negócio.
+                </p>
+
+            </div>
+
+            <div class="solucoes-grid">
+
+                <!-- SISTEMA PERSONALIZADO -->
+
+                <article class="solucao-card">
+
+                    <div class="solucao-icone">💻</div>
+
+                    <h3>Sistema Personalizado</h3>
+
+                    <p>
+                        Sistemas completos para controle
+                        de estoque, vendas, financeiro,
+                        usuários, relatórios e gestão
+                        empresarial.
+                    </p>
+
+                    <div class="solucao-recursos">
+                        <span>Estoque</span>
+                        <span>Financeiro</span>
+                        <span>Relatórios</span>
+                        <span>Usuários</span>
+                    </div>
+
+                    <div class="solucao-acao">
+                        <a href="/orcamento" class="botao">
+                            Solicitar projeto →
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- SITE PROFISSIONAL -->
+
+                <article class="solucao-card">
+
+                    <div class="solucao-icone">🌐</div>
+
+                    <h3>Site Profissional</h3>
+
+                    <p>
+                        Sites modernos, rápidos
+                        e responsivos, desenvolvidos
+                        para fortalecer a presença
+                        digital da sua empresa.
+                    </p>
+
+                    <div class="solucao-recursos">
+                        <span>Responsivo</span>
+                        <span>Institucional</span>
+                        <span>Contato</span>
+                        <span>Catálogo</span>
+                    </div>
+
+                    <div class="solucao-acao">
+                        <a href="/orcamento" class="botao">
+                            Criar meu site →
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- APLICATIVO -->
+
+                <article class="solucao-card">
+
+                    <div class="solucao-icone">📱</div>
+
+                    <h3>Aplicativo</h3>
+
+                    <p>
+                        Aplicativos personalizados
+                        para Android e aplicações
+                        adaptadas ao celular,
+                        voltados à praticidade
+                        e ao atendimento.
+                    </p>
+
+                    <div class="solucao-recursos">
+                        <span>Android</span>
+                        <span>Interface moderna</span>
+                        <span>Integrações</span>
+                    </div>
+
+                    <div class="solucao-acao">
+                        <a href="/orcamento" class="botao">
+                            Criar aplicativo →
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- LOJA VIRTUAL -->
+
+                <article class="solucao-card">
+
+                    <div class="solucao-icone">🛒</div>
+
+                    <h3>Loja Virtual</h3>
+
+                    <p>
+                        Plataformas para vender
+                        produtos online com
+                        organização, facilidade
+                        de gerenciamento e
+                        uma boa experiência de compra.
+                    </p>
+
+                    <div class="solucao-recursos">
+                        <span>Produtos</span>
+                        <span>Carrinho</span>
+                        <span>Pedidos</span>
+                        <span>Catálogo</span>
+                    </div>
+
+                    <div class="solucao-acao">
+                        <a href="/orcamento" class="botao">
+                            Criar loja virtual →
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- AUTOMAÇÃO -->
+
+                <article class="solucao-card">
+
+                    <div class="solucao-icone">⚙️</div>
+
+                    <h3>Automação Empresarial</h3>
+
+                    <p>
+                        Automatização de tarefas
+                        repetitivas para economizar
+                        tempo, reduzir erros
+                        e melhorar a produtividade.
+                    </p>
+
+                    <div class="solucao-recursos">
+                        <span>Automação</span>
+                        <span>Integrações</span>
+                        <span>Produtividade</span>
+                    </div>
+
+                    <div class="solucao-acao">
+                        <a href="/orcamento" class="botao">
+                            Quero automatizar →
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- DASHBOARDS -->
+
+                <article class="solucao-card">
+
+                    <div class="solucao-icone">📊</div>
+
+                    <h3>Painéis e Dashboards</h3>
+
+                    <p>
+                        Dashboards para acompanhar
+                        indicadores, vendas,
+                        movimentações e resultados
+                        de forma clara e organizada.
+                    </p>
+
+                    <div class="solucao-recursos">
+                        <span>Indicadores</span>
+                        <span>Gráficos</span>
+                        <span>Relatórios</span>
+                        <span>Gestão</span>
+                    </div>
+
+                    <div class="solucao-acao">
+                        <a href="/orcamento" class="botao">
+                            Solicitar dashboard →
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMO FUNCIONA -->
+
+    <section class="solucoes-secao solucoes-secao-alt">
+
+        <div class="solucoes-container">
+
+            <div class="solucoes-titulo">
+
+                <span>ETAPAS DO PROJETO</span>
+
+                <h2>
+                    Como desenvolvemos sua solução?
+                </h2>
+
+                <p>
+                    Um processo organizado para
+                    transformar suas necessidades
+                    em uma solução digital.
+                </p>
+
+            </div>
+
+            <div class="solucoes-etapas">
+
+                <article class="solucoes-etapa">
+                    <span class="solucoes-etapa-numero">01</span>
+                    <h3>Entendimento</h3>
+                    <p>
+                        Conversamos sobre a ideia,
+                        os objetivos e as necessidades
+                        do seu negócio.
+                    </p>
+                </article>
+
+                <article class="solucoes-etapa">
+                    <span class="solucoes-etapa-numero">02</span>
+                    <h3>Planejamento</h3>
+                    <p>
+                        Organizamos as funcionalidades,
+                        a estrutura e a proposta
+                        da solução.
+                    </p>
+                </article>
+
+                <article class="solucoes-etapa">
+                    <span class="solucoes-etapa-numero">03</span>
+                    <h3>Desenvolvimento</h3>
+                    <p>
+                        Criamos a interface
+                        e implementamos os recursos
+                        definidos para o projeto.
+                    </p>
+                </article>
+
+                <article class="solucoes-etapa">
+                    <span class="solucoes-etapa-numero">04</span>
+                    <h3>Entrega</h3>
+                    <p>
+                        Realizamos verificações
+                        e disponibilizamos a solução
+                        conforme o combinado.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DIFERENCIAIS -->
+
+    <section class="solucoes-secao">
+
+        <div class="solucoes-container">
+
+            <div class="solucoes-titulo">
+
+                <span>NOSSOS DIFERENCIAIS</span>
+
+                <h2>
+                    Por que escolher a KBSistemas?
+                </h2>
+
+                <p>
+                    Desenvolvemos soluções com foco
+                    em organização, praticidade
+                    e necessidades reais.
+                </p>
+
+            </div>
+
+            <div class="solucoes-diferenciais">
+
+                <div class="solucoes-diferencial">
+                    <span>🚀</span>
+                    <h3>Desenvolvimento sob medida</h3>
+                </div>
+
+                <div class="solucoes-diferencial">
+                    <span>⚡</span>
+                    <h3>Praticidade e desempenho</h3>
+                </div>
+
+                <div class="solucoes-diferencial">
+                    <span>🔒</span>
+                    <h3>Controle e segurança</h3>
+                </div>
+
+                <div class="solucoes-diferencial">
+                    <span>📱</span>
+                    <h3>Design responsivo</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO -->
+
+    <section class="solucoes-cta">
+
+        <h2>
+            Vamos desenvolver seu próximo projeto?
+        </h2>
+
+        <p>
+            Conte sua ideia e solicite
+            um orçamento sem compromisso.
+            Vamos conversar sobre a solução
+            ideal para o seu negócio.
+        </p>
+
+        <a href="/orcamento" class="botao">
+            Solicitar orçamento →
+        </a>
+
+    </section>
+
+</main>
+
+<!-- WHATSAPP -->
+
+<a
+    href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Entrar em contato pelo WhatsApp"
+>
+    ☎
 </a>
 
-</div>
-
-
-
-<div class="card">
-
-<h2>🌐 Site Profissional</h2>
-
-<p>
-Sites modernos, rápidos, responsivos e preparados para fortalecer a presença digital da sua empresa.
-</p>
-
-<a href="/orcamento" class="botao">
-
-Criar meu Site
-
-</a>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>📱 Aplicativo</h2>
-
-<p>
-Aplicativos personalizados para Android, desenvolvidos para facilitar processos e melhorar o atendimento aos clientes.
-</p>
-
-<a href="/orcamento" class="botao">
-
-Criar Aplicativo
-
-</a>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>🛒 Loja Virtual</h2>
-
-<p>
-Plataformas completas para vender produtos online com segurança, organização e facilidade de gerenciamento.
-</p>
-
-<a href="/orcamento" class="botao">
-
-Criar Loja Virtual
-
-</a>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>⚙️ Automação Empresarial</h2>
-
-<p>
-Automatização de tarefas repetitivas para reduzir custos, economizar tempo e aumentar a produtividade da empresa.
-</p>
-
-<a href="/orcamento" class="botao">
-
-Quero Automatizar
-
-</a>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>📊 Painéis e Dashboards</h2>
-
-<p>
-Desenvolvimento de dashboards modernos para acompanhamento de indicadores, vendas e resultados em tempo real.
-</p>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Dashboard
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="destaque">
-
-<h1>Por que escolher a KBSistemas?</h1>
-
-<div class="frases">
-
-<h2>🚀 Desenvolvimento Sob Medida</h2>
-
-<h2>⚡ Alto Desempenho</h2>
-
-<h2>🔒 Segurança</h2>
-
-<h2>📱 Responsivo</h2>
-
-</div>
-
-</section>
-
-
-
-<section class="contato-home">
-
-<h1>Vamos desenvolver seu projeto?</h1>
-
-<p>
-Solicite um orçamento sem compromisso e descubra como a tecnologia pode transformar sua empresa.
-</p>
-
-<a href="/orcamento" class="botao">
-
-Solicitar Orçamento
-
-</a>
-
-</section>
-
-
-
-<a href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento" class="whatsapp">
-
-📱
-
-</a>
-
-
+<!-- RODAPÉ -->
 
 <footer>
-
-<p>
-
-© 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
-
-</p>
-
+    <p>
+        © 2026 KBSistemas — Desenvolvimento de Sistemas,
+        Sites e Aplicações Web.
+    </p>
 </footer>
 
 </body>
-
 </html>
