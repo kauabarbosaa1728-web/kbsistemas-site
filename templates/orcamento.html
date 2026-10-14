@@ -1,216 +1,807 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Solicite um orçamento personalizado com a KBSistemas para desenvolvimento de sites, sistemas empresariais, aplicativos, lojas virtuais e automações.">
 
-<title>Orçamento - KBSistemas</title>
+    <title>Solicitar Orçamento | KBSistemas</title>
 
-<link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
+    <style>
+        /* ==========================================
+           ORÇAMENTO PREMIUM - KBSISTEMAS
+           ========================================== */
+
+        .orcamento-hero {
+            padding: 75px 7% 65px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(39,112,193,.14),
+                    transparent 65%
+                ),
+                #080c12;
+            border-bottom: 1px solid #1d2938;
+        }
+
+        .orcamento-etiqueta {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 7px 13px;
+            background: #122235;
+            border: 1px solid #284461;
+            border-radius: 8px;
+            color: #8ac9ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .orcamento-hero h1 {
+            max-width: 850px;
+            margin: 0 auto 20px;
+            color: #f2f6fc;
+            font-size: clamp(37px, 5vw, 57px);
+            line-height: 1.15;
+            letter-spacing: -1.7px;
+        }
+
+        .orcamento-hero h1 span {
+            color: #3ca5f5;
+        }
+
+        .orcamento-hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #a5b2c3;
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        /* CONTEÚDO */
+
+        .orcamento-secao {
+            padding: 80px 7% 100px;
+            background: #080c12;
+        }
+
+        .orcamento-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+            align-items: start;
+            gap: 30px;
+        }
+
+        /* FORMULÁRIO */
+
+        .orcamento-formulario {
+            padding: 36px;
+            background: #111a26;
+            border: 1px solid #293b50;
+            border-radius: 18px;
+            box-shadow: 0 18px 50px rgba(0,0,0,.12);
+        }
+
+        .orcamento-formulario h2 {
+            margin-bottom: 12px;
+            color: #f2f6fc;
+            font-size: 27px;
+            line-height: 1.3;
+        }
+
+        .orcamento-formulario > p {
+            margin-bottom: 30px;
+            color: #a5b2c3;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .orcamento-campos-duplos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .orcamento-campo {
+            margin-bottom: 21px;
+        }
+
+        .orcamento-campo label {
+            display: block;
+            margin-bottom: 9px;
+            color: #e4ecf6;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .orcamento-campo input,
+        .orcamento-campo select,
+        .orcamento-campo textarea {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            padding: 13px 15px;
+            background: #0b131e;
+            border: 1px solid #314156;
+            border-radius: 9px;
+            color: #f2f6fc;
+            font: inherit;
+            font-size: 14px;
+            outline: none;
+            transition:
+                border-color .2s,
+                box-shadow .2s;
+        }
+
+        .orcamento-campo input::placeholder,
+        .orcamento-campo textarea::placeholder {
+            color: #8391a4;
+        }
+
+        .orcamento-campo input:focus,
+        .orcamento-campo select:focus,
+        .orcamento-campo textarea:focus {
+            border-color: #3ca5f5;
+            box-shadow: 0 0 0 3px rgba(60,165,245,.12);
+        }
+
+        .orcamento-campo select {
+            cursor: pointer;
+        }
+
+        .orcamento-campo textarea {
+            min-height: 145px;
+            resize: vertical;
+            line-height: 1.7;
+        }
+
+        .orcamento-obrigatorio {
+            color: #80c4ff;
+        }
+
+        .orcamento-ajuda {
+            display: block;
+            margin-top: 8px;
+            color: #92a2b5;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* BOTÃO DE ENVIO */
+
+        .orcamento-enviar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            width: 100%;
+            min-height: 49px;
+            padding: 13px 20px;
+            background: #2789d5;
+            border: 1px solid #359eea;
+            border-radius: 10px;
+            color: #fff;
+            font: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition:
+                background .2s,
+                transform .2s;
+        }
+
+        .orcamento-enviar:hover {
+            background: #349ce9;
+            transform: translateY(-2px);
+        }
+
+        .orcamento-enviar:focus-visible {
+            outline: 3px solid #a2d6ff;
+            outline-offset: 3px;
+        }
+
+        .orcamento-aviso {
+            margin-top: 15px;
+            color: #9aabba;
+            font-size: 12px;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* PAINEL LATERAL */
+
+        .orcamento-lateral {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .orcamento-info {
+            padding: 29px 26px;
+            background: #111a26;
+            border: 1px solid #293b50;
+            border-radius: 17px;
+        }
+
+        .orcamento-info-icone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            background: #14263a;
+            border: 1px solid #28435f;
+            border-radius: 12px;
+            font-size: 23px;
+        }
+
+        .orcamento-info h3 {
+            margin-bottom: 12px;
+            color: #f2f6fc;
+            font-size: 20px;
+        }
+
+        .orcamento-info p {
+            margin-bottom: 18px;
+            color: #a5b2c3;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .orcamento-info ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .orcamento-info li {
+            display: flex;
+            gap: 9px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            color: #b8c8d9;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .orcamento-info li:last-child {
+            border-bottom: none;
+        }
+
+        .orcamento-info li::before {
+            content: "✓";
+            flex-shrink: 0;
+            color: #56cba4;
+            font-weight: 800;
+        }
+
+        .orcamento-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            background: #172c40;
+            border: 1px solid #34516d;
+            border-radius: 9px;
+            color: #b8ddff;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .2s;
+        }
+
+        .orcamento-whatsapp:hover {
+            background: #223d57;
+        }
+
+        /* RODAPÉ DA PÁGINA */
+
+        .orcamento-cta {
+            padding: 80px 7%;
+            background: #0d141e;
+            border-top: 1px solid #1d2938;
+            text-align: center;
+        }
+
+        .orcamento-cta h2 {
+            margin-bottom: 17px;
+            color: #f2f6fc;
+            font-size: clamp(28px, 3.7vw, 39px);
+        }
+
+        .orcamento-cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #a5b2c3;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .orcamento-cta .botao {
+            width: auto;
+            margin: 0;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 850px) {
+            .orcamento-container {
+                grid-template-columns: 1fr;
+            }
+
+            .orcamento-lateral {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .orcamento-hero {
+                padding: 60px 20px;
+            }
+
+            .orcamento-hero p {
+                font-size: 15px;
+            }
+
+            .orcamento-secao {
+                padding: 55px 17px 75px;
+            }
+
+            .orcamento-formulario {
+                padding: 25px 20px;
+            }
+
+            .orcamento-campos-duplos,
+            .orcamento-lateral {
+                grid-template-columns: 1fr;
+            }
+
+            .orcamento-cta {
+                padding: 65px 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .orcamento-enviar {
+                transition: none;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+<!-- MENU -->
 
 <header>
+    <div class="logo">
+        <h1>KB<span>Sistemas</span></h1>
+    </div>
 
-<div class="logo">
-    <h1>KB<span>Sistemas</span></h1>
-</div>
-
-
-<nav>
-
-<a href="/">Início</a>
-<a href="/sobre">Sobre</a>
-<a href="/servicos">Serviços</a>
-<a href="/planos">Soluções</a>
-<a href="/contato">Contato</a>
-
-</nav>
-
+    <nav aria-label="Menu principal">
+        <a href="/">Início</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/servicos">Serviços</a>
+        <a href="/projetos">Portfólio</a>
+        <a href="/planos">Soluções</a>
+        <a href="/contato">Contato</a>
+    </nav>
 </header>
 
+<main>
 
+    <!-- APRESENTAÇÃO -->
 
+    <section class="orcamento-hero">
 
+        <span class="orcamento-etiqueta">
+            ✦ COMECE SEU PROJETO
+        </span>
 
-<section class="contato-home">
+        <h1>
+            Vamos transformar sua ideia
+            em uma <span>solução digital.</span>
+        </h1>
 
+        <p>
+            Preencha as informações abaixo
+            para solicitar um orçamento
+            personalizado com a KBSistemas.
+            Você será direcionado ao WhatsApp
+            com os dados do seu projeto.
+        </p>
 
-<h1>
-Vamos criar seu projeto?
-</h1>
+    </section>
 
+    <!-- FORMULÁRIO -->
 
-<p>
-Preencha as informações abaixo e receba um orçamento
-personalizado sem compromisso.
-</p>
+    <section class="orcamento-secao">
 
+        <div class="orcamento-container">
 
+            <div class="orcamento-formulario">
 
+                <h2>Conte sobre seu projeto</h2>
 
-<div class="card">
+                <p>
+                    Preencha os campos para
+                    iniciarmos uma conversa
+                    sobre a solução ideal
+                    para o seu negócio.
+                </p>
 
+                <form id="formulario-orcamento">
 
-<form>
+                    <!-- NOME E EMPRESA -->
 
+                    <div class="orcamento-campos-duplos">
 
-<label>
-Nome completo
-</label>
+                        <div class="orcamento-campo">
 
-<input 
-type="text"
-placeholder="Digite seu nome">
+                            <label for="nome">
+                                Nome completo
+                                <span class="orcamento-obrigatorio">*</span>
+                            </label>
 
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Digite seu nome"
+                                autocomplete="name"
+                                required
+                            >
 
+                        </div>
 
-<label>
-Empresa
-</label>
+                        <div class="orcamento-campo">
 
-<input 
-type="text"
-placeholder="Nome da empresa">
+                            <label for="empresa">
+                                Empresa
+                            </label>
 
+                            <input
+                                type="text"
+                                id="empresa"
+                                name="empresa"
+                                placeholder="Nome da empresa (opcional)"
+                                autocomplete="organization"
+                            >
 
+                        </div>
 
-<label>
-WhatsApp
-</label>
+                    </div>
 
-<input 
-type="tel"
-placeholder="(11) 99999-9999">
+                    <!-- WHATSAPP -->
 
+                    <div class="orcamento-campo">
 
+                        <label for="telefone">
+                            Seu WhatsApp
+                            <span class="orcamento-obrigatorio">*</span>
+                        </label>
 
-<label>
-Qual solução você precisa?
-</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(11) 99999-9999"
+                            autocomplete="tel"
+                            inputmode="tel"
+                            minlength="10"
+                            required
+                        >
 
+                        <small class="orcamento-ajuda">
+                            Informe um número com DDD
+                            para facilitar nosso contato.
+                        </small>
 
-<select>
+                    </div>
 
-<option>
-Escolha uma opção
-</option>
+                    <!-- SOLUÇÃO -->
 
-<option>
-Sistema Empresarial
-</option>
+                    <div class="orcamento-campo">
 
-<option>
-Site Profissional
-</option>
+                        <label for="solucao">
+                            Qual solução você precisa?
+                            <span class="orcamento-obrigatorio">*</span>
+                        </label>
 
-<option>
-Aplicativo
-</option>
+                        <select
+                            id="solucao"
+                            name="solucao"
+                            required
+                        >
 
-<option>
-Loja Virtual
-</option>
+                            <option value="" disabled selected>
+                                Selecione uma solução
+                            </option>
 
-<option>
-Outro projeto
-</option>
+                            <option value="Sistema Empresarial">
+                                Sistema Empresarial
+                            </option>
 
-</select>
+                            <option value="ERP Empresarial">
+                                ERP Empresarial
+                            </option>
 
+                            <option value="Site Profissional">
+                                Site Profissional
+                            </option>
 
+                            <option value="Landing Page">
+                                Landing Page
+                            </option>
 
+                            <option value="Catálogo Digital">
+                                Catálogo Digital
+                            </option>
 
-<label>
-Prazo desejado
-</label>
+                            <option value="Aplicativo">
+                                Aplicativo
+                            </option>
 
+                            <option value="Loja Virtual">
+                                Loja Virtual
+                            </option>
 
-<select>
+                            <option value="Automação de Processos">
+                                Automação de Processos
+                            </option>
 
-<option>
-Escolha o prazo
-</option>
+                            <option value="Dashboard e Relatórios">
+                                Dashboard e Relatórios
+                            </option>
 
-<option>
-Até 30 dias
-</option>
+                            <option value="Outro projeto">
+                                Outro projeto
+                            </option>
 
-<option>
-1 a 3 meses
-</option>
+                        </select>
 
-<option>
-Acima de 3 meses
-</option>
+                    </div>
 
-</select>
+                    <!-- PRAZO -->
 
+                    <div class="orcamento-campo">
 
+                        <label for="prazo">
+                            Prazo desejado
+                        </label>
 
+                        <select id="prazo" name="prazo">
 
-<label>
-Conte sobre seu projeto
-</label>
+                            <option value="" selected>
+                                Selecione o prazo (opcional)
+                            </option>
 
+                            <option value="Até 30 dias">
+                                Até 30 dias
+                            </option>
 
-<textarea 
-placeholder="Explique sua ideia ou o que sua empresa precisa">
+                            <option value="1 a 3 meses">
+                                1 a 3 meses
+                            </option>
 
-</textarea>
+                            <option value="Acima de 3 meses">
+                                Acima de 3 meses
+                            </option>
 
+                            <option value="A combinar">
+                                A combinar
+                            </option>
 
+                        </select>
 
-<a 
-href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20um%20projeto"
-class="botao">
+                    </div>
 
-Solicitar orçamento pelo WhatsApp
+                    <!-- DESCRIÇÃO -->
 
+                    <div class="orcamento-campo">
+
+                        <label for="descricao">
+                            Conte sobre seu projeto
+                            <span class="orcamento-obrigatorio">*</span>
+                        </label>
+
+                        <textarea
+                            id="descricao"
+                            name="descricao"
+                            placeholder="Descreva sua ideia, as funcionalidades que deseja e o que sua empresa precisa..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <!-- ENVIO -->
+
+                    <button
+                        type="submit"
+                        class="orcamento-enviar"
+                    >
+                        💬 Enviar orçamento pelo WhatsApp →
+                    </button>
+
+                    <p class="orcamento-aviso">
+                        Ao clicar no botão, o WhatsApp
+                        será aberto com as informações
+                        preenchidas. Confira a mensagem
+                        e toque em enviar para concluir
+                        sua solicitação.
+                    </p>
+
+                </form>
+
+            </div>
+
+            <!-- INFORMAÇÕES LATERAIS -->
+
+            <aside class="orcamento-lateral">
+
+                <div class="orcamento-info">
+
+                    <div class="orcamento-info-icone">
+                        🚀
+                    </div>
+
+                    <h3>Como funciona?</h3>
+
+                    <p>
+                        Solicitar um orçamento
+                        é simples e não exige
+                        compromisso de contratação.
+                    </p>
+
+                    <ul>
+                        <li>Preencha seus dados</li>
+                        <li>Descreva sua necessidade</li>
+                        <li>Envie pelo WhatsApp</li>
+                        <li>Converse sobre o projeto</li>
+                    </ul>
+
+                </div>
+
+                <div class="orcamento-info">
+
+                    <div class="orcamento-info-icone">
+                        💻
+                    </div>
+
+                    <h3>Projetos sob medida</h3>
+
+                    <p>
+                        Desenvolvemos soluções
+                        digitais para diferentes
+                        tipos de negócio.
+                    </p>
+
+                    <ul>
+                        <li>Sistemas empresariais</li>
+                        <li>Sites profissionais</li>
+                        <li>Aplicativos e sistemas web</li>
+                        <li>Automações e dashboards</li>
+                    </ul>
+
+                    <a
+                        href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20um%20projeto"
+                        class="orcamento-whatsapp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Tirar uma dúvida →
+                    </a>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+    <!-- CHAMADA FINAL -->
+
+    <section class="orcamento-cta">
+
+        <h2>
+            Quer conhecer nossos trabalhos?
+        </h2>
+
+        <p>
+            Explore os projetos desenvolvidos
+            pela KBSistemas e veja exemplos
+            de sistemas, sites e aplicações
+            que podemos criar.
+        </p>
+
+        <a href="/projetos" class="botao">
+            Conhecer portfólio →
+        </a>
+
+    </section>
+
+</main>
+
+<!-- WHATSAPP FLUTUANTE -->
+
+<a
+    href="https://wa.me/5511911524799?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Entrar em contato pelo WhatsApp"
+>
+    ☎
 </a>
 
-
-
-</form>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<a 
-href="https://wa.me/5511911524799?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento"
-class="whatsapp">
-
-📱
-
-</a>
-
-
-
-
+<!-- RODAPÉ -->
 
 <footer>
-
-<p>
-© 2026 KBSistemas - Desenvolvimento de Sistemas, Sites e Aplicativos.
-</p>
-
+    <p>
+        © 2026 KBSistemas — Desenvolvimento de
+        Sistemas, Sites e Aplicações Web.
+    </p>
 </footer>
 
+<!-- SCRIPT DO FORMULÁRIO -->
 
+<script>
+document.getElementById("formulario-orcamento")
+    .addEventListener("submit", function(evento) {
+
+        evento.preventDefault();
+
+        const nome = document.getElementById("nome").value.trim();
+        const empresa = document.getElementById("empresa").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
+        const solucao = document.getElementById("solucao").value;
+        const prazo = document.getElementById("prazo").value;
+        const descricao = document.getElementById("descricao").value.trim();
+
+        if (!nome || !telefone || !solucao || !descricao) {
+            alert("Preencha os campos obrigatórios.");
+            return;
+        }
+
+        const mensagem =
+            "Olá! Gostaria de solicitar um orçamento com a KBSistemas.\n\n" +
+            "📋 *DADOS DO CLIENTE*\n" +
+            "👤 Nome: " + nome + "\n" +
+            "🏢 Empresa: " + (empresa || "Não informada") + "\n" +
+            "📱 WhatsApp: " + telefone + "\n\n" +
+            "💻 *INFORMAÇÕES DO PROJETO*\n" +
+            "🔹 Solução: " + solucao + "\n" +
+            "📅 Prazo desejado: " + (prazo || "Não informado") + "\n\n" +
+            "📝 *DESCRIÇÃO DO PROJETO*\n" +
+            descricao + "\n\n" +
+            "Aguardo o retorno. Obrigado!";
+
+        const numeroWhatsApp = "5511911524799";
+
+        const linkWhatsApp =
+            "https://wa.me/" +
+            numeroWhatsApp +
+            "?text=" +
+            encodeURIComponent(mensagem);
+
+        window.location.href = linkWhatsApp;
+    });
+</script>
 
 </body>
-
 </html>
