@@ -644,6 +644,30 @@
                         loading="lazy"
                     >
                 </button>
+
+                <button
+                    type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/finance-4.png')"
+                    aria-label="Ver administração do Finance"
+                >
+                    <img
+                        src="/static/img/projetos/finance-4.png"
+                        alt="Administração do KBSistemas Finance"
+                        loading="lazy"
+                    >
+                </button>
+
+                <button
+                    type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/finance-5.png')"
+                    aria-label="Ver tela de login do Finance"
+                >
+                    <img
+                        src="/static/img/projetos/finance-5.png"
+                        alt="Tela de login do KBSistemas Finance"
+                        loading="lazy"
+                    >
+                </button>
             </div>
 
             <div class="projeto-corpo">
@@ -1243,6 +1267,10 @@ function trocarFoto(botao, caminho) {
 
     principal.src = caminho;
     principal.alt = miniatura.alt;
+    principal.setAttribute(
+        "aria-label",
+        "Ampliar: " + miniatura.alt
+    );
 
     card.querySelectorAll(".projeto-fotos button")
         .forEach(function(item) {
