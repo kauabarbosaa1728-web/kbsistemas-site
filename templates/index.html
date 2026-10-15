@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="KBSistemas: sistemas empresariais, sites profissionais, aplicativos e soluções digitais personalizadas. Conheça nosso portfólio.">
+    <meta
+        name="description"
+        content="KBSistemas: sistemas empresariais, controle financeiro, sites profissionais e soluções digitais personalizadas. Conheça nosso portfólio."
+    >
 
     <title>KBSistemas | Soluções Digitais</title>
 
     <link rel="stylesheet" href="/static/css/style.css">
 
     <style>
-        /* =====================================
-           HOME PREMIUM - KBSISTEMAS
-           ===================================== */
+        /* APRESENTAÇÃO PRINCIPAL */
 
         .home-hero {
             min-height: 610px;
@@ -142,7 +141,7 @@
             background: #0c1521;
             border: 1px solid #27364a;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
         }
 
         .home-imagem-legenda {
@@ -193,7 +192,7 @@
 
         .home-servicos {
             padding: 85px 7%;
-            border-top: 1px solid rgba(255,255,255,.05);
+            border-top: 1px solid rgba(255, 255, 255, .05);
             background: #0b1018;
         }
 
@@ -333,6 +332,90 @@
 
         .home-portfolio-final {
             margin-top: 35px;
+            text-align: center;
+        }
+
+        /* APRESENTAÇÃO ILUSTRATIVA DO FINANCE */
+
+        .home-finance {
+            border-color: #305276;
+        }
+
+        .home-finance-previa {
+            box-sizing: border-box;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #f5f9ff, #e7effc);
+            color: #20324e;
+        }
+
+        .home-finance-topo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .home-finance-logo {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 11px;
+            background: #2563eb;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .home-finance-marca {
+            display: block;
+            color: #20324e;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .home-finance-subtitulo {
+            display: block;
+            margin-top: 2px;
+            color: #61718b;
+            font-size: 11px;
+        }
+
+        .home-finance-recursos {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .home-finance-recurso {
+            min-width: 0;
+            padding: 12px 6px;
+            background: #fff;
+            border: 1px solid #dce5f2;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .home-finance-recurso span {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 20px;
+        }
+
+        .home-finance-recurso strong {
+            color: #334968;
+            font-size: 11px;
+        }
+
+        .home-finance-nota {
+            color: #65758d;
+            font-size: 10px;
             text-align: center;
         }
 
@@ -504,6 +587,11 @@
                 height: 190px;
             }
 
+            .home-finance-previa {
+                padding: 15px;
+                gap: 12px;
+            }
+
             .home-cta-acoes {
                 flex-direction: column;
             }
@@ -516,10 +604,6 @@
 </head>
 
 <body>
-
-<!-- =====================================
-     MENU
-     ===================================== -->
 
 <header>
     <div class="logo">
@@ -538,16 +622,12 @@
 
 <main>
 
-    <!-- =====================================
-         APRESENTAÇÃO PRINCIPAL
-         ===================================== -->
+    <!-- APRESENTAÇÃO PRINCIPAL -->
 
     <section class="home-hero">
-
         <div class="home-hero-container">
 
             <div class="home-hero-content">
-
                 <span class="home-etiqueta">
                     ✦ AGÊNCIA DE TECNOLOGIA
                 </span>
@@ -565,16 +645,16 @@
                 </p>
 
                 <div class="home-hero-buttons">
-
                     <a href="/projetos" class="botao">
                         Ver portfólio →
                     </a>
 
-                    <a href="/orcamento"
-                       class="botao botao-outline">
+                    <a
+                        href="/orcamento"
+                        class="botao botao-outline"
+                    >
                         Solicitar orçamento
                     </a>
-
                 </div>
 
                 <div class="home-beneficios">
@@ -582,11 +662,9 @@
                     <span><strong>✓</strong> Tecnologia moderna</span>
                     <span><strong>✓</strong> Atendimento personalizado</span>
                 </div>
-
             </div>
 
             <div class="home-hero-imagem">
-
                 <img
                     src="/static/img/projetos/erp-1.png"
                     alt="Sistema ERP empresarial desenvolvido pela KBSistemas"
@@ -596,28 +674,20 @@
                 <div class="home-imagem-legenda">
                     ● KBSistemas ERP — Gestão empresarial
                 </div>
-
             </div>
 
         </div>
-
     </section>
 
-    <!-- =====================================
-         SERVIÇOS
-         ===================================== -->
+    <!-- SERVIÇOS -->
 
     <section class="home-servicos">
-
         <div class="home-section-header">
-
             <span class="home-section-tag">
                 O QUE FAZEMOS
             </span>
 
-            <h2>
-                Soluções para o seu negócio
-            </h2>
+            <h2>Soluções para o seu negócio</h2>
 
             <p>
                 Desenvolvemos ferramentas digitais para
@@ -625,7 +695,6 @@
                 trabalhar com mais organização,
                 eficiência e praticidade.
             </p>
-
         </div>
 
         <div class="cards">
@@ -677,24 +746,17 @@
                 Conhecer nossos serviços →
             </a>
         </div>
-
     </section>
 
-    <!-- =====================================
-         PORTFÓLIO COM IMAGENS REAIS
-         ===================================== -->
+    <!-- PORTFÓLIO -->
 
     <section class="home-portfolio">
-
         <div class="home-section-header">
-
             <span class="home-section-tag">
                 NOSSO PORTFÓLIO
             </span>
 
-            <h2>
-                Projetos desenvolvidos
-            </h2>
+            <h2>Projetos desenvolvidos</h2>
 
             <p>
                 Conheça algumas das soluções que
@@ -702,15 +764,84 @@
                 organização, tecnologia e
                 experiência do usuário.
             </p>
-
         </div>
 
         <div class="home-projetos-grid">
 
+            <!-- KBSISTEMAS FINANCE -->
+
+            <article class="home-projeto home-finance">
+
+                <div class="home-projeto-imagem">
+                    <div class="home-finance-previa">
+
+                        <div class="home-finance-topo">
+                            <span class="home-finance-logo" aria-hidden="true">
+                                KB
+                            </span>
+
+                            <div>
+                                <strong class="home-finance-marca">
+                                    KBSistemas Finance
+                                </strong>
+
+                                <span class="home-finance-subtitulo">
+                                    Finanças pessoais e empresariais
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="home-finance-recursos">
+                            <div class="home-finance-recurso">
+                                <span aria-hidden="true">↗</span>
+                                <strong>Receitas</strong>
+                            </div>
+
+                            <div class="home-finance-recurso">
+                                <span aria-hidden="true">↘</span>
+                                <strong>Despesas</strong>
+                            </div>
+
+                            <div class="home-finance-recurso">
+                                <span aria-hidden="true">◎</span>
+                                <strong>Metas</strong>
+                            </div>
+                        </div>
+
+                        <div class="home-finance-nota">
+                            Apresentação ilustrativa do projeto
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="home-projeto-conteudo">
+                    <span class="home-projeto-tag">
+                        CONTROLE FINANCEIRO
+                    </span>
+
+                    <h3>KBSistemas Finance</h3>
+
+                    <p>
+                        Finanças pessoais e empresariais
+                        com receitas, despesas, planejamento,
+                        metas e painel com atualização automática.
+                    </p>
+
+                    <a
+                        href="https://kbsistemas-finance.onrender.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Acessar sistema ↗
+                    </a>
+                </div>
+
+            </article>
+
             <!-- ERP -->
 
             <article class="home-projeto">
-
                 <div class="home-projeto-imagem">
                     <img
                         src="/static/img/projetos/erp-1.png"
@@ -720,7 +851,6 @@
                 </div>
 
                 <div class="home-projeto-conteudo">
-
                     <span class="home-projeto-tag">
                         SISTEMA EMPRESARIAL
                     </span>
@@ -733,18 +863,13 @@
                         relatórios e controle de usuários.
                     </p>
 
-                    <a href="/projetos">
-                        Ver projeto →
-                    </a>
-
+                    <a href="/projetos">Ver projeto →</a>
                 </div>
-
             </article>
 
             <!-- ESTOQUE INTELIGENTE -->
 
             <article class="home-projeto">
-
                 <div class="home-projeto-imagem">
                     <img
                         src="/static/img/projetos/estoque-1.png"
@@ -754,7 +879,6 @@
                 </div>
 
                 <div class="home-projeto-conteudo">
-
                     <span class="home-projeto-tag">
                         GESTÃO DE ESTOQUE
                     </span>
@@ -767,18 +891,13 @@
                         com assistente virtual integrado.
                     </p>
 
-                    <a href="/projetos">
-                        Ver projeto →
-                    </a>
-
+                    <a href="/projetos">Ver projeto →</a>
                 </div>
-
             </article>
 
             <!-- REVERSA -->
 
             <article class="home-projeto">
-
                 <div class="home-projeto-imagem">
                     <img
                         src="/static/img/projetos/reversa-1.png"
@@ -788,7 +907,6 @@
                 </div>
 
                 <div class="home-projeto-conteudo">
-
                     <span class="home-projeto-tag">
                         CONTROLE OPERACIONAL
                     </span>
@@ -801,18 +919,13 @@
                         manutenção e descarte eletrônico.
                     </p>
 
-                    <a href="/projetos">
-                        Ver projeto →
-                    </a>
-
+                    <a href="/projetos">Ver projeto →</a>
                 </div>
-
             </article>
 
             <!-- KB LASHES -->
 
             <article class="home-projeto">
-
                 <div class="home-projeto-imagem">
                     <img
                         src="/static/img/projetos/lashes-1.png"
@@ -822,7 +935,6 @@
                 </div>
 
                 <div class="home-projeto-conteudo">
-
                     <span class="home-projeto-tag">
                         SITE PROFISSIONAL
                     </span>
@@ -835,18 +947,13 @@
                         e informações para agendamento.
                     </p>
 
-                    <a href="/projetos">
-                        Ver projeto →
-                    </a>
-
+                    <a href="/projetos">Ver projeto →</a>
                 </div>
-
             </article>
 
             <!-- WARZONE -->
 
             <article class="home-projeto">
-
                 <div class="home-projeto-imagem">
                     <img
                         src="/static/img/projetos/warzone-1.png"
@@ -856,7 +963,6 @@
                 </div>
 
                 <div class="home-projeto-conteudo">
-
                     <span class="home-projeto-tag">
                         SITE DE EVENTOS
                     </span>
@@ -869,12 +975,8 @@
                         e informações para participantes.
                     </p>
 
-                    <a href="/projetos">
-                        Ver projeto →
-                    </a>
-
+                    <a href="/projetos">Ver projeto →</a>
                 </div>
-
             </article>
 
         </div>
@@ -884,31 +986,23 @@
                 Conhecer portfólio completo →
             </a>
         </div>
-
     </section>
 
-    <!-- =====================================
-         DIFERENCIAIS
-         ===================================== -->
+    <!-- DIFERENCIAIS -->
 
     <section class="home-diferenciais">
-
         <div class="home-section-header">
-
             <span class="home-section-tag">
                 NOSSO COMPROMISSO
             </span>
 
-            <h2>
-                Tecnologia feita para você
-            </h2>
+            <h2>Tecnologia feita para você</h2>
 
             <p>
                 Cada solução é desenvolvida
                 considerando as necessidades
                 e os objetivos de cada projeto.
             </p>
-
         </div>
 
         <div class="home-diferenciais-grid">
@@ -942,22 +1036,16 @@
             </article>
 
         </div>
-
     </section>
 
-    <!-- =====================================
-         CHAMADA FINAL
-         ===================================== -->
+    <!-- CHAMADA FINAL -->
 
     <section class="home-cta">
-
         <span class="home-section-tag">
             VAMOS CONVERSAR?
         </span>
 
-        <h2>
-            Seu próximo projeto começa aqui.
-        </h2>
+        <h2>Seu próximo projeto começa aqui.</h2>
 
         <p>
             Tem uma ideia para um sistema, site ou
@@ -967,7 +1055,6 @@
         </p>
 
         <div class="home-cta-acoes">
-
             <a
                 href="https://wa.me/5511911524799?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20com%20a%20KBSistemas."
                 class="botao"
@@ -983,9 +1070,7 @@
             >
                 Solicitar orçamento →
             </a>
-
         </div>
-
     </section>
 
 </main>
@@ -1001,8 +1086,6 @@
 >
     ☎
 </a>
-
-<!-- RODAPÉ -->
 
 <footer>
     <p>
