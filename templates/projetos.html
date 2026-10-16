@@ -322,6 +322,36 @@
     background: #22354b;
 }
 
+/* TECNOLOGIAS */
+
+.projeto-tecnologias {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #304b3d;
+}
+
+.projeto-tecnologias strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #e6c181;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.projeto-tecnologias-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.projeto-tecnologias-lista span {
+    padding: 5px 8px;
+    border: 1px solid #3b4d42;
+    border-radius: 6px;
+    color: #b9cebf;
+    font-size: 11px;
+}
+
 /* ALMOXARIFADO MATRIZ */
 
 .projeto-matriz {
@@ -379,32 +409,69 @@
     color: #c5ddcc;
 }
 
-.projeto-tecnologias {
-    margin-top: auto;
-    padding-top: 18px;
-    border-top: 1px solid #304b3d;
+/* KBSISTEMAS FINANCE */
+
+.projeto-finance {
+    border-color: #355b85;
 }
 
-.projeto-tecnologias strong {
-    display: block;
-    margin-bottom: 10px;
-    color: #e6c181;
-    font-size: 10px;
-    letter-spacing: 1px;
+.projeto-finance:hover {
+    border-color: #68a9ed;
 }
 
-.projeto-tecnologias-lista {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
+.finance-detalhes {
+    margin-bottom: 22px;
+    padding: 18px;
+    border: 1px solid #2c4663;
+    border-radius: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(44, 101, 168, .12),
+            rgba(12, 23, 39, .65)
+        );
 }
 
-.projeto-tecnologias-lista span {
-    padding: 5px 8px;
-    border: 1px solid #3b4d42;
-    border-radius: 6px;
-    color: #b9cebf;
-    font-size: 11px;
+.finance-detalhes h4 {
+    margin: 0 0 13px;
+    color: #a6d5ff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.finance-lista {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.finance-lista li {
+    color: #aabbd0;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.finance-lista strong {
+    color: #e3effc;
+    font-weight: 600;
+}
+
+.projeto-finance .projeto-tecnologias {
+    margin-top: 0;
+    margin-bottom: 24px;
+    border-top-color: #2c4663;
+}
+
+.projeto-finance .projeto-tecnologias strong {
+    color: #93caff;
+}
+
+.projeto-finance .projeto-tecnologias-lista span {
+    border-color: #304762;
+    color: #bdcfe5;
 }
 
 /* OUTROS SERVIÇOS */
@@ -591,6 +658,10 @@
 
     .projeto-botoes a {
         flex: 1 1 auto;
+    }
+
+    .finance-detalhes {
+        padding: 15px;
     }
 
     .visualizador {
@@ -807,9 +878,12 @@
             </div>
         </article>
 
-        <!-- FINANCE -->
+        <!-- KBSISTEMAS FINANCE -->
 
-        <article class="projeto-card" id="finance">
+        <article
+            class="projeto-card projeto-finance"
+            id="finance"
+        >
 
             <div class="projeto-imagem">
                 <img
@@ -892,31 +966,109 @@
             <div class="projeto-corpo">
 
                 <span class="projeto-tag">
-                    FINANÇAS PESSOAIS E EMPRESARIAIS
+                    PLATAFORMA FINANCEIRA • MODELO SAAS
                 </span>
 
                 <h3>💰 KBSistemas Finance</h3>
 
                 <p>
-                    Sistema para organizar finanças pessoais
-                    e empresariais em espaços separados.
-                    Reúne receitas, despesas, contas,
-                    planejamento mensal, metas e relatórios,
-                    com atualização automática do painel.
+                    Plataforma de planejamento e controle
+                    financeiro para organizar a vida pessoal
+                    e as finanças de empresas em espaços separados.
+                    Centraliza receitas, despesas, contas,
+                    saldo, metas e planejamento mensal,
+                    com gráficos e atualização automática
+                    dos indicadores.
                 </p>
+
+                <div class="finance-detalhes">
+                    <h4>📊 PRINCIPAIS FUNCIONALIDADES</h4>
+
+                    <ul class="finance-lista">
+                        <li>
+                            <strong>Organização financeira:</strong>
+                            registro de receitas e despesas,
+                            acompanhamento das contas e
+                            visão do saldo.
+                        </li>
+
+                        <li>
+                            <strong>Espaços separados:</strong>
+                            organização das finanças pessoais
+                            e empresariais em ambientes distintos.
+                        </li>
+
+                        <li>
+                            <strong>Planejamento e metas:</strong>
+                            acompanhamento dos objetivos
+                            financeiros e do planejamento mensal.
+                        </li>
+
+                        <li>
+                            <strong>Indicadores e relatórios:</strong>
+                            gráficos para analisar as finanças,
+                            consultas por período e exportação CSV.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="finance-detalhes">
+                    <h4>👥 ADMINISTRAÇÃO DA PLATAFORMA</h4>
+
+                    <ul class="finance-lista">
+                        <li>
+                            <strong>Área exclusiva do dono:</strong>
+                            painel para acompanhar os clientes
+                            cadastrados e a situação de acesso.
+                        </li>
+
+                        <li>
+                            <strong>Gestão de assinaturas:</strong>
+                            confirmação manual de pagamento,
+                            liberação de acesso, renovação
+                            e acompanhamento do vencimento.
+                        </li>
+
+                        <li>
+                            <strong>Controle de contas:</strong>
+                            identificação de clientes pendentes,
+                            ativos, vencidos ou bloqueados,
+                            com ações de bloqueio e desbloqueio.
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="projeto-recursos">
                     <span>📊 Painel financeiro</span>
                     <span>↗ Receitas</span>
                     <span>↘ Despesas</span>
-                    <span>🏦 Contas</span>
-                    <span>📅 Planejamento</span>
+                    <span>🏦 Contas e saldo</span>
+                    <span>📅 Planejamento mensal</span>
                     <span>🎯 Metas</span>
+                    <span>🏢 Pessoal e empresarial</span>
+                    <span>📈 Gráficos</span>
                     <span>📤 Relatórios e CSV</span>
+                    <span>👥 Gestão de clientes</span>
+                    <span>🔑 Controle de acesso</span>
+                    <span>🔄 Assinaturas e renovações</span>
                     <span>📱 Responsivo</span>
                 </div>
 
+                <div class="projeto-tecnologias">
+                    <strong>TECNOLOGIAS UTILIZADAS</strong>
+
+                    <div class="projeto-tecnologias-lista">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>PostgreSQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
                 <div class="projeto-botoes">
+
                     <a
                         class="btn-secundario"
                         href="https://kbsistemas-finance.onrender.com"
@@ -934,6 +1086,7 @@
                     >
                         Quero conhecer →
                     </a>
+
                 </div>
 
             </div>
