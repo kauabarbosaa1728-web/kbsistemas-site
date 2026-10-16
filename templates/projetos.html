@@ -332,95 +332,39 @@
     border-color: #61b38c;
 }
 
-.matriz-capa {
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 290px;
-    padding: 34px;
-    overflow: hidden;
-    border-bottom: 1px solid #365d4d;
-    background:
-        radial-gradient(
-            ellipse at 95% 10%,
-            rgba(64, 223, 174, .18),
-            transparent 65%
-        ),
-        linear-gradient(135deg, #14271f, #0b1512);
+.projeto-matriz .projeto-imagem {
+    background: #0b1712;
+    border-bottom-color: #365d4d;
 }
 
-.matriz-capa::after {
-    position: absolute;
-    right: -45px;
-    bottom: -100px;
-    width: 270px;
-    height: 270px;
-    border: 1px solid rgba(230, 193, 129, .16);
-    border-radius: 50%;
-    content: "";
-    pointer-events: none;
+.projeto-matriz .projeto-fotos {
+    background: #102019;
+    border-bottom-color: #365d4d;
+    scrollbar-color: #436851 #102019;
 }
 
-.matriz-capa-topo {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 22px;
+.projeto-matriz .projeto-fotos button {
+    background: #14271e;
+    border-color: #3e624c;
 }
 
-.matriz-simbolo {
-    display: grid;
-    flex-shrink: 0;
-    place-items: center;
-    width: 46px;
-    height: 46px;
-    border: 1px solid #8cf1c8;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #4de1ae, #187650);
-    color: #09271b;
-    font-size: 28px;
-    font-weight: 800;
+.projeto-matriz .projeto-fotos button:hover {
+    border-color: #8ce7bd;
 }
 
-.matriz-identidade strong {
-    display: block;
-    color: #edf5ef;
-    font-size: 19px;
-    letter-spacing: 3px;
+.projeto-matriz .projeto-fotos button.ativo {
+    border-color: #40dfae;
+    background: #1b3c2b;
 }
 
-.matriz-identidade small {
-    color: #a4bdad;
-    font-size: 9px;
-    letter-spacing: 2px;
+.projeto-matriz .projeto-imagem img:focus-visible {
+    outline-color: #40dfae;
 }
 
-.matriz-capa-titulo {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 12px;
-    color: #eef6f0;
-    font-size: clamp(25px, 3vw, 34px);
-    font-weight: 650;
-    line-height: 1.2;
-    letter-spacing: -.8px;
-}
-
-.matriz-capa-titulo span {
-    color: #40dfae;
-}
-
-.matriz-capa-periodos {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    color: #e6c181;
-    font-size: 12px;
-    line-height: 1.8;
+.projeto-matriz .projeto-ampliar {
+    background: rgba(11, 27, 19, .94);
+    border-color: #416a50;
+    color: #c1edcf;
 }
 
 .projeto-matriz .projeto-tag {
@@ -607,10 +551,6 @@
         height: 260px;
     }
 
-    .matriz-capa {
-        min-height: 260px;
-    }
-
     .portfolio-servicos {
         margin-top: 65px;
     }
@@ -628,11 +568,6 @@
     .projeto-imagem {
         height: 210px;
         padding: 9px;
-    }
-
-    .matriz-capa {
-        min-height: 240px;
-        padding: 25px;
     }
 
     .projeto-corpo {
@@ -731,6 +666,7 @@
 </section>
 
 <section class="portfolio">
+
     <div class="portfolio-intro">
         <h2>Nossos projetos</h2>
 
@@ -749,29 +685,75 @@
             class="projeto-card projeto-matriz"
             id="almoxarifado-matriz"
         >
-            <div class="matriz-capa">
-                <div class="matriz-capa-topo">
-                    <div class="matriz-simbolo" aria-hidden="true">
-                        M
-                    </div>
 
-                    <div class="matriz-identidade">
-                        <strong>MATRIZ</strong>
-                        <small>ALMOXARIFADO</small>
-                    </div>
-                </div>
+            <div class="projeto-imagem">
+                <img
+                    src="/static/img/projetos/matriz-1.png"
+                    alt="Dashboard do Relatório de Gastos Almoxarifado Matriz"
+                    loading="lazy"
+                    onclick="abrirImagem(this)"
+                >
 
-                <div class="matriz-capa-titulo">
-                    Controle de materiais.<br>
-                    <span>Visibilidade dos gastos.</span>
-                </div>
+                <span class="projeto-ampliar">
+                    ⤢ Ampliar imagem
+                </span>
+            </div>
 
-                <p class="matriz-capa-periodos">
-                    Relatórios semanais · Mensais · Últimos 30 dias
-                </p>
+            <div class="projeto-fotos">
+
+                <button
+                    class="ativo"
+                    type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/matriz-1.png')"
+                    aria-label="Ver dashboard do Almoxarifado Matriz"
+                >
+                    <img
+                        src="/static/img/projetos/matriz-1.png"
+                        alt="Dashboard do Relatório de Gastos Almoxarifado Matriz"
+                        loading="lazy"
+                    >
+                </button>
+
+                <button
+                    type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/matriz-2.png')"
+                    aria-label="Ver geração de links dos relatórios"
+                >
+                    <img
+                        src="/static/img/projetos/matriz-2.png"
+                        alt="Geração de relatórios semanais, mensais e dos últimos 30 dias"
+                        loading="lazy"
+                    >
+                </button>
+
+                <button
+                    type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/matriz-3.png')"
+                    aria-label="Ver registro de movimentação"
+                >
+                    <img
+                        src="/static/img/projetos/matriz-3.png"
+                        alt="Registro de retirada ou devolução por técnico"
+                        loading="lazy"
+                    >
+                </button>
+
+                <button
+                    type="button"
+                    onclick="trocarFoto(this, '/static/img/projetos/matriz-4.png')"
+                    aria-label="Ver tela de login do Almoxarifado Matriz"
+                >
+                    <img
+                        src="/static/img/projetos/matriz-4.png"
+                        alt="Tela de login do Almoxarifado Matriz"
+                        loading="lazy"
+                    >
+                </button>
+
             </div>
 
             <div class="projeto-corpo">
+
                 <span class="projeto-tag">
                     TELECOMUNICAÇÕES • CONTROLE DE GASTOS
                 </span>
@@ -821,12 +803,14 @@
                         <span>JavaScript</span>
                     </div>
                 </div>
+
             </div>
         </article>
 
         <!-- FINANCE -->
 
         <article class="projeto-card" id="finance">
+
             <div class="projeto-imagem">
                 <img
                     src="/static/img/projetos/finance-1.png"
@@ -841,6 +825,7 @@
             </div>
 
             <div class="projeto-fotos">
+
                 <button
                     class="ativo"
                     type="button"
@@ -901,9 +886,11 @@
                         loading="lazy"
                     >
                 </button>
+
             </div>
 
             <div class="projeto-corpo">
+
                 <span class="projeto-tag">
                     FINANÇAS PESSOAIS E EMPRESARIAIS
                 </span>
@@ -948,12 +935,14 @@
                         Quero conhecer →
                     </a>
                 </div>
+
             </div>
         </article>
 
         <!-- ERP -->
 
         <article class="projeto-card">
+
             <div class="projeto-imagem">
                 <img
                     src="/static/img/projetos/erp-1.png"
@@ -968,6 +957,7 @@
             </div>
 
             <div class="projeto-fotos">
+
                 <button
                     class="ativo"
                     type="button"
@@ -1028,9 +1018,11 @@
                         loading="lazy"
                     >
                 </button>
+
             </div>
 
             <div class="projeto-corpo">
+
                 <span class="projeto-tag">
                     GESTÃO EMPRESARIAL
                 </span>
@@ -1058,12 +1050,14 @@
                         Solicitar ERP →
                     </a>
                 </div>
+
             </div>
         </article>
 
         <!-- ESTOQUE INTELIGENTE -->
 
         <article class="projeto-card">
+
             <div class="projeto-imagem">
                 <img
                     src="/static/img/projetos/estoque-1.png"
@@ -1078,6 +1072,7 @@
             </div>
 
             <div class="projeto-fotos">
+
                 <button
                     class="ativo"
                     type="button"
@@ -1138,9 +1133,11 @@
                         loading="lazy"
                     >
                 </button>
+
             </div>
 
             <div class="projeto-corpo">
+
                 <span class="projeto-tag">
                     ESTOQUE + ASSISTENTE VIRTUAL
                 </span>
@@ -1169,12 +1166,14 @@
                         Quero esse sistema →
                     </a>
                 </div>
+
             </div>
         </article>
 
         <!-- REVERSA -->
 
         <article class="projeto-card">
+
             <div class="projeto-imagem">
                 <img
                     src="/static/img/projetos/reversa-1.png"
@@ -1189,6 +1188,7 @@
             </div>
 
             <div class="projeto-fotos">
+
                 <button
                     class="ativo"
                     type="button"
@@ -1213,9 +1213,11 @@
                         loading="lazy"
                     >
                 </button>
+
             </div>
 
             <div class="projeto-corpo">
+
                 <span class="projeto-tag">
                     LOGÍSTICA REVERSA • WEB APP
                 </span>
@@ -1244,12 +1246,14 @@
                         Solicitar sistema →
                     </a>
                 </div>
+
             </div>
         </article>
 
         <!-- KB LASHES -->
 
         <article class="projeto-card">
+
             <div class="projeto-imagem">
                 <img
                     src="/static/img/projetos/lashes-1.png"
@@ -1264,6 +1268,7 @@
             </div>
 
             <div class="projeto-corpo">
+
                 <span class="projeto-tag">
                     SITE COMERCIAL • BELEZA
                 </span>
@@ -1289,12 +1294,14 @@
                         Quero um site assim →
                     </a>
                 </div>
+
             </div>
         </article>
 
         <!-- WARZONE — SEM LINK DE ACESSO AO PROJETO -->
 
         <article class="projeto-card">
+
             <div class="projeto-imagem">
                 <img
                     src="/static/img/projetos/warzone-1.png"
@@ -1309,6 +1316,7 @@
             </div>
 
             <div class="projeto-corpo">
+
                 <span class="projeto-tag">
                     EVENTOS • CAMPEONATOS GAMER
                 </span>
@@ -1334,6 +1342,7 @@
                         Criar site parecido →
                     </a>
                 </div>
+
             </div>
         </article>
 
@@ -1351,6 +1360,7 @@
         </p>
 
         <div class="servicos-extra">
+
             <article class="servico-extra">
                 <h3>🌐 Sites Profissionais</h3>
 
@@ -1380,6 +1390,7 @@
                     as necessidades de cada negócio.
                 </p>
             </article>
+
         </div>
 
         <div style="margin-top: 30px;">
@@ -1451,6 +1462,7 @@
     aria-hidden="true"
     tabindex="-1"
 >
+
     <button
         class="fechar-visualizador"
         type="button"
@@ -1487,6 +1499,7 @@
     >
         1 / 1
     </span>
+
 </div>
 
 <script>
@@ -1542,6 +1555,7 @@ function abrirImagem(imagemClicada) {
         if (indiceAtual < 0) {
             indiceAtual = 0;
         }
+
     } else {
         imagensAtuais = [{
             src: imagemClicada.src,
