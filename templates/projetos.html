@@ -128,6 +128,7 @@
     box-sizing: border-box;
     position: relative;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -176,6 +177,7 @@
 
 .projeto-fotos {
     display: flex;
+    flex-shrink: 0;
     gap: 10px;
     padding: 13px 15px;
     overflow-x: auto;
@@ -407,6 +409,48 @@
     background: #192d24;
     border-color: #365342;
     color: #c5ddcc;
+}
+
+/* DETALHES DO ALMOXARIFADO */
+
+.matriz-detalhes {
+    margin-bottom: 22px;
+    padding: 18px;
+    border: 1px solid #365d4d;
+    border-radius: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(44, 112, 75, .15),
+            rgba(12, 28, 20, .65)
+        );
+}
+
+.matriz-detalhes h4 {
+    margin: 0 0 13px;
+    color: #a2edc9;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.matriz-lista {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.matriz-lista li {
+    color: #b2cabb;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.matriz-lista strong {
+    color: #e0f3e7;
+    font-weight: 600;
 }
 
 /* KBSISTEMAS FINANCE */
@@ -660,7 +704,8 @@
         flex: 1 1 auto;
     }
 
-    .finance-detalhes {
+    .finance-detalhes,
+    .matriz-detalhes {
         padding: 15px;
     }
 
@@ -842,19 +887,74 @@
                     automática.
                 </p>
 
-                <p>
-                    Permite gerar relatórios semanais, mensais
-                    e dos últimos 30 dias, comparar gastos entre
-                    períodos, exportar em PDF e compartilhar
-                    fechamentos por link, facilitando a
-                    apresentação dos resultados à gestão.
-                </p>
+                <div class="matriz-detalhes">
+                    <h4>📦 CONTROLE DE MATERIAIS E EQUIPAMENTOS</h4>
+
+                    <ul class="matriz-lista">
+                        <li>
+                            <strong>Acompanhamento dos 9 técnicos:</strong>
+                            identificação de quem retirou cada item,
+                            com data, quantidade e custo
+                            das movimentações.
+                        </li>
+
+                        <li>
+                            <strong>Retiradas e devoluções:</strong>
+                            registro de observações e devoluções
+                            sem uso vinculadas à retirada original,
+                            reduzindo o custo líquido.
+                        </li>
+
+                        <li>
+                            <strong>Custos por unidade ou metro:</strong>
+                            cálculo proporcional para materiais
+                            comprados em pacotes, caixas e rolos,
+                            conforme o catálogo de referência.
+                        </li>
+
+                        <li>
+                            <strong>Categorias separadas:</strong>
+                            visualização dos valores de materiais
+                            e equipamentos, incluindo cabos,
+                            conectores, roteadores e ONUs.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="matriz-detalhes">
+                    <h4>📊 DASHBOARD E RELATÓRIOS PARA A GESTÃO</h4>
+
+                    <ul class="matriz-lista">
+                        <li>
+                            <strong>Indicadores e gráficos:</strong>
+                            custo líquido, valores devolvidos,
+                            evolução diária, custos por técnico
+                            e itens de maior impacto.
+                        </li>
+
+                        <li>
+                            <strong>Comparação entre períodos:</strong>
+                            filtros por data e análise de aumento
+                            ou redução dos gastos em relação
+                            ao período anterior de igual duração.
+                        </li>
+
+                        <li>
+                            <strong>Fechamentos compartilháveis:</strong>
+                            relatórios semanais, mensais e dos
+                            últimos 30 dias, com geração de links
+                            para a gestão e exportação em PDF e CSV.
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="projeto-recursos">
                     <span>📊 Dashboard</span>
                     <span>👥 Controle por técnico</span>
                     <span>📦 Materiais e equipamentos</span>
                     <span>🔄 Retiradas e devoluções</span>
+                    <span>📏 Custos por unidade e metro</span>
+                    <span>🏷️ Catálogo de custos</span>
                     <span>📅 Fechamentos por período</span>
                     <span>📈 Comparação de gastos</span>
                     <span>📄 PDF e CSV</span>
