@@ -7,7 +7,7 @@
 
 <meta
     name="description"
-    content="Conheça os projetos desenvolvidos pela KBSistemas: Finance, ERP, Estoque Inteligente com KIRA IA, logística reversa e sites profissionais."
+    content="Conheça os projetos desenvolvidos pela KBSistemas: relatórios de almoxarifado, Finance, ERP, Estoque Inteligente com KIRA IA, logística reversa e sites profissionais."
 >
 
 <title>Portfólio de Projetos | KBSistemas</title>
@@ -322,6 +322,147 @@
     background: #22354b;
 }
 
+/* ALMOXARIFADO MATRIZ */
+
+.projeto-matriz {
+    border-color: #365d4d;
+}
+
+.projeto-matriz:hover {
+    border-color: #61b38c;
+}
+
+.matriz-capa {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 290px;
+    padding: 34px;
+    overflow: hidden;
+    border-bottom: 1px solid #365d4d;
+    background:
+        radial-gradient(
+            ellipse at 95% 10%,
+            rgba(64, 223, 174, .18),
+            transparent 65%
+        ),
+        linear-gradient(135deg, #14271f, #0b1512);
+}
+
+.matriz-capa::after {
+    position: absolute;
+    right: -45px;
+    bottom: -100px;
+    width: 270px;
+    height: 270px;
+    border: 1px solid rgba(230, 193, 129, .16);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.matriz-capa-topo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.matriz-simbolo {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #8cf1c8;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4de1ae, #187650);
+    color: #09271b;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.matriz-identidade strong {
+    display: block;
+    color: #edf5ef;
+    font-size: 19px;
+    letter-spacing: 3px;
+}
+
+.matriz-identidade small {
+    color: #a4bdad;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.matriz-capa-titulo {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 12px;
+    color: #eef6f0;
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 650;
+    line-height: 1.2;
+    letter-spacing: -.8px;
+}
+
+.matriz-capa-titulo span {
+    color: #40dfae;
+}
+
+.matriz-capa-periodos {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #e6c181;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.projeto-matriz .projeto-tag {
+    background: #1a3528;
+    border-color: #3e624c;
+    color: #a2edc9;
+}
+
+.projeto-matriz .projeto-recursos span {
+    background: #192d24;
+    border-color: #365342;
+    color: #c5ddcc;
+}
+
+.projeto-tecnologias {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #304b3d;
+}
+
+.projeto-tecnologias strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #e6c181;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.projeto-tecnologias-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.projeto-tecnologias-lista span {
+    padding: 5px 8px;
+    border: 1px solid #3b4d42;
+    border-radius: 6px;
+    color: #b9cebf;
+    font-size: 11px;
+}
+
 /* OUTROS SERVIÇOS */
 
 .portfolio-servicos {
@@ -450,7 +591,7 @@
     font-size: 13px;
 }
 
-/* CELULAR */
+/* RESPONSIVIDADE */
 
 @media (max-width: 850px) {
     .portfolio-grid,
@@ -464,6 +605,10 @@
 
     .projeto-imagem {
         height: 260px;
+    }
+
+    .matriz-capa {
+        min-height: 260px;
     }
 
     .portfolio-servicos {
@@ -483,6 +628,11 @@
     .projeto-imagem {
         height: 210px;
         padding: 9px;
+    }
+
+    .matriz-capa {
+        min-height: 240px;
+        padding: 25px;
     }
 
     .projeto-corpo {
@@ -575,14 +725,15 @@
     <p>
         Conheça nossos sistemas empresariais,
         plataformas digitais e sites personalizados.
-        Explore cada projeto e confira as telas
-        nas imagens abaixo.
+        Explore cada projeto e confira suas
+        funcionalidades.
     </p>
 </section>
 
 <section class="portfolio">
     <div class="portfolio-intro">
         <h2>Nossos projetos</h2>
+
         <p>
             Sistemas, sites e aplicações desenvolvidos
             com foco em organização, praticidade
@@ -591,6 +742,87 @@
     </div>
 
     <div class="portfolio-grid">
+
+        <!-- ALMOXARIFADO MATRIZ -->
+
+        <article
+            class="projeto-card projeto-matriz"
+            id="almoxarifado-matriz"
+        >
+            <div class="matriz-capa">
+                <div class="matriz-capa-topo">
+                    <div class="matriz-simbolo" aria-hidden="true">
+                        M
+                    </div>
+
+                    <div class="matriz-identidade">
+                        <strong>MATRIZ</strong>
+                        <small>ALMOXARIFADO</small>
+                    </div>
+                </div>
+
+                <div class="matriz-capa-titulo">
+                    Controle de materiais.<br>
+                    <span>Visibilidade dos gastos.</span>
+                </div>
+
+                <p class="matriz-capa-periodos">
+                    Relatórios semanais · Mensais · Últimos 30 dias
+                </p>
+            </div>
+
+            <div class="projeto-corpo">
+                <span class="projeto-tag">
+                    TELECOMUNICAÇÕES • CONTROLE DE GASTOS
+                </span>
+
+                <h3>
+                    📊 Relatório de Gastos — Almoxarifado Matriz
+                </h3>
+
+                <p>
+                    Sistema desenvolvido para apoiar o controle
+                    de materiais e equipamentos em uma empresa
+                    de telecomunicações. Registra retiradas e
+                    devoluções por técnico e apresenta os custos
+                    em uma dashboard com gráficos e atualização
+                    automática.
+                </p>
+
+                <p>
+                    Permite gerar relatórios semanais, mensais
+                    e dos últimos 30 dias, comparar gastos entre
+                    períodos, exportar em PDF e compartilhar
+                    fechamentos por link, facilitando a
+                    apresentação dos resultados à gestão.
+                </p>
+
+                <div class="projeto-recursos">
+                    <span>📊 Dashboard</span>
+                    <span>👥 Controle por técnico</span>
+                    <span>📦 Materiais e equipamentos</span>
+                    <span>🔄 Retiradas e devoluções</span>
+                    <span>📅 Fechamentos por período</span>
+                    <span>📈 Comparação de gastos</span>
+                    <span>📄 PDF e CSV</span>
+                    <span>🔗 Relatórios compartilháveis</span>
+                    <span>📱 Responsivo</span>
+                </div>
+
+                <div class="projeto-tecnologias">
+                    <strong>TECNOLOGIAS UTILIZADAS</strong>
+
+                    <div class="projeto-tecnologias-lista">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>PostgreSQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </article>
 
         <!-- FINANCE -->
 
@@ -602,6 +834,7 @@
                     loading="lazy"
                     onclick="abrirImagem(this)"
                 >
+
                 <span class="projeto-ampliar">
                     ⤢ Ampliar imagem
                 </span>
@@ -728,6 +961,7 @@
                     loading="lazy"
                     onclick="abrirImagem(this)"
                 >
+
                 <span class="projeto-ampliar">
                     ⤢ Ampliar imagem
                 </span>
@@ -837,6 +1071,7 @@
                     loading="lazy"
                     onclick="abrirImagem(this)"
                 >
+
                 <span class="projeto-ampliar">
                     ⤢ Ampliar imagem
                 </span>
@@ -947,6 +1182,7 @@
                     loading="lazy"
                     onclick="abrirImagem(this)"
                 >
+
                 <span class="projeto-ampliar">
                     ⤢ Ampliar imagem
                 </span>
@@ -1021,6 +1257,7 @@
                     loading="lazy"
                     onclick="abrirImagem(this)"
                 >
+
                 <span class="projeto-ampliar">
                     ⤢ Ampliar imagem
                 </span>
@@ -1055,7 +1292,7 @@
             </div>
         </article>
 
-        <!-- WARZONE -->
+        <!-- WARZONE — SEM LINK DE ACESSO AO PROJETO -->
 
         <article class="projeto-card">
             <div class="projeto-imagem">
@@ -1065,6 +1302,7 @@
                     loading="lazy"
                     onclick="abrirImagem(this)"
                 >
+
                 <span class="projeto-ampliar">
                     ⤢ Ampliar imagem
                 </span>
@@ -1092,15 +1330,6 @@
                 </div>
 
                 <div class="projeto-botoes">
-                    <a
-                        class="btn-secundario"
-                        href="https://campwarzone.onrender.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Ver projeto ↗
-                    </a>
-
                     <a class="btn-projeto" href="/orcamento">
                         Criar site parecido →
                     </a>
@@ -1124,6 +1353,7 @@
         <div class="servicos-extra">
             <article class="servico-extra">
                 <h3>🌐 Sites Profissionais</h3>
+
                 <p>
                     Sites institucionais, landing pages
                     e páginas comerciais para empresas
@@ -1133,6 +1363,7 @@
 
             <article class="servico-extra">
                 <h3>🛍️ Catálogos Digitais</h3>
+
                 <p>
                     Catálogos personalizados para
                     apresentar produtos, serviços,
@@ -1142,6 +1373,7 @@
 
             <article class="servico-extra">
                 <h3>🛒 Lojas Virtuais</h3>
+
                 <p>
                     Desenvolvimento de lojas e
                     vitrines digitais conforme
@@ -1267,6 +1499,7 @@ function trocarFoto(botao, caminho) {
 
     principal.src = caminho;
     principal.alt = miniatura.alt;
+
     principal.setAttribute(
         "aria-label",
         "Ampliar: " + miniatura.alt
@@ -1289,6 +1522,7 @@ let overflowAnterior = "";
 
 function abrirImagem(imagemClicada) {
     const card = imagemClicada.closest(".projeto-card");
+
     const miniaturas = Array.from(
         card.querySelectorAll(".projeto-fotos img")
     );
@@ -1391,6 +1625,7 @@ document.querySelectorAll(".projeto-imagem img")
     .forEach(function(imagem) {
         imagem.tabIndex = 0;
         imagem.setAttribute("role", "button");
+
         imagem.setAttribute(
             "aria-label",
             "Ampliar: " + imagem.alt
@@ -1456,6 +1691,7 @@ document.addEventListener("keydown", function(evento) {
         ) {
             evento.preventDefault();
             ultimo.focus();
+
         } else if (
             !evento.shiftKey
             && document.activeElement === ultimo
